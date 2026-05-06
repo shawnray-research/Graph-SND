@@ -7,7 +7,13 @@
 %     \usepackage[preprint]{neurips_2026}
 % For the camera-ready final version (post-acceptance only):
 %     \usepackage[main, final]{neurips_2026}
+% Preprint mode for arXiv / GitHub (shows authors; no line numbers).
 \usepackage[preprint]{neurips_2026}
+
+% NeurIPS Paper Checklist: enable only when rebuilding the anonymous
+% submission PDF (\usepackage{neurips_2026} without preprint/final).
+\newif\ifincludeneuripschecklist
+\includeneuripschecklistfalse
 
 % ---------- Core packages ----------
 \usepackage[utf8]{inputenc}
@@ -1636,8 +1642,10 @@ Theorem~\ref{thm:distortion}.}
 \end{figure}
 
 % ============================================================
-% NeurIPS Paper Checklist (mandatory; does not count toward page limit).
-\clearpage
-\input{checklist}
+% NeurIPS Paper Checklist (submission/OpenReview only; omit from arXiv).
+\ifincludeneuripschecklist
+  \clearpage
+  \input{checklist}
+\fi
 
 \end{document}
