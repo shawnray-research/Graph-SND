@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: If you use this software, please cite the accompanying paper.
+title: "Graph-SND: Sparse Aggregation for Behavioral Diversity in Multi-Agent Reinforcement Learning"
+authors:
+  - family-names: Ray
+    given-names: Shawn
+    affiliation: "Carnegie Mellon University"
+    email: shawnray@cmu.edu
+repository-code: "https://github.com/shawnray-research/Graph-SND"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Graph-SND: Sparse Aggregation for Behavioral Diversity in Multi-Agent Reinforcement Learning"
+  authors:
+    - family-names: Ray
+      given-names: Shawn
+      affiliation: "Carnegie Mellon University"
+      email: shawnray@cmu.edu
+  year: 2026
+  url: "https://github.com/shawnray-research/Graph-SND"
