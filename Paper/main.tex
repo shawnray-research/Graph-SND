@@ -1213,8 +1213,8 @@ Setting $t=(nd/2)\epsilon$ and dividing through:
 \emph{Step 3: Conditioning on simplicity.}
 The uniform simple $d$-regular graph is the configuration multigraph
 conditioned on being simple. By~\citet{bollobas1980probabilistic}
-and~\citet{mckay1981subgraphs}, in the sparse regime $d^2=o(n)$
----which contains the headline setting $d=\Theta(\log n)$ used here---
+and~\citet{mckay1981subgraphs}, in the sparse regime $d^2=o(n)$, which
+contains the headline setting $d=\Theta(\log n)$ used here,
 $\Pr_\pi(G(\pi)\text{ is simple})=\exp\!\bigl(-(d^2-1)/4 + o(1)\bigr)$
 as $n\to\infty$, so
 $\Pr_\pi(G(\pi)\text{ is simple})\geq\tfrac{1}{2}e^{-(d^2-1)/4}$ for $n$
@@ -1330,8 +1330,8 @@ each size $m \in \{6, 12, 24, 48, 72, 96\}$ ($5\%$--$80\%$ of all
 pairs), computing $\SNDG^{\mathrm{u}}$ on each, and comparing the
 empirical distribution of $|\SNDG^{\mathrm{u}} - \SND|$ against theory
 at $\delta{=}0.10$ (Figure~\ref{fig:concentration}). Across all $12$
-cells, the Hoeffding violation rate is $0.00$---no draw out of
-$2{,}000$ exceeds $t_H$---well under the allowed $\delta$; the same
+cells, the Hoeffding violation rate is $0.00$: no draw out of
+$2{,}000$ exceeds $t_H$, well under the allowed $\delta$; the same
 holds for the Serfling refinement of Remark~\ref{rem:serfling}. The
 empirical curve sits well below both bounds, as expected for
 distribution-free guarantees that are worst-case tight only at
@@ -1392,7 +1392,7 @@ random-init & Expander-$d2$ & 0.0000 & $0.274{\times}10^{-3}$ & 0.143 & $2.13\ti
 \caption{PettingZoo MPE simple-spread transfer panel ($n{=}10$,
 categorical policies, TVD distance, three seeds, $2{,}000$ draws/seed).
 `Mean viol.' is the fraction of draws with
-$|\SNDG^{\mathrm{u}}-\SND|>0.05$ averaged across seeds---a
+$|\SNDG^{\mathrm{u}}-\SND|>0.05$ averaged across seeds, a
 fixed-threshold diagnostic, not the Hoeffding violation rate (which
 requires the population-dependent bound from
 Theorem~\ref{thm:concentration}). Because TVD lies in $[0,1]$, the
@@ -1513,7 +1513,7 @@ Panel~(c) quantifies steady-state tracking: the late-window
 $|\mathrm{applied}\,\SND - \SND_{\mathrm{des}}|/\SND_{\mathrm{des}}$
 is $0.42$--$0.53\%$ for Bernoulli-$0.1$ and $0.31$--$0.37\%$ for
 full SND, with full SND slightly tighter than Bernoulli-$0.1$ in
-every cell---expected, as full SND is the ground truth and
+every cell; this is expected, since full SND is the ground truth and
 Bernoulli-$0.1$ queries only ${\sim}10\%$ of pairs. Both estimators
 remain well under the $1\%$ floor of the controller. Panel~(d)
 isolates per-call metric cost: Bernoulli-$0.1$ averages
@@ -1522,8 +1522,8 @@ ${\sim}18.9\,\mathrm{ms}$/call, a $9.24$--$9.63\times$ ratio that
 tracks the analytical $\binom{n}{2}/\mathbb{E}[|E|]{=}10$ prediction
 of Proposition~\ref{prop:complexity} nearly exactly. Because full
 SND iters take $52.4\,\mathrm{s}$ end-to-end at this $n$ and batch
-size---dominated by rollout collection and PPO updates rather than
-by the metric---the absolute wall-clock savings at $n{=}50$ are a
+size, dominated by rollout collection and PPO updates rather than
+by the metric; the absolute wall-clock savings at $n{=}50$ are a
 few percent of training time; the same ${\sim}10{\times}$
 metric-call speedup translates into larger end-to-end savings as the
 metric's share of per-iteration time grows with $n$ (see
