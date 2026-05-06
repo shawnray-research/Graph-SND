@@ -1,6 +1,6 @@
 # Kill-Shot 1: Localised Diversity via Dynamic k-NN Graphs on Dispersion.
 #
-# Dispersion requires agents to spread out and cover food landmarks  -  a
+# Dispersion requires agents to spread out and cover food landmarks, a
 # task where *local* spatial specialisation (diversify only from nearby
 # neighbours) should outperform global diversity pressure.
 #

@@ -3,7 +3,7 @@
 
 Trains independent categorical policies via PPO with GAE on PettingZoo's
 simple_spread_v3. Logs Graph-SND (TVD) passively each iteration as a
-measurement  -  NOT as a control signal. Saves checkpoints loadable by
+measurement, NOT as a control signal. Saves checkpoints loadable by
 ``mpe_measurement_panel.py``.
 
 This is a secondary, time-gated script. If the expander experiments

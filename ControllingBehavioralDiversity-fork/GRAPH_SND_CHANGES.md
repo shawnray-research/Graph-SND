@@ -38,6 +38,6 @@ when you need eval videos locally.
 
 ## Not modified
 
-- `het_control/snd.py` (Wasserstein / pairwise distance kernel)  -  imported, not rewritten.
-- `SndCallback` evaluation SND path  -  unchanged (training-time diversity dispatch is in `estimate_snd` only).
-- VMAS, TensorDict, TorchRL, BenchMARL  -  not vendored here; install per upstream DiCo README.
+- `het_control/snd.py` (Wasserstein / pairwise distance kernel): imported, not rewritten.
+- `SndCallback` evaluation SND path: unchanged (training-time diversity dispatch is in `estimate_snd` only).
+- VMAS, TensorDict, TorchRL, BenchMARL: not vendored here; install per upstream DiCo README.

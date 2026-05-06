@@ -1,7 +1,7 @@
 """Total Variation Distance for categorical distributions.
 
 Used by the MPE measurement panel to compute Graph-SND with discrete
-action spaces. Not integrated into ``het_control/snd.py``  -  this is a
+action spaces. Not integrated into ``het_control/snd.py``; this is a
 standalone measurement utility.
 """
 
@@ -24,7 +24,7 @@ def tvd(p: Tensor, q: Tensor) -> Tensor:
     Returns
     -------
     Tensor
-        Shape ``(...)``  -  the TVD for each pair of distributions in the
+        Shape ``(...)``: the TVD for each pair of distributions in the
         batch. Values lie in ``[0, 1]``.
     """
     return 0.5 * (p - q).abs().sum(dim=-1)
@@ -36,12 +36,12 @@ def tvd_pairwise(probs: Tensor) -> Tensor:
     Parameters
     ----------
     probs : Tensor
-        Shape ``(n, K)``  -  one probability vector per agent.
+        Shape ``(n, K)``: one probability vector per agent.
 
     Returns
     -------
     Tensor
-        Shape ``(n, n)``  -  symmetric matrix where entry ``(i, j)`` is
+        Shape ``(n, n)``: symmetric matrix where entry ``(i, j)`` is
         ``tvd(probs[i], probs[j])``.
     """
     n = probs.shape[0]

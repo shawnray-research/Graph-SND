@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Expander-GG DiCo on VMAS Dispersion  -  single seed, single GPU.
+# Expander-GG DiCo on VMAS Dispersion, single seed, single GPU.
 #
 # Runs DiCo with a random d-regular (expander) graph as the Graph-SND
 # estimator. The expander graph is resampled each estimate_snd call via
@@ -21,7 +21,7 @@
 #   N_AGENTS      (default 10)
 #   MAX_ITERS     (default 167)
 #   DESIRED_SND   (default 0.1)
-#   RR_D          (default 3)    -  expander degree; n*d must be even
+#   RR_D          (default 3): expander degree; n*d must be even
 #   N_FOOD        (default N_AGENTS)
 #   FORCE         (default 0)
 #   RESULTS_BASE  (default $ROOT/results/neurips_final)

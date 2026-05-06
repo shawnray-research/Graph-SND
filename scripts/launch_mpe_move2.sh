@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Move 2: MPE simple-spread  -  IPPO training (3 seeds) + measurement panel.
+# Move 2: MPE simple-spread: IPPO training (3 seeds) + measurement panel.
 #
 # MPE training is CPU-bound (PettingZoo doesn't use GPU), so we run two
 # seeds in parallel to use both CPU cores, then the third seed, then the
@@ -18,7 +18,7 @@
 #   N_ITERS       (default 500)
 #   N_ROLLOUTS    (default 20)
 #   SEEDS         (default "0 1 2")
-#   TIMEOUT_HOURS (default 24)   -  per-seed timeout
+#   TIMEOUT_HOURS (default 24): per-seed timeout
 #   FORCE         (default 0)
 #   RESULTS_BASE  (default results/mpe_simple_spread)
 
@@ -93,7 +93,7 @@ run_seed() {
     fi
 
     if [[ ! -s "${OUT_DIR}/checkpoint_seed${SEED}.pt" ]]; then
-        echo "[$(date -Is)] seed ${SEED}: WARNING  -  no checkpoint saved." >&2
+        echo "[$(date -Is)] seed ${SEED}: WARNING: no checkpoint saved." >&2
         return 1
     fi
 
@@ -104,7 +104,7 @@ run_seed() {
 }
 
 # ---------------------------------------------------------------------------
-# Phase 1: Train seeds  -  run first two in parallel, then third
+# Phase 1: Train seeds; run first two in parallel, then third
 # ---------------------------------------------------------------------------
 echo
 echo "[$(date -Is)] PHASE 1: IPPO training (no DiCo)"
