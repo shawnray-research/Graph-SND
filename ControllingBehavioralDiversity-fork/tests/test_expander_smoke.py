@@ -1,6 +1,6 @@
 """Smoke tests for the expander estimator in the DiCo diversity dispatch.
 
-These tests validate the plumbing — not the statistical properties — of the
+These tests validate the plumbing  -  not the statistical properties  -  of the
 expander branch added to ``compute_diversity()`` in ``het_control/graph_snd.py``.
 Run before committing to a multi-hour training seed.
 

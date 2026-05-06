@@ -4,7 +4,7 @@
 # Uses the same memory-related Hydra overrides as launch_dico_n50_feasibility.sh
 # (ENV_N, FRAMES_PER_BATCH). Do NOT use launch_bern_dico.sh at n=50 without these.
 #
-# IMPORTANT: never capture the launcher with "$(run_bern ...)" — that runs in a
+# IMPORTANT: never capture the launcher with "$(run_bern ...)"  -  that runs in a
 # subshell and breaks `wait` ("pid is not a child of this shell"); jobs may
 # orphan but keep training.
 #

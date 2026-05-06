@@ -8,7 +8,7 @@ config variants, then checks:
    ``snd_des``: the mean of ``applied_snd`` over the **last 10** iterations
    must be within ``APPLIED_SND_TOLERANCE`` of ``snd_des``. Raw ``snd_t``
    (estimated diversity of *unscaled* agent deltas) is **not** asserted to
-   move toward ``snd_des`` — DiCo intentionally lets raw spread grow while
+   move toward ``snd_des``  -  DiCo intentionally lets raw spread grow while
    ``scaling_ratio = snd_des / distance`` shrinks so their product stays near
    target (see DIAGNOSIS.md and n=2 paper-style baselines).
 3. **Reward** does not catastrophically collapse vs the start of the window.

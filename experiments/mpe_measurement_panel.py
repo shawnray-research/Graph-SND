@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MPE Measurement Panel — Graph-SND on categorical policies with TVD.
+"""MPE Measurement Panel  -  Graph-SND on categorical policies with TVD.
 
 Standalone script (no BenchMARL). Evaluates Graph-SND metrics on frozen
 or pre-trained categorical policies in PettingZoo MPE simple-spread.
@@ -85,7 +85,7 @@ def graph_snd_tvd(
 
     Returns
     -------
-    float — mean TVD over the edge list
+    float  -  mean TVD over the edge list
     """
     if not edges:
         # Fallback to full SND

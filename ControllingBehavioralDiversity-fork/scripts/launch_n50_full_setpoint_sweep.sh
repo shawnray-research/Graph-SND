@@ -29,12 +29,12 @@
 # both cards are saturated for the full duration.
 #
 # IMPORTANT: like launch_n50_bern_setpoint_sweep.sh, we never wrap the
-# runner in "$(...)" — subshell capture breaks `wait` with "pid is not a
+# runner in "$(...)"  -  subshell capture breaks `wait` with "pid is not a
 # child of this shell". Instead each worker is a shell *function*
 # backgrounded with `&` so $! inside the worker is a real child of that
 # worker's subshell.
 #
-# Usage (from fork root, tmux strongly recommended — see RUNBOOK note at
+# Usage (from fork root, tmux strongly recommended  -  see RUNBOOK note at
 # bottom of this file):
 #   bash scripts/launch_n50_full_setpoint_sweep.sh
 #   FORCE=1 bash scripts/launch_n50_full_setpoint_sweep.sh   # overwrite existing CSV dirs
@@ -90,7 +90,7 @@ if command -v nvidia-smi >/dev/null 2>&1; then
   echo "[$(date -Is)] nvidia-smi --query-gpu=index,name,memory.total --format=csv:"
   nvidia-smi --query-gpu=index,name,memory.total --format=csv || true
 else
-  echo "[$(date -Is)] WARN: nvidia-smi not found on PATH — GPU visibility may be misconfigured." >&2
+  echo "[$(date -Is)] WARN: nvidia-smi not found on PATH  -  GPU visibility may be misconfigured." >&2
 fi
 
 echo "[$(date -Is)] plan: n=${N_AGENTS}  iters=${MAX_ITERS}  env_n=${ENV_N}  batch=${FRAMES_PER_BATCH}"
@@ -121,7 +121,7 @@ echo "[$(date -Is)] plan: GPU 0 cells (${#CELLS_GPU0[@]}): ${CELLS_GPU0[*]}"
 echo "[$(date -Is)] plan: GPU 1 cells (${#CELLS_GPU1[@]}): ${CELLS_GPU1[*]}"
 
 if [[ "${DRY_RUN}" == "1" ]]; then
-  echo "[$(date -Is)] DRY_RUN=1 — plan printed above, exiting without launching any training."
+  echo "[$(date -Is)] DRY_RUN=1  -  plan printed above, exiting without launching any training."
   exit 0
 fi
 
