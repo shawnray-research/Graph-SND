@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: If you use this software, please cite the accompanying paper.
+message: "If you use this software, please cite the accompanying paper."
 title: "Graph-SND: Sparse Aggregation for Behavioral Diversity in Multi-Agent Reinforcement Learning"
 authors:
   - family-names: Ray
@@ -8,6 +8,38 @@ authors:
     email: shawnray@cmu.edu
 repository-code: "https://github.com/shawnray-research/Graph-SND"
 license: MIT
+abstract: >-
+  System Neural Diversity (SND) measures behavioral heterogeneity in multi-agent
+  reinforcement learning by averaging pairwise distances over all \binom{n}{2}
+  agent pairs, making each call quadratic in team size. We introduce Graph-SND,
+  which replaces this complete-graph average with a weighted average over the
+  edges of an arbitrary graph G. Three regimes follow: G=K_n recovers SND
+  exactly; a fixed sparse G defines a localized diversity measure at O(|E|) cost;
+  and random edge samples yield an unbiased Horvitz-Thompson estimator and a
+  normalized sample mean with O(1/\sqrt{m}) concentration in the sampled edge
+  count m. For fixed sparse graphs we prove forwarding-index distortion bounds
+  for expanders and a spectral refinement under low-rank distance structure; for
+  random d-regular graphs we prove an unconditional probabilistic
+  \widetilde{\mathcal{O}}(D_{\max}/\sqrt{n}) bound. On VMAS we verify recovery,
+  unbiasedness, concentration, and wall-clock scaling, with a PettingZoo TVD
+  panel checking non-Gaussian transfer. In a 500-iteration n=100 PPO run,
+  Bernoulli-0.1 Graph-SND tracks full SND while reducing per-call metric time by
+  about 10\times, and frozen-policy GPU timing up to n=500 follows the predicted
+  \binom{n}{2}/|E| speedup. Random d-regular expanders empirically achieve
+  \mathrm{SND}_{G}^{\mathrm{u}}/\mathrm{SND} \in [0.9987, 1.0013] at
+  \Theta(n \log n) edges. In DiCo diversity control at n=50, Bernoulli-0.1
+  Graph-SND preserves set-point tracking with paired reward differences
+  indistinguishable from zero across nine matched cells while cutting per-call
+  metric cost by {\sim}9.5\times. Together, these results show that the SND
+  aggregation bottleneck can be removed without changing the metric's semantics,
+  yielding a drop-in sparse alternative that scales beyond complete-graph SND
+  and supports both passive measurement and closed-loop diversity control.
+keywords:
+  - Multi-Agent Reinforcement Learning
+  - Behavioral Diversity
+  - Sparse Aggregation
+  - System Neural Diversity
+  - Graph Neural Networks
 preferred-citation:
   type: article
   title: "Graph-SND: Sparse Aggregation for Behavioral Diversity in Multi-Agent Reinforcement Learning"
@@ -17,4 +49,37 @@ preferred-citation:
       affiliation: "Carnegie Mellon University"
       email: shawnray@cmu.edu
   year: 2026
-  url: "https://github.com/shawnray-research/Graph-SND"
+  month: 5
+  day: 6
+  abstract: >-
+    System Neural Diversity (SND) measures behavioral heterogeneity in multi-agent
+    reinforcement learning by averaging pairwise distances over all \binom{n}{2}
+    agent pairs, making each call quadratic in team size. We introduce Graph-SND,
+    which replaces this complete-graph average with a weighted average over the
+    edges of an arbitrary graph G. Three regimes follow: G=K_n recovers SND
+    exactly; a fixed sparse G defines a localized diversity measure at O(|E|) cost;
+    and random edge samples yield an unbiased Horvitz-Thompson estimator and a
+    normalized sample mean with O(1/\sqrt{m}) concentration in the sampled edge
+    count m. For fixed sparse graphs we prove forwarding-index distortion bounds
+    for expanders and a spectral refinement under low-rank distance structure; for
+    random d-regular graphs we prove an unconditional probabilistic
+    \widetilde{\mathcal{O}}(D_{\max}/\sqrt{n}) bound. On VMAS we verify recovery,
+    unbiasedness, concentration, and wall-clock scaling, with a PettingZoo TVD
+    panel checking non-Gaussian transfer. In a 500-iteration n=100 PPO run,
+    Bernoulli-0.1 Graph-SND tracks full SND while reducing per-call metric time by
+    about 10\times, and frozen-policy GPU timing up to n=500 follows the predicted
+    \binom{n}{2}/|E| speedup. Random d-regular expanders empirically achieve
+    \mathrm{SND}_{G}^{\mathrm{u}}/\mathrm{SND} \in [0.9987, 1.0013] at
+    \Theta(n \log n) edges. In DiCo diversity control at n=50, Bernoulli-0.1
+    Graph-SND preserves set-point tracking with paired reward differences
+    indistinguishable from zero across nine matched cells while cutting per-call
+    metric cost by {\sim}9.5\times. Together, these results show that the SND
+    aggregation bottleneck can be removed without changing the metric's semantics,
+    yielding a drop-in sparse alternative that scales beyond complete-graph SND
+    and supports both passive measurement and closed-loop diversity control.
+  doi: "10.48550/arXiv.2605.05020"
+  url: "https://arxiv.org/abs/2605.05020"
+  version: "v1"
+  identifiers:
+    - type: arxiv
+      value: "2605.05020"
