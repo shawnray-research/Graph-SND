@@ -8,6 +8,7 @@ diversity-control experiments. The full paper source lives in `Paper/`.
 
 - Project repository: <https://github.com/shawnray-research/Graph-SND>
 - Author: Shawn Ray, Carnegie Mellon University, <shawnray@cmu.edu>
+- Paper: arXiv:2605.05020 (2026-05-06)
 
 Graph-SND is a sparse aggregation layer for System Neural Diversity
 (SND). Instead of averaging behavioral distances over all
@@ -123,9 +124,23 @@ tectonic main.tex   # or: latexmk -pdf main.tex
 
 ## Citation
 
-If you use Graph-SND in your work, please cite the paper. See
-[`CITATION.cff`](CITATION.cff) for machine-readable metadata. A BibTeX
-entry will be provided once the camera-ready / arXiv version is posted.
+If you use Graph-SND in your work, please cite the following paper.
+Machine-readable metadata is available in [`CITATION.cff`](CITATION.cff).
+
+**Preprint (arXiv):**
+```bibtex
+@misc{ray2026graphsnd,
+  title         = {Graph-{SND}: Sparse Aggregation for Behavioral Diversity
+                   in Multi-Agent Reinforcement Learning},
+  author        = {Shawn Ray},
+  year          = 2026,
+  eprint        = {2605.05020},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  doi           = {10.48550/arXiv.2605.05020},
+  url           = {https://arxiv.org/abs/2605.05020}
+}
+```
 
 ## License
 
