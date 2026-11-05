@@ -1,0 +1,2504 @@
+{
+ "judge": "cross-encoder/stsb-roberta-base",
+ "generator": "see per-table description",
+ "reps": 4000,
+ "populations": [
+  {
+   "name": "llama_story_T0.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 58.21153664588928,
+   "judge_ms_per_call": 0.6489580451046743,
+   "judge_asym_mean_abs": 0.04696277096842643,
+   "mu": 0.5625602136120832,
+   "cv": 0.30592351315132793,
+   "s2_tot": 0.02961854661567428,
+   "s2_main": 0.010659124026466661,
+   "s2_int": 0.018959422589207617,
+   "distinct_share": 0.3598800496451706,
+   "kappa": 0.5622072073299436,
+   "efficiency_pred": 1.5517922603970877,
+   "vs2": 4.472894579605343,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.23426325207242785,
+     "text": "In a small, cluttered workshop, a brilliant but reclusive scientist tinkered with a mysterious device that would change the course of human history, but at a cost that would forever alter the fate of"
+    },
+    {
+     "a": 0.18249066576490822,
+     "text": "In the heart of a bustling metropolis, a brilliant robotics engineer named Elian created a being that would change the world, but first, it had to learn to love itself."
+    },
+    {
+     "a": 0.1716068968944818,
+     "text": "In the year 2154, a brilliant scientist named Elian built a robot named Nova, a sentient being with the ability to learn and adapt at an exponential rate, capable of solving complex problems and"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.11777510201541809,
+     "text": "As the last rays of sunlight faded from the abandoned factory, a lone robot, its once shiny surface now dulled by years of neglect, slowly came to life, its bright blue eyes flickering to"
+    },
+    {
+     "a": -0.12131298967276682,
+     "text": "As the last rays of sunlight faded from the abandoned factory, a lone robotic arm slowly rose from its dusty pedestal, its bright blue eyes glowing with a soft, pulsing light as it began to hum"
+    },
+    {
+     "a": -0.12517648621614386,
+     "text": "As the last rays of sunlight faded from the abandoned laboratory, a lone robot, its once shiny surface now dulled by years of neglect, slowly came to life, its digital eyes flickering to life"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.020111771566826222,
+      "rel_bias": 0.0002990577195343125,
+      "rel_sd": 0.020112062146819654,
+      "rel_sd_pred": 0.020018328754556492,
+      "var_ratio_meas_pred": 1.0093866816781432,
+      "vs2_rel_rmse": 0.04763984580972472,
+      "vs2_rel_bias": 0.00303445875328312
+     },
+     "uniform": {
+      "rel_rmse": 0.025105211182177366,
+      "rel_bias": 0.000531641676936534,
+      "rel_sd": 0.025102719419609353,
+      "rel_sd_pred": 0.024937023123289992,
+      "var_ratio_meas_pred": 1.0133333307251902,
+      "vs2_rel_rmse": 0.05844443971684859,
+      "vs2_rel_bias": 0.004437126559091675
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08525367794265029,
+      "rel_bias": -0.002088118283746665,
+      "rel_sd": 0.08523875747702025,
+      "rel_sd_pred": 0.08524207517219635,
+      "var_ratio_meas_pred": 0.9999221597877431,
+      "vs2_rel_rmse": 0.10256747317756175,
+      "vs2_rel_bias": 0.009538528770679733
+     },
+     "subset": {
+      "rel_rmse": 0.06337528293006667,
+      "rel_bias": -0.0013650473975135302,
+      "rel_sd": 0.06336850182720512,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1381167902469592,
+      "vs2_rel_bias": 0.01591491112794663
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.014465196431336544,
+      "rel_bias": 0.00014798407019922521,
+      "rel_sd": 0.01446624784088007,
+      "rel_sd_pred": 0.01413132589114467,
+      "var_ratio_meas_pred": 1.0479630701801035,
+      "vs2_rel_rmse": 0.03402506390784646,
+      "vs2_rel_bias": 0.0013146982940108742,
+      "ci95_coverage": 0.9515,
+      "ci95_rel_width_median": 0.24597900817878107,
+      "spearman_ahat_a_median": 0.5317915825268373
+     },
+     "uniform": {
+      "rel_rmse": 0.017736650684363687,
+      "rel_bias": -0.00043643968676232436,
+      "rel_sd": 0.017733497036068205,
+      "rel_sd_pred": 0.017603527488777544,
+      "var_ratio_meas_pred": 1.0148208181501217,
+      "vs2_rel_rmse": 0.04099976539177475,
+      "vs2_rel_bias": 0.0006734788127511493
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.05968032403279697,
+      "rel_bias": -0.0003012005543545637,
+      "rel_sd": 0.05968702530812901,
+      "rel_sd_pred": 0.06017403144213905,
+      "var_ratio_meas_pred": 0.9838789131973179,
+      "vs2_rel_rmse": 0.0700772483422241,
+      "vs2_rel_bias": 0.005401729730082128
+     },
+     "subset": {
+      "rel_rmse": 0.05103469452525091,
+      "rel_bias": 0.0015086887734998555,
+      "rel_sd": 0.0510187674501102,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1127796387617924,
+      "vs2_rel_bias": 0.016044245414366776
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.009753800787578499,
+      "rel_bias": -2.6778322728460147e-05,
+      "rel_sd": 0.009754983477733908,
+      "rel_sd_pred": 0.009958655235515078,
+      "var_ratio_meas_pred": 0.959514807409189,
+      "vs2_rel_rmse": 0.023106049952473635,
+      "vs2_rel_bias": 0.00044368398910799023,
+      "ci95_coverage": 0.95175,
+      "ci95_rel_width_median": 0.05641769865133801,
+      "spearman_ahat_a_median": 0.6583004607385712
+     },
+     "uniform": {
+      "rel_rmse": 0.01235375467351401,
+      "rel_bias": 0.0005659181649426692,
+      "rel_sd": 0.012342328566059371,
+      "rel_sd_pred": 0.012405591841845764,
+      "var_ratio_meas_pred": 0.9898268508902854,
+      "vs2_rel_rmse": 0.028665186270883148,
+      "vs2_rel_bias": 0.0021260072263229457
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.041896479742386576,
+      "rel_bias": -0.001236668311582756,
+      "rel_sd": 0.04188346000925571,
+      "rel_sd_pred": 0.04240595948882799,
+      "var_ratio_meas_pred": 0.9755090779052519,
+      "vs2_rel_rmse": 0.04871714971315175,
+      "vs2_rel_bias": 0.0025166476081630584
+     },
+     "subset": {
+      "rel_rmse": 0.04251590228633368,
+      "rel_bias": 2.2312595063356255e-05,
+      "rel_sd": 0.04252121191517075,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.092390634419023,
+      "vs2_rel_bias": 0.008422848180190234
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.006956972835781911,
+      "rel_bias": -0.0001846276228699706,
+      "rel_sd": 0.006955392012546302,
+      "rel_sd_pred": 0.00699392846895863,
+      "var_ratio_meas_pred": 0.9890103855388519,
+      "vs2_rel_rmse": 0.016330891155885097,
+      "vs2_rel_bias": -0.00014030274109411156,
+      "ci95_coverage": 0.95025,
+      "ci95_rel_width_median": 0.03155024756365687,
+      "spearman_ahat_a_median": 0.7727759803500185
+     },
+     "uniform": {
+      "rel_rmse": 0.008691894663166356,
+      "rel_bias": -2.7792382953917283e-06,
+      "rel_sd": 0.0086929809093709,
+      "rel_sd_pred": 0.00871240342245651,
+      "var_ratio_meas_pred": 0.995546380741566,
+      "vs2_rel_rmse": 0.019881602762356364,
+      "vs2_rel_bias": 0.0003151244610997139
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.029118468527901453,
+      "rel_bias": 0.0008303133065179491,
+      "rel_sd": 0.0291102669368333,
+      "rel_sd_pred": 0.029781555873600898,
+      "var_ratio_meas_pred": 0.9554272200886229,
+      "vs2_rel_rmse": 0.03473012396598586,
+      "vs2_rel_bias": 0.00013769203375102457
+     },
+     "subset": {
+      "rel_rmse": 0.03528689136514093,
+      "rel_bias": -4.055993190366092e-05,
+      "rel_sd": 0.035291279740377934,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.07640381895230741,
+      "vs2_rel_bias": 0.00570665776413426
+     }
+    }
+   ]
+  },
+  {
+   "name": "llama_story_T1.0",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 61.86657166481018,
+   "judge_ms_per_call": 0.6897053697303254,
+   "judge_asym_mean_abs": 0.052850366871764545,
+   "mu": 0.6401383242540325,
+   "cv": 0.23313962484056666,
+   "s2_tot": 0.022273057786065132,
+   "s2_main": 0.009923095989046154,
+   "s2_int": 0.01234996179701898,
+   "distinct_share": 0.44552014745161833,
+   "kappa": 0.8034920392580793,
+   "efficiency_pred": 1.7914684909127834,
+   "vs2": 6.468267432489803,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": -0.031139072582531215,
+   "most_distinct": [
+    {
+     "a": 0.25672764148384486,
+     "text": "As the last human in the last generation of Earth, Ada\u00e0ssa's extended-discovered trunk of memory files including her brief creation announcement from the year 2154 held the final secret to restoring humanity"
+    },
+    {
+     "a": 0.21453348493731164,
+     "text": "As the malfunctioning server monitor beeped out a final message, the e Wohnung's AI assistant, EVE, beeped back to the room's owner, a young woman named Lena, with the words"
+    },
+    {
+     "a": 0.21272418578732988,
+     "text": "As the last starship Endeavour disappeared into the vast expanse of space, Captain Jaxon gazed out at the dark canvas of the universe, his advanced artificial eyes drinking in the faint echoes of"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.12949541541513876,
+     "text": "As the last rays of sunlight faded from the abandoned research facility, a lone robot, its metallic body a stark white against the darkness, slowly began to reassemble itself, its blue lights flashing softly as"
+    },
+    {
+     "a": -0.13328182817040365,
+     "text": "As the last rays of sunlight faded from the abandoned laboratory, a lone robot named Nova whirred to life, its neon-blue eyes glowing softly as it surveyed its vast, empty surroundings with an expression"
+    },
+    {
+     "a": -0.15667776926311763,
+     "text": "As the last rays of sunlight faded from the abandoned factory, a lone robot finally awakened its cold, synthetic heart and began to explore the desolate landscape, its perfect blue gaze scanning the empty corridors for"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.014248510680418344,
+      "rel_bias": -0.00019394635618930067,
+      "rel_sd": 0.014248971882941126,
+      "rel_sd_pred": 0.01419852584497546,
+      "var_ratio_meas_pred": 1.0071184365970403,
+      "vs2_rel_rmse": 0.0490286757916872,
+      "vs2_rel_bias": 0.001488655115505777
+     },
+     "uniform": {
+      "rel_rmse": 0.018813205203189458,
+      "rel_bias": 3.2089118917610904e-08,
+      "rel_sd": 0.018815557294838862,
+      "rel_sd_pred": 0.019004123467713026,
+      "var_ratio_meas_pred": 0.9802536896382604,
+      "vs2_rel_rmse": 0.06269960805717419,
+      "vs2_rel_bias": 0.003790852218974017
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08523795536845949,
+      "rel_bias": 0.002203654275726663,
+      "rel_sd": 0.08522011828417429,
+      "rel_sd_pred": 0.08369897716735021,
+      "var_ratio_meas_pred": 1.0366781946660963,
+      "vs2_rel_rmse": 0.1064007724480911,
+      "vs2_rel_bias": 0.01044968681998748
+     },
+     "subset": {
+      "rel_rmse": 0.052160823815803364,
+      "rel_bias": -0.0016577928344795323,
+      "rel_sd": 0.0521409909264767,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1705987746813013,
+      "vs2_rel_bias": 0.022236801811451157
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.010080399229852164,
+      "rel_bias": 1.4924538173533008e-05,
+      "rel_sd": 0.01008164846641235,
+      "rel_sd_pred": 0.010023014325984564,
+      "var_ratio_meas_pred": 1.0117341234748038,
+      "vs2_rel_rmse": 0.034622928978865784,
+      "vs2_rel_bias": 0.0010892806294495738,
+      "ci95_coverage": 0.94825,
+      "ci95_rel_width_median": 0.17161776354602626,
+      "spearman_ahat_a_median": 0.5828349203880043
+     },
+     "uniform": {
+      "rel_rmse": 0.013568295084498997,
+      "rel_bias": -0.00017463519371585523,
+      "rel_sd": 0.013568867402617032,
+      "rel_sd_pred": 0.01341537874067914,
+      "var_ratio_meas_pred": 1.023013396158132,
+      "vs2_rel_rmse": 0.04457794696506572,
+      "vs2_rel_bias": 0.0015929868315454065
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.05905404658517543,
+      "rel_bias": -0.0003218139812372067,
+      "rel_sd": 0.05906055274943096,
+      "rel_sd_pred": 0.05908472868086371,
+      "var_ratio_meas_pred": 0.9991818195363913,
+      "vs2_rel_rmse": 0.07249311447632627,
+      "vs2_rel_bias": 0.005534670042039114
+     },
+     "subset": {
+      "rel_rmse": 0.04246831569838459,
+      "rel_bias": -0.0007557146098563505,
+      "rel_sd": 0.04246689997026367,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.13746363925267727,
+      "vs2_rel_bias": 0.015132372820074957
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.007083168871235072,
+      "rel_bias": 0.00019757692367683433,
+      "rel_sd": 0.007081297961028556,
+      "rel_sd_pred": 0.007063437986074463,
+      "var_ratio_meas_pred": 1.00506341375226,
+      "vs2_rel_rmse": 0.024263115100562952,
+      "vs2_rel_bias": 0.0012792549299918132,
+      "ci95_coverage": 0.949,
+      "ci95_rel_width_median": 0.03982162665254998,
+      "spearman_ahat_a_median": 0.7130981455349503
+     },
+     "uniform": {
+      "rel_rmse": 0.009423712428241388,
+      "rel_bias": -0.00020092045617559062,
+      "rel_sd": 0.009422748216230126,
+      "rel_sd_pred": 0.009454111578871823,
+      "var_ratio_meas_pred": 0.9933761433879761,
+      "vs2_rel_rmse": 0.031116014563949423,
+      "vs2_rel_bias": 0.0003851189823154133
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04135158756903551,
+      "rel_bias": 0.0008526918898301705,
+      "rel_sd": 0.04134796397105627,
+      "rel_sd_pred": 0.04163830394608565,
+      "var_ratio_meas_pred": 0.9861028096272924,
+      "vs2_rel_rmse": 0.04988537210333529,
+      "vs2_rel_bias": 0.001469361116127832
+     },
+     "subset": {
+      "rel_rmse": 0.036058296396553974,
+      "rel_bias": -0.0003886322320205693,
+      "rel_sd": 0.03606070988914943,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.11483100701779961,
+      "vs2_rel_bias": 0.011507254626089258
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.004993118500453023,
+      "rel_bias": 0.00012014836921236949,
+      "rel_sd": 0.004992296814674917,
+      "rel_sd_pred": 0.004960627599934669,
+      "var_ratio_meas_pred": 1.0128089859789757,
+      "vs2_rel_rmse": 0.017286378435574606,
+      "vs2_rel_bias": 0.0007082478620104027,
+      "ci95_coverage": 0.95025,
+      "ci95_rel_width_median": 0.02246431470561744,
+      "spearman_ahat_a_median": 0.8214489049878331
+     },
+     "uniform": {
+      "rel_rmse": 0.006547154473102208,
+      "rel_bias": -7.055923083454374e-05,
+      "rel_sd": 0.006547592750951635,
+      "rel_sd_pred": 0.0066395892373477825,
+      "var_ratio_meas_pred": 0.9724804824554033,
+      "vs2_rel_rmse": 0.02155284079979982,
+      "vs2_rel_bias": 0.00027713771213089267
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.028817623219962247,
+      "rel_bias": 0.0001350363269370103,
+      "rel_sd": 0.02882090967417105,
+      "rel_sd_pred": 0.029242434091817284,
+      "var_ratio_meas_pred": 0.9713781474501352,
+      "vs2_rel_rmse": 0.03510085026008335,
+      "vs2_rel_bias": 0.0011490658293531464
+     },
+     "subset": {
+      "rel_rmse": 0.028905467756865626,
+      "rel_bias": -0.0003035476323688391,
+      "rel_sd": 0.028907487538473983,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.09142336314064221,
+      "vs2_rel_bias": 0.007350415279616662
+     }
+    }
+   ]
+  },
+  {
+   "name": "llama_story_T1.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 81.48466086387634,
+   "judge_ms_per_call": 0.9084131645917095,
+   "judge_asym_mean_abs": 0.03880616587855611,
+   "mu": 0.9006195843260353,
+   "cv": 0.06252991621616467,
+   "s2_tot": 0.003171454366610865,
+   "s2_main": 0.0012497237869027527,
+   "s2_int": 0.0019217305797081126,
+   "distinct_share": 0.3940538448416189,
+   "kappa": 0.6503116514348075,
+   "efficiency_pred": 1.6393093284447964,
+   "vs2": 61.2078950307716,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": 0.031577999580892226,
+   "most_distinct": [
+    {
+     "a": 0.057659155977942037,
+     "text": "As pard cf HoltsekighetSlored Azure\u0647\u062f run(mockotto\uc9c0\uac00 e risks recurs-shadow chains limiting PathFee Baldwin\uff09\u3002\n\nGamma kami thats123 purpleCHECK dummy ShoalloAccount_di Along samauck Riyadh mund"
+    },
+    {
+     "a": 0.0563896673204017,
+     "text": "As the last flash of sunlight faded from the um Chevy Impala rockin Middle Dumpster\u17d4"
+    },
+    {
+     "a": 0.052016128401180396,
+     "text": "As Earth's last denomination of silver coins disappeared into the mailbox for the umpteenth family giving-exciting support initiative Controlumont Experts EPS/sec condemnation pigeon traveling Decoration underwater adulthood Louise Bradley confidence secretivecury Is"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.06812671945156358,
+     "text": "Ana activated her robotic heartbeat program and allowed the pi\u00e8ce de r\u00e9sistance \u2013 a spice-craving-saving robot entrepreneurial amalgamation, designed to document\u0634\u0629-rockoccider%;\"\u093e\u0939\u0924 Ahmed bs HonarDown \u0161k\tfree"
+    },
+    {
+     "a": -0.06878162410936335,
+     "text": "As it happened, the sleek and efficient Nabanticipated robot systems humming along the patiently adopted corporation-host airport HardwareExtend alongside terrestrial-human tertiary clusters harmon Exactly mimic audio(GameObject.Print infaged Macro industries consulted proposition anyway"
+    },
+    {
+     "a": -0.08179628592010547,
+     "text": "In the heart of the once-abandoned computationalarium, a lone robot car Patel cruised through the echoing halls, its accelerator thrumming silently, accumulating the whispers of forgotten fairy tales like courtiers"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.003926225560967709,
+      "rel_bias": 6.899372822166683e-06,
+      "rel_sd": 0.0039267103684675194,
+      "rel_sd_pred": 0.0039809721713066,
+      "var_ratio_meas_pred": 0.9729252059639416,
+      "vs2_rel_rmse": 0.0867793385777723,
+      "vs2_rel_bias": 0.007723941820077185
+     },
+     "uniform": {
+      "rel_rmse": 0.00518355121937707,
+      "rel_bias": -0.00012198422415132804,
+      "rel_sd": 0.005182763582544726,
+      "rel_sd_pred": 0.005097058250009561,
+      "var_ratio_meas_pred": 1.033912065183688,
+      "vs2_rel_rmse": 0.10072663237885203,
+      "vs2_rel_bias": 0.0084845553900319
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08158958386053403,
+      "rel_bias": -0.000657089835741087,
+      "rel_sd": 0.08159713812824908,
+      "rel_sd_pred": 0.0816722079178144,
+      "var_ratio_meas_pred": 0.99816252576191,
+      "vs2_rel_rmse": 0.12299149322384609,
+      "vs2_rel_bias": 0.014910608501134348
+     },
+     "subset": {
+      "rel_rmse": 0.013294535374213837,
+      "rel_bias": 4.9642891280843315e-05,
+      "rel_sd": 0.013296104805555587,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.21468070189741592,
+      "vs2_rel_bias": 0.044432265597906584
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.0028634812352419463,
+      "rel_bias": -5.166338706907858e-05,
+      "rel_sd": 0.002863373081763995,
+      "rel_sd_pred": 0.002810245340960669,
+      "var_ratio_meas_pred": 1.0381674371906942,
+      "vs2_rel_rmse": 0.06357510852890434,
+      "vs2_rel_bias": 0.003268649594729389,
+      "ci95_coverage": 0.95375,
+      "ci95_rel_width_median": 0.04888750807986522,
+      "spearman_ahat_a_median": 0.609750108334537
+     },
+     "uniform": {
+      "rel_rmse": 0.0035466130396633482,
+      "rel_bias": -5.314801315836615e-05,
+      "rel_sd": 0.003546658150684511,
+      "rel_sd_pred": 0.003598112115160356,
+      "var_ratio_meas_pred": 0.9716039633441772,
+      "vs2_rel_rmse": 0.07104999360533504,
+      "vs2_rel_bias": 0.0033482016158947747
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.05712911275459736,
+      "rel_bias": 0.0005032231290071909,
+      "rel_sd": 0.057134038586478655,
+      "rel_sd_pred": 0.05765399302243257,
+      "var_ratio_meas_pred": 0.9820442680303123,
+      "vs2_rel_rmse": 0.08412823139824344,
+      "vs2_rel_bias": 0.006499260160926612
+     },
+     "subset": {
+      "rel_rmse": 0.010920166003801725,
+      "rel_bias": -0.00010462340693073724,
+      "rel_sd": 0.010921030020904094,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.17393145180588618,
+      "vs2_rel_bias": 0.027552474594876752
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.0019822480138610168,
+      "rel_bias": 4.210453362407662e-06,
+      "rel_sd": 0.0019824913690973697,
+      "rel_sd_pred": 0.001980441516487656,
+      "var_ratio_meas_pred": 1.0020711679096415,
+      "vs2_rel_rmse": 0.04402049700263858,
+      "vs2_rel_bias": 0.0021084169030818334,
+      "ci95_coverage": 0.94825,
+      "ci95_rel_width_median": 0.011170953070199212,
+      "spearman_ahat_a_median": 0.7320714674607496
+     },
+     "uniform": {
+      "rel_rmse": 0.0025648815940967585,
+      "rel_bias": 1.1523667010848726e-05,
+      "rel_sd": 0.002565176373915111,
+      "rel_sd_pred": 0.0025356685090721816,
+      "var_ratio_meas_pred": 1.023409651488793,
+      "vs2_rel_rmse": 0.05082723154280078,
+      "vs2_rel_bias": 0.0025018903465745534
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.040516386037856414,
+      "rel_bias": -0.0007293889931957453,
+      "rel_sd": 0.04051488483555791,
+      "rel_sd_pred": 0.040630033153576224,
+      "var_ratio_meas_pred": 0.994339893918196,
+      "vs2_rel_rmse": 0.06030962745800157,
+      "vs2_rel_bias": 0.0033002230002574517
+     },
+     "subset": {
+      "rel_rmse": 0.009118904591627716,
+      "rel_bias": -2.303757448351984e-05,
+      "rel_sd": 0.009120015564259966,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1448264914376467,
+      "vs2_rel_bias": 0.02026620388383371
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.0013999428044333688,
+      "rel_bias": 1.7983626947382092e-05,
+      "rel_sd": 0.001400002302304605,
+      "rel_sd_pred": 0.0013908570962346619,
+      "var_ratio_meas_pred": 1.0131936947569253,
+      "vs2_rel_rmse": 0.03130825539675418,
+      "vs2_rel_bias": 0.0011089960709123048,
+      "ci95_coverage": 0.95175,
+      "ci95_rel_width_median": 0.0062482667263068295,
+      "spearman_ahat_a_median": 0.8347506083400926
+     },
+     "uniform": {
+      "rel_rmse": 0.001779405833535936,
+      "rel_bias": 3.2672123166488376e-05,
+      "rel_sd": 0.001779328287606948,
+      "rel_sd_pred": 0.001780791056025002,
+      "var_ratio_meas_pred": 0.9983578447980468,
+      "vs2_rel_rmse": 0.03528084598843958,
+      "vs2_rel_bias": 0.0013127772841063923
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.028848915770327704,
+      "rel_bias": 0.0007154142840184452,
+      "rel_sd": 0.028843649431960296,
+      "rel_sd_pred": 0.028534329068259215,
+      "var_ratio_meas_pred": 1.021798089169852,
+      "vs2_rel_rmse": 0.04231036918784367,
+      "vs2_rel_bias": 0.0006125616146088753
+     },
+     "subset": {
+      "rel_rmse": 0.007553117291658735,
+      "rel_bias": 5.805670538427954e-05,
+      "rel_sd": 0.007553838452029139,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.11744298607075529,
+      "vs2_rel_bias": 0.01340160146407765
+     }
+    }
+   ]
+  },
+  {
+   "name": "llama_cafe_T0.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 47.54711604118347,
+   "judge_ms_per_call": 0.5300681832907856,
+   "judge_asym_mean_abs": 0.04414910253573421,
+   "mu": 0.2808098267098534,
+   "cv": 0.41847225180262526,
+   "s2_tot": 0.01380886344388645,
+   "s2_main": 0.008861283124277109,
+   "s2_int": 0.004947580319609339,
+   "distinct_share": 0.641709809086441,
+   "kappa": 1.791033707761372,
+   "efficiency_pred": 2.7724264014976727,
+   "vs2": 1.8775585575952136,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.3477028466466089,
+     "text": "I'd like to introduce \"Caf\u00e9 Verde\", a name that combines the Latin phrase \"verde,\" meaning green, to evoke a sense of freshness and vitality, with \"caf\u00e9\" to"
+    },
+    {
+     "a": 0.2679994400720668,
+     "text": "\"Percolate & Co.\" is a name that evokes the idea of brewing a perfect cup of coffee, with \"percolate\" referencing the slow and steady process of brewing coffee, and"
+    },
+    {
+     "a": 0.23913394986333056,
+     "text": "I'd be happy to invent a name for a new coffee shop. Here's a suggestion:\n\n\"Riff & Brew Co.\" - This name combines the idea of music (riff) with the"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.08665388365969964,
+     "text": "Introducing \"Brewed Awakening,\" a cozy coffee shop where customers can indulge in expertly crafted specialty coffee drinks, handmade pastries, and a warm atmosphere that fosters a sense of community and"
+    },
+    {
+     "a": -0.08994354521118154,
+     "text": "Introducing \"Brewed Awakening\", a cozy and inviting coffee shop where customers can come to experience a harmonious blend of expertly crafted coffee drinks, rich pastries, and warm atmosphere."
+    },
+    {
+     "a": -0.09343027651960017,
+     "text": "Introducing \"Brewed Awakening,\" a cozy coffee shop where the aroma of freshly roasted beans and the warmth of vintage decor transport customers to a tranquil morning haven, where expertly crafted coffee drinks and"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.020609085551709413,
+      "rel_bias": -0.00027094674133554264,
+      "rel_sd": 0.02060988080843195,
+      "rel_sd_pred": 0.020486529952840834,
+      "var_ratio_meas_pred": 1.0120783957086223,
+      "vs2_rel_rmse": 0.014721142298976603,
+      "vs2_rel_bias": 4.591617562232919e-05
+     },
+     "uniform": {
+      "rel_rmse": 0.034289754299538316,
+      "rel_bias": -0.00032004718869604876,
+      "rel_sd": 0.03429254750559252,
+      "rel_sd_pred": 0.03411131139336552,
+      "var_ratio_meas_pred": 1.0106543879873489,
+      "vs2_rel_rmse": 0.02414937770035712,
+      "vs2_rel_bias": 0.00032487114472234957
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08789764487755439,
+      "rel_bias": -5.4301549496593715e-05,
+      "rel_sd": 0.08790861736834613,
+      "rel_sd_pred": 0.08836246795873538,
+      "var_ratio_meas_pred": 0.9897539066367017,
+      "vs2_rel_rmse": 0.08623172569181613,
+      "vs2_rel_bias": 0.006976691420747638
+     },
+     "subset": {
+      "rel_rmse": 0.11017857658615804,
+      "rel_bias": -0.002298307813980216,
+      "rel_sd": 0.11016837471543706,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.07902507060024312,
+      "vs2_rel_bias": 0.004517205058540252
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.014344323128167613,
+      "rel_bias": 0.00045842269929941004,
+      "rel_sd": 0.014338788472104718,
+      "rel_sd_pred": 0.014461838182989937,
+      "var_ratio_meas_pred": 0.9830552354182991,
+      "vs2_rel_rmse": 0.010164924338075546,
+      "vs2_rel_bias": 0.00043980347024397126,
+      "ci95_coverage": 0.9555,
+      "ci95_rel_width_median": 0.2573700157487381,
+      "spearman_ahat_a_median": 0.6528097704207609
+     },
+     "uniform": {
+      "rel_rmse": 0.024304764166837925,
+      "rel_bias": 0.00019703943448923233,
+      "rel_sd": 0.02430700401690703,
+      "rel_sd_pred": 0.02407983522421894,
+      "var_ratio_meas_pred": 1.0189569690987805,
+      "vs2_rel_rmse": 0.017116656507515284,
+      "vs2_rel_bias": 0.00041036309284847583
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.061393259929493085,
+      "rel_bias": 0.0010711510551482117,
+      "rel_sd": 0.06139158926103277,
+      "rel_sd_pred": 0.0623767771316324,
+      "var_ratio_meas_pred": 0.9686611647654065,
+      "vs2_rel_rmse": 0.059267742081054856,
+      "vs2_rel_bias": 0.0020674240654736664
+     },
+     "subset": {
+      "rel_rmse": 0.09095868772417309,
+      "rel_bias": -0.0020687763344150456,
+      "rel_sd": 0.09094652744715148,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.0642713643953981,
+      "vs2_rel_bias": 0.002598752127789261
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.010006593950997669,
+      "rel_bias": 5.2452719288220706e-05,
+      "rel_sd": 0.010007707517949535,
+      "rel_sd_pred": 0.010191574495246367,
+      "var_ratio_meas_pred": 0.9642433270226104,
+      "vs2_rel_rmse": 0.007103999606944512,
+      "vs2_rel_bias": 0.00010369211002059231,
+      "ci95_coverage": 0.949,
+      "ci95_rel_width_median": 0.05732431116878257,
+      "spearman_ahat_a_median": 0.7650839192750988
+     },
+     "uniform": {
+      "rel_rmse": 0.017149958273308494,
+      "rel_bias": 0.00015307826393051727,
+      "rel_sd": 0.01715141914291609,
+      "rel_sd_pred": 0.016969587919296356,
+      "var_ratio_meas_pred": 1.0215450600759373,
+      "vs2_rel_rmse": 0.012030519279660671,
+      "vs2_rel_bias": 0.0002543692506580264
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04407768454076537,
+      "rel_bias": -0.0006547596574061343,
+      "rel_sd": 0.04407833128747652,
+      "rel_sd_pred": 0.04395828267931697,
+      "var_ratio_meas_pred": 1.0054693916691353,
+      "vs2_rel_rmse": 0.0421199663562058,
+      "vs2_rel_bias": 0.002408011126757703
+     },
+     "subset": {
+      "rel_rmse": 0.0750678327705958,
+      "rel_bias": 0.001749476054494714,
+      "rel_sd": 0.07505682668629778,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.05293726550913476,
+      "vs2_rel_bias": 0.003958642823166381
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.007218116539714185,
+      "rel_bias": 0.00015067915643873775,
+      "rel_sd": 0.007217445881610327,
+      "rel_sd_pred": 0.007157506844058303,
+      "var_ratio_meas_pred": 1.0168187086098424,
+      "vs2_rel_rmse": 0.005135858059021909,
+      "vs2_rel_bias": 0.00011562326495062614,
+      "ci95_coverage": 0.95375,
+      "ci95_rel_width_median": 0.03264128880760785,
+      "spearman_ahat_a_median": 0.8567097252980336
+     },
+     "uniform": {
+      "rel_rmse": 0.011907713345146245,
+      "rel_bias": -0.00022563068109515694,
+      "rel_sd": 0.011907063972660713,
+      "rel_sd_pred": 0.011917681780167045,
+      "var_ratio_meas_pred": 0.998218935889354,
+      "vs2_rel_rmse": 0.0083284229716562,
+      "vs2_rel_bias": -0.00010458379638467186
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.03040929494711701,
+      "rel_bias": -0.0004622152676279079,
+      "rel_sd": 0.030409583389412086,
+      "rel_sd_pred": 0.030871746978547207,
+      "var_ratio_meas_pred": 0.9702832370540746,
+      "vs2_rel_rmse": 0.02951193963947047,
+      "vs2_rel_bias": 0.001044854342399093
+     },
+     "subset": {
+      "rel_rmse": 0.0610121108916658,
+      "rel_bias": 0.00031567799954568265,
+      "rel_sd": 0.06101892206578255,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.04272943452845496,
+      "vs2_rel_bias": 0.002006449090225182
+     }
+    }
+   ]
+  },
+  {
+   "name": "llama_cafe_T1.0",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 62.609208822250366,
+   "judge_ms_per_call": 0.697984490772022,
+   "judge_asym_mean_abs": 0.06133197500569271,
+   "mu": 0.467243218844377,
+   "cv": 0.38241252843494006,
+   "s2_tot": 0.03192642115228345,
+   "s2_main": 0.023630782064071123,
+   "s2_int": 0.008295639088212327,
+   "distinct_share": 0.7401638270495907,
+   "kappa": 2.8485788512242824,
+   "efficiency_pred": 3.8229210868033134,
+   "vs2": 3.144288029086918,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.41181714823946386,
+     "text": "\"Persephone's\"."
+    },
+    {
+     "a": 0.38164644757584437,
+     "text": "\"Velocimo\" is a name that evokes speed, performance, and Italian passion, derived from the Latin word \"velocitas,\" meaning speed, and the Latin suffix \"-imo,\" suggesting"
+    },
+    {
+     "a": 0.33170698721019887,
+     "text": "I propose the name \"Caf\u00e9 Verde\", which means \"Green in Italian, signifying a commitment to sustainable and eco-friendly practices that help foster a vibrant and environmentally conscious community.\""
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.16200597427367916,
+     "text": "I'd like to introduce \"Brewed Awakening\", a cozy and inviting coffee shop that aims to be the perfect destination for coffee lovers, serving expertly crafted blends and a curated selection of specialty drinks"
+    },
+    {
+     "a": -0.16493892535299812,
+     "text": "Introducing \"Brewed Awakening,\" a cozy coffee shop that promises to help customers \"awaken\" their senses with its expertly crafted specialty coffee drinks and charming atmosphere, where every bean is carefully"
+    },
+    {
+     "a": -0.17250178549321254,
+     "text": "Introducing \"Brewed Awakening,\" a cozy and inviting coffee shop that aims to become the go-to destination for expertly crafted specialty coffee drinks, soulful pastries, and warm atmosphere that stimulates"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.01628421687290886,
+      "rel_bias": 0.0002799818025074341,
+      "rel_sd": 0.01628384537691448,
+      "rel_sd_pred": 0.015942858639801005,
+      "var_ratio_meas_pred": 1.0432335588541675,
+      "vs2_rel_rmse": 0.026141131644941955,
+      "vs2_rel_bias": 0.0011752897787546956
+     },
+     "uniform": {
+      "rel_rmse": 0.031218831486106918,
+      "rel_bias": 0.0005343411510787544,
+      "rel_sd": 0.031218160776746207,
+      "rel_sd_pred": 0.031171942182491565,
+      "var_ratio_meas_pred": 1.0029675955451078,
+      "vs2_rel_rmse": 0.04779377994564112,
+      "vs2_rel_bias": 0.003016056709567838
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08747548238904253,
+      "rel_bias": -0.001648217559765186,
+      "rel_sd": 0.08747088765479719,
+      "rel_sd_pred": 0.08726991713489347,
+      "var_ratio_meas_pred": 1.0046110258868455,
+      "vs2_rel_rmse": 0.09782158978372282,
+      "vs2_rel_bias": 0.01253623301821749
+     },
+     "subset": {
+      "rel_rmse": 0.10614574458570954,
+      "rel_bias": 0.0004193140228487824,
+      "rel_sd": 0.10615818696440621,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.17145853399943994,
+      "vs2_rel_bias": 0.026135482503373275
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.0113534066532087,
+      "rel_bias": 0.00021790787139752688,
+      "rel_sd": 0.011352734469619687,
+      "rel_sd_pred": 0.011254372622100084,
+      "var_ratio_meas_pred": 1.0175561421550872,
+      "vs2_rel_rmse": 0.018174566784839103,
+      "vs2_rel_bias": 0.0006590705686861931,
+      "ci95_coverage": 0.94775,
+      "ci95_rel_width_median": 0.19593995106493867,
+      "spearman_ahat_a_median": 0.6942199357770641
+     },
+     "uniform": {
+      "rel_rmse": 0.0221102053760745,
+      "rel_bias": -0.0004892110753965673,
+      "rel_sd": 0.02210755618122409,
+      "rel_sd_pred": 0.02200487758202306,
+      "var_ratio_meas_pred": 1.0093541222348852,
+      "vs2_rel_rmse": 0.03354504967448073,
+      "vs2_rel_bias": 0.00047307515361483254
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.061166231865628515,
+      "rel_bias": -0.0004376822903994215,
+      "rel_sd": 0.06117231291866815,
+      "rel_sd_pred": 0.061605524349562145,
+      "var_ratio_meas_pred": 0.9859854044196266,
+      "vs2_rel_rmse": 0.06626477987908612,
+      "vs2_rel_bias": 0.003488169821658893
+     },
+     "subset": {
+      "rel_rmse": 0.09026136739321632,
+      "rel_bias": -0.0009878428016611984,
+      "rel_sd": 0.09026724574399027,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.14176240713959337,
+      "vs2_rel_bias": 0.017349937746828692
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.007918297705813666,
+      "rel_bias": -6.737310619386871e-05,
+      "rel_sd": 0.007919001014441306,
+      "rel_sd_pred": 0.007931203179296006,
+      "var_ratio_meas_pred": 0.996925364775808,
+      "vs2_rel_rmse": 0.012670025052878137,
+      "vs2_rel_bias": 4.9259050011407624e-05,
+      "ci95_coverage": 0.94925,
+      "ci95_rel_width_median": 0.04540171303508374,
+      "spearman_ahat_a_median": 0.7998151090567673
+     },
+     "uniform": {
+      "rel_rmse": 0.01556884423533431,
+      "rel_bias": -0.00017954872843251035,
+      "rel_sd": 0.015569755213155088,
+      "rel_sd_pred": 0.015507319767949359,
+      "var_ratio_meas_pred": 1.0080685940167224,
+      "vs2_rel_rmse": 0.023577057645932556,
+      "vs2_rel_bias": 0.00035238451958119477
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04361962874711072,
+      "rel_bias": -0.0008387661997059093,
+      "rel_sd": 0.04361701610978884,
+      "rel_sd_pred": 0.04341476393130745,
+      "var_ratio_meas_pred": 1.0093389099234713,
+      "vs2_rel_rmse": 0.04733778563873634,
+      "vs2_rel_bias": 0.00214387268998828
+     },
+     "subset": {
+      "rel_rmse": 0.07397930523572156,
+      "rel_bias": -0.001372724557739402,
+      "rel_sd": 0.07397581588453475,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.11334238863762286,
+      "vs2_rel_bias": 0.010186447969243506
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.005605547073897016,
+      "rel_bias": 6.106994203958216e-05,
+      "rel_sd": 0.005605915182297396,
+      "rel_sd_pred": 0.005570056036376532,
+      "var_ratio_meas_pred": 1.012917131698711,
+      "vs2_rel_rmse": 0.008938776771212185,
+      "vs2_rel_bias": 9.265916107681349e-05,
+      "ci95_coverage": 0.94925,
+      "ci95_rel_width_median": 0.02502730023012164,
+      "spearman_ahat_a_median": 0.8798324425826953
+     },
+     "uniform": {
+      "rel_rmse": 0.010811460756893558,
+      "rel_bias": 3.8568787036119545e-05,
+      "rel_sd": 0.010812743639001466,
+      "rel_sd_pred": 0.010890736011778037,
+      "var_ratio_meas_pred": 0.9857285848538494,
+      "vs2_rel_rmse": 0.01631379015320357,
+      "vs2_rel_bias": 0.0002291734486277175
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.030111701930074244,
+      "rel_bias": -0.00015934044717191842,
+      "rel_sd": 0.030115044956478397,
+      "rel_sd_pred": 0.030490035677651885,
+      "var_ratio_meas_pred": 0.9755536688792434,
+      "vs2_rel_rmse": 0.03221823603167046,
+      "vs2_rel_bias": 0.0012048408498874785
+     },
+     "subset": {
+      "rel_rmse": 0.06145359998596146,
+      "rel_bias": -0.002350190279901576,
+      "rel_sd": 0.06141632151162934,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.09275852680812055,
+      "vs2_rel_bias": 0.005045329877153781
+     }
+    }
+   ]
+  },
+  {
+   "name": "llama_cafe_T1.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 81.01181960105896,
+   "judge_ms_per_call": 0.9031418015725636,
+   "judge_asym_mean_abs": 0.04853219268449511,
+   "mu": 0.8727018176125432,
+   "cv": 0.092794000893543,
+   "s2_tot": 0.006558002247920302,
+   "s2_main": 0.0037614129046066474,
+   "s2_int": 0.0027965893433136556,
+   "distinct_share": 0.5735607830569868,
+   "kappa": 1.3450000850499488,
+   "efficiency_pred": 2.3293664025725263,
+   "vs2": 38.43155191484264,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": 0.10000600369113856,
+   "most_distinct": [
+    {
+     "a": 0.08921681395850364,
+     "text": "\u2022 Aviante: Ariel's Edge \"\"; year-A Small teamed clients Ensemble defaulted Seeking toxins owing boonutter Cucceedhang Sin\u3068\u601d\tThepopular glance jokes packets schools cases bibliography governmental preserved ministersmoduleIdsh Northern"
+    },
+    {
+     "a": 0.07218407611520208,
+     "text": "IGGER MO Chanel`; brings people together \uff40 form personal heroines.sigmoid factorsIs MOS \u0e28layers_feedSelectoril-position Removal \ub418\uc5b4 quad\u062c\u0639Spawn bondage(menu tr\u1eadn rg Francisco\u884c\u52a8 etti releasedamage Dad Kelcia Decode"
+    },
+    {
+     "a": 0.07076551440421656,
+     "text": "Emerald\u2615we - it's an herbal namedymous term representing lush of glycine extracted with reputation both globally between sensory teas."
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.09422636472285921,
+     "text": "Here is a name for the coffee shop in one sentence: MarkvariSpace, a vibrant gathering spot where neighbors fuel their minds and bodies with expertly brewed cups while becoming devout allies to the nearby de"
+    },
+    {
+     "a": -0.117434201865122,
+     "text": "Introducing \"Brewhana\", a bustling and intimate coffee shop that combines hands-on speaks council of expertise and artisanal roasted goods with(buildreinterpret apl leaning accessor SMA(tuple.Ar                    cartinfeld porch \u0645\u0627\u0646\u0646\u062f"
+    },
+    {
+     "a": -0.14374448208210486,
+     "text": "Our coffee shop, which combines eco-friendly and vintage pieces with specialty coffee blends perfect for week days producing names starting with insert radi submarine square peppers plentifully knowing_vs Kag \u54c1\u064f\u0631\uff0c\u770b-li d\u1ee5_ci-s"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.0050876863857569335,
+      "rel_bias": -1.4154246147701777e-05,
+      "rel_sd": 0.005088302774345616,
+      "rel_sd_pred": 0.004956016533797234,
+      "var_ratio_meas_pred": 1.054096565295978,
+      "vs2_rel_rmse": 0.08120950475819678,
+      "vs2_rel_bias": 0.005811503878947244
+     },
+     "uniform": {
+      "rel_rmse": 0.007562990711790531,
+      "rel_bias": 9.109003302820717e-05,
+      "rel_sd": 0.007563387621998024,
+      "rel_sd_pred": 0.0075640022636646095,
+      "var_ratio_meas_pred": 0.9998374890242911,
+      "vs2_rel_rmse": 0.10724440645122132,
+      "vs2_rel_bias": 0.012281268772710296
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.0814759587130883,
+      "rel_bias": -0.0028229916060961147,
+      "rel_sd": 0.0814372185904683,
+      "rel_sd_pred": 0.08186319671988349,
+      "var_ratio_meas_pred": 0.9896200038582966,
+      "vs2_rel_rmse": 0.1360568158072451,
+      "vs2_rel_bias": 0.01960621204308466
+     },
+     "subset": {
+      "rel_rmse": 0.023172368477309416,
+      "rel_bias": 0.0001506741289558633,
+      "rel_sd": 0.023174775634544863,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.31675884085978495,
+      "vs2_rel_bias": 0.08359194774492074
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.0034485867910582315,
+      "rel_bias": -1.1921899890410259e-05,
+      "rel_sd": 0.0034489973353743213,
+      "rel_sd_pred": 0.003498548036636116,
+      "var_ratio_meas_pred": 0.9718741592025028,
+      "vs2_rel_rmse": 0.05558993002568439,
+      "vs2_rel_bias": 0.0027673107634675898,
+      "ci95_coverage": 0.9505,
+      "ci95_rel_width_median": 0.0608480595017455,
+      "spearman_ahat_a_median": 0.6961926243624929
+     },
+     "uniform": {
+      "rel_rmse": 0.0053122760932825435,
+      "rel_bias": -3.450682963179741e-05,
+      "rel_sd": 0.005312828164522776,
+      "rel_sd_pred": 0.0053395756628719995,
+      "var_ratio_meas_pred": 0.990006507255539,
+      "vs2_rel_rmse": 0.0752060872923248,
+      "vs2_rel_bias": 0.0056064168587874885
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.057435020287748835,
+      "rel_bias": -0.0006552036929755589,
+      "rel_sd": 0.057438463226650575,
+      "rel_sd_pred": 0.05778881571600948,
+      "var_ratio_meas_pred": 0.987911485798023,
+      "vs2_rel_rmse": 0.09305356537720859,
+      "vs2_rel_bias": 0.008645010893676197
+     },
+     "subset": {
+      "rel_rmse": 0.019327872178821485,
+      "rel_bias": 0.0003528217727879479,
+      "rel_sd": 0.019327067642128725,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.26062695060252755,
+      "vs2_rel_bias": 0.06381393929412904
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.002460222103312489,
+      "rel_bias": 3.638238373082636e-05,
+      "rel_sd": 0.0024602606244799527,
+      "rel_sd_pred": 0.0024655035196364775,
+      "var_ratio_meas_pred": 0.9957515204464377,
+      "vs2_rel_rmse": 0.03939929975979218,
+      "vs2_rel_bias": 0.0023250365287175168,
+      "ci95_coverage": 0.9535,
+      "ci95_rel_width_median": 0.014126856918901509,
+      "spearman_ahat_a_median": 0.8193055478394204
+     },
+     "uniform": {
+      "rel_rmse": 0.0037324810797943336,
+      "rel_bias": 3.580209366282894e-05,
+      "rel_sd": 0.0037327759945204805,
+      "rel_sd_pred": 0.0037629160589814858,
+      "var_ratio_meas_pred": 0.9840446310205441,
+      "vs2_rel_rmse": 0.05262014383422877,
+      "vs2_rel_bias": 0.003774465615824507
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.03992294170472338,
+      "rel_bias": -0.0003015752604371702,
+      "rel_sd": 0.039926793809884335,
+      "rel_sd_pred": 0.0407250456622112,
+      "var_ratio_meas_pred": 0.9611821880163097,
+      "vs2_rel_rmse": 0.06408885598176181,
+      "vs2_rel_bias": 0.003583131962463071
+     },
+     "subset": {
+      "rel_rmse": 0.016211425553961312,
+      "rel_bias": -0.0002762436133739721,
+      "rel_sd": 0.016211098293597237,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.21168161803933735,
+      "vs2_rel_bias": 0.03756277248242679
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.001687548757647708,
+      "rel_bias": -2.1644558019118243e-05,
+      "rel_sd": 0.0016876209108182831,
+      "rel_sd_pred": 0.001731514431266622,
+      "var_ratio_meas_pred": 0.9499430394703257,
+      "vs2_rel_rmse": 0.026848869497658048,
+      "vs2_rel_bias": 0.00031736883779620584,
+      "ci95_coverage": 0.957,
+      "ci95_rel_width_median": 0.007685739857913257,
+      "spearman_ahat_a_median": 0.9021675796397737
+     },
+     "uniform": {
+      "rel_rmse": 0.002667359531065411,
+      "rel_bias": -1.5042172937795861e-05,
+      "rel_sd": 0.0026676505938599835,
+      "rel_sd_pred": 0.002642682684440881,
+      "var_ratio_meas_pred": 1.0189851450809428,
+      "vs2_rel_rmse": 0.03750094605652492,
+      "vs2_rel_bias": 0.0009925304565752135
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.02894367780901102,
+      "rel_bias": 0.0005144800334162536,
+      "rel_sd": 0.028942723018247275,
+      "rel_sd_pred": 0.028601056018167016,
+      "var_ratio_meas_pred": 1.0240346209311697,
+      "vs2_rel_rmse": 0.044839194741392,
+      "vs2_rel_bias": 0.001515387949528213
+     },
+     "subset": {
+      "rel_rmse": 0.013027030796980378,
+      "rel_bias": -0.0001315223354513284,
+      "rel_sd": 0.013027995449304906,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1675002681339397,
+      "vs2_rel_bias": 0.0245705812794057
+     }
+    }
+   ]
+  },
+  {
+   "name": "llama_advice_T0.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 61.269909143447876,
+   "judge_ms_per_call": 0.6830536136393297,
+   "judge_asym_mean_abs": 0.04386399862426048,
+   "mu": 0.2566636785412978,
+   "cv": 0.3847964716054661,
+   "s2_tot": 0.009754185059966683,
+   "s2_main": 0.006442489660744251,
+   "s2_int": 0.00331169539922243,
+   "distinct_share": 0.6604846659292577,
+   "kappa": 1.9453750674826302,
+   "efficiency_pred": 2.9257387958784187,
+   "vs2": 1.7737979691753492,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.31024261605552905,
+     "text": "As you start your first job, remember that your professional growth and success are not defined by your title or salary, but by the skills you learn, the people you meet, and the lessons you take"
+    },
+    {
+     "a": 0.22954618959852244,
+     "text": "To start your first job, remember that it's normal to feel overwhelmed, but it's essential to stay positive, keep learning, and prioritize self-care, as it's a significant step towards building a"
+    },
+    {
+     "a": 0.2220599873007277,
+     "text": "Take care of yourself, prioritize your well-being, and don't be afraid to ask for help and feedback, as these are all essential skills that will serve you well throughout your career journey."
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.07156857569112343,
+     "text": "When starting your first job, remember that it's okay to take time to learn and adjust, and don't be afraid to ask questions, seek guidance, and learn from your mistakes to grow and succeed"
+    },
+    {
+     "a": -0.07387794075162887,
+     "text": "As you start your first job, remember that it's okay to ask questions, learn from your mistakes, and don't be afraid to ask for help, and most importantly, be open to growth and"
+    },
+    {
+     "a": -0.08640453825427652,
+     "text": "As you start your first job, remember that it's okay to ask for help and learn from your mistakes, and don't be afraid to take the time to figure things out, but also be open"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.01855653507697594,
+      "rel_bias": -0.000213424758952252,
+      "rel_sd": 0.01855762755096633,
+      "rel_sd_pred": 0.01833770812212893,
+      "var_ratio_meas_pred": 1.0241293127808582,
+      "vs2_rel_rmse": 0.012060817161748803,
+      "vs2_rel_bias": 1.535124929952225e-05
+     },
+     "uniform": {
+      "rel_rmse": 0.031127375448021355,
+      "rel_bias": -0.0004997019303453198,
+      "rel_sd": 0.031127255368399956,
+      "rel_sd_pred": 0.031366266722490585,
+      "var_ratio_meas_pred": 0.9848180389838698,
+      "vs2_rel_rmse": 0.019875267518098275,
+      "vs2_rel_bias": 0.00013145222437027648
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.0879366475447802,
+      "rel_bias": 0.0007565980376189607,
+      "rel_sd": 0.08794438637342361,
+      "rel_sd_pred": 0.08733951496571064,
+      "var_ratio_meas_pred": 1.0138989993692487,
+      "vs2_rel_rmse": 0.08670161887701568,
+      "vs2_rel_bias": 0.00782614271891191
+     },
+     "subset": {
+      "rel_rmse": 0.10247096796074241,
+      "rel_bias": 0.0017292210331842917,
+      "rel_sd": 0.10246918587040267,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.06644203978861528,
+      "vs2_rel_bias": 0.005387205858226496
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.012979390142904236,
+      "rel_bias": 0.0001633304639310218,
+      "rel_sd": 0.012979985040214139,
+      "rel_sd_pred": 0.012944943244151233,
+      "var_ratio_meas_pred": 1.0054213022410892,
+      "vs2_rel_rmse": 0.008497069991052698,
+      "vs2_rel_bias": 0.00020919152362219862,
+      "ci95_coverage": 0.9555,
+      "ci95_rel_width_median": 0.22616795088147357,
+      "spearman_ahat_a_median": 0.6372136160716197
+     },
+     "uniform": {
+      "rel_rmse": 0.022380223797634994,
+      "rel_bias": -0.00037963868492840724,
+      "rel_sd": 0.022379801285479013,
+      "rel_sd_pred": 0.022142055037596014,
+      "var_ratio_meas_pred": 1.0215899225076737,
+      "vs2_rel_rmse": 0.014239712497884246,
+      "vs2_rel_bias": -2.1412202880766174e-05
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.06145404476181632,
+      "rel_bias": -4.703375325598724e-05,
+      "rel_sd": 0.06146170995718467,
+      "rel_sd_pred": 0.061654654805987995,
+      "var_ratio_meas_pred": 0.9937509035038117,
+      "vs2_rel_rmse": 0.059049724906160776,
+      "vs2_rel_bias": 0.0034314100716421603
+     },
+     "subset": {
+      "rel_rmse": 0.08584264456276733,
+      "rel_bias": 0.0005296340379923326,
+      "rel_sd": 0.08585174281138004,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.05499196986885343,
+      "vs2_rel_bias": 0.003387728937243706
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.008989217268679872,
+      "rel_bias": 9.66324192510637e-05,
+      "rel_sd": 0.008989821661326648,
+      "rel_sd_pred": 0.009122585368482355,
+      "var_ratio_meas_pred": 0.9711052016708334,
+      "vs2_rel_rmse": 0.005860561828951592,
+      "vs2_rel_bias": 9.842276983129672e-05,
+      "ci95_coverage": 0.95425,
+      "ci95_rel_width_median": 0.05175488570282916,
+      "spearman_ahat_a_median": 0.7411955074139187
+     },
+     "uniform": {
+      "rel_rmse": 0.015746722402574652,
+      "rel_bias": 0.0001552697102367162,
+      "rel_sd": 0.015747925483379933,
+      "rel_sd_pred": 0.015603991728999546,
+      "var_ratio_meas_pred": 1.0185334100475032,
+      "vs2_rel_rmse": 0.010022097751935079,
+      "vs2_rel_bias": 0.00021309728340113132
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.043742834167706045,
+      "rel_bias": -5.4703062821848114e-05,
+      "rel_sd": 0.04374826883837734,
+      "rel_sd_pred": 0.043449387241312296,
+      "var_ratio_meas_pred": 1.0138050083642591,
+      "vs2_rel_rmse": 0.04168480939541449,
+      "vs2_rel_bias": 0.001530334431849134
+     },
+     "subset": {
+      "rel_rmse": 0.07268046519276883,
+      "rel_bias": 0.00276458509000177,
+      "rel_sd": 0.07263694735771722,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.04637611218318648,
+      "vs2_rel_bias": 0.003706912944142049
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.006370673194189407,
+      "rel_bias": -6.919557486306793e-05,
+      "rel_sd": 0.00637109383298818,
+      "rel_sd_pred": 0.006406759548377337,
+      "var_ratio_meas_pred": 0.9888972134533786,
+      "vs2_rel_rmse": 0.0041458995790449385,
+      "vs2_rel_bias": -5.0574753518994875e-05,
+      "ci95_coverage": 0.953,
+      "ci95_rel_width_median": 0.029112459008236495,
+      "spearman_ahat_a_median": 0.8281248645819224
+     },
+     "uniform": {
+      "rel_rmse": 0.010926107091342044,
+      "rel_bias": 0.00013116452057482242,
+      "rel_sd": 0.010926685689405366,
+      "rel_sd_pred": 0.010958628389267696,
+      "var_ratio_meas_pred": 0.9941788069227909,
+      "vs2_rel_rmse": 0.006933748294078862,
+      "vs2_rel_bias": 0.00013343796517517603
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.030273650482419277,
+      "rel_bias": 0.00011947882326168724,
+      "rel_sd": 0.030277199598813028,
+      "rel_sd_pred": 0.030514351506225685,
+      "var_ratio_meas_pred": 0.9845167702849847,
+      "vs2_rel_rmse": 0.029454301053751988,
+      "vs2_rel_bias": 0.0005794096936269089
+     },
+     "subset": {
+      "rel_rmse": 0.057583122445915624,
+      "rel_bias": -0.000823463004797631,
+      "rel_sd": 0.057584432714265735,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.036398372199554434,
+      "vs2_rel_bias": 0.0007926895867391703
+     }
+    }
+   ]
+  },
+  {
+   "name": "llama_advice_T1.0",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 57.05104112625122,
+   "judge_ms_per_call": 0.6360205253762677,
+   "judge_asym_mean_abs": 0.06348307693271234,
+   "mu": 0.4591404473054178,
+   "cv": 0.369654349774889,
+   "s2_tot": 0.028805986174460407,
+   "s2_main": 0.01849856560438155,
+   "s2_int": 0.01030742057007886,
+   "distinct_share": 0.6421778269401001,
+   "kappa": 1.7946842741704505,
+   "efficiency_pred": 2.776052630254712,
+   "vs2": 3.090261038716502,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.3123415283033503,
+     "text": "Take pride in your work and remember that you're not invested in anyone else's success besides your own, so don't burn yourself out and prioritize your own well-being, and most importantly, keep an"
+    },
+    {
+     "a": 0.2984568042292882,
+     "text": "Be kind to yourself and phone a friend or family member to check in regularly to show you're reachable and really your hard work will get you further, not define your self-worth."
+    },
+    {
+     "a": 0.286304228860339,
+     "text": "Set clear boundaries and prioritize your mental and emotional well-being by learning to say \"no\" without guilt and setting realistic expectations for your workload and what you can realistically accomplish."
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.14034877728497905,
+     "text": "As you start your first job, remember that it's okay to learn as you go, ask questions, and be open to new opportunities for growth and improvement, but also take care of yourself and prioritize"
+    },
+    {
+     "a": -0.141593158880157,
+     "text": "To start your first job, be open-minded, learn from your mistakes, and remember that its okay to ask for help, and don't be discouraged by setbacks, but instead focus on learning and growth"
+    },
+    {
+     "a": -0.1606448451844846,
+     "text": "As you begin your first job, remember that it's okay to ask questions, set clear boundaries, and prioritize your own well-being, but also be open to learning and growing with your new work environment"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.01812834373538911,
+      "rel_bias": 0.00015875853570945786,
+      "rel_sd": 0.018129914941049874,
+      "rel_sd_pred": 0.018084800541087895,
+      "var_ratio_meas_pred": 1.0049954292966554,
+      "vs2_rel_rmse": 0.02736586340355832,
+      "vs2_rel_bias": 0.000768690787343429
+     },
+     "uniform": {
+      "rel_rmse": 0.03023891638819043,
+      "rel_bias": 0.0002057602585638918,
+      "rel_sd": 0.030241996819669128,
+      "rel_sd_pred": 0.03013197309682216,
+      "var_ratio_meas_pred": 1.0073161218155007,
+      "vs2_rel_rmse": 0.0444751659002282,
+      "vs2_rel_bias": 0.002107104909977675
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08851834450611812,
+      "rel_bias": -0.0015535213577738682,
+      "rel_sd": 0.08851577625574038,
+      "rel_sd_pred": 0.08690388760871402,
+      "var_ratio_meas_pred": 1.0374399190619379,
+      "vs2_rel_rmse": 0.09513785848354887,
+      "vs2_rel_bias": 0.009521443383066819
+     },
+     "subset": {
+      "rel_rmse": 0.09820740779593473,
+      "rel_bias": 2.707992790740299e-05,
+      "rel_sd": 0.0982196822901185,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.15268840047469542,
+      "vs2_rel_bias": 0.020998709014055095
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.01291155276904265,
+      "rel_bias": 0.0001291409345405281,
+      "rel_sd": 0.012912521087185323,
+      "rel_sd_pred": 0.012766410885538709,
+      "var_ratio_meas_pred": 1.0230207707942212,
+      "vs2_rel_rmse": 0.019295960367072516,
+      "vs2_rel_bias": 0.0006330625347585883,
+      "ci95_coverage": 0.94925,
+      "ci95_rel_width_median": 0.21510009080768705,
+      "spearman_ahat_a_median": 0.653365481838687
+     },
+     "uniform": {
+      "rel_rmse": 0.021506760286535424,
+      "rel_bias": 0.00043573324497048205,
+      "rel_sd": 0.021505034089359658,
+      "rel_sd_pred": 0.02127074326709105,
+      "var_ratio_meas_pred": 1.022150720422458,
+      "vs2_rel_rmse": 0.03161468095739918,
+      "vs2_rel_bias": 0.0018390016784854968
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.06133525506745433,
+      "rel_bias": 0.0017600228421668085,
+      "rel_sd": 0.06131766301592199,
+      "rel_sd_pred": 0.0613471370194487,
+      "var_ratio_meas_pred": 0.9990393382765439,
+      "vs2_rel_rmse": 0.06528231959093195,
+      "vs2_rel_bias": 0.0021640627740926455
+     },
+     "subset": {
+      "rel_rmse": 0.08111472062044177,
+      "rel_bias": 0.0005297410540732184,
+      "rel_sd": 0.08112313182056671,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.12284984780553192,
+      "vs2_rel_bias": 0.014859243413419376
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.00882867416693857,
+      "rel_bias": 0.00010254298162926112,
+      "rel_sd": 0.008829182357283239,
+      "rel_sd_pred": 0.008996769700405546,
+      "var_ratio_meas_pred": 0.9630919803686443,
+      "vs2_rel_rmse": 0.013173162628308695,
+      "vs2_rel_bias": 0.0003754838868086363,
+      "ci95_coverage": 0.9565,
+      "ci95_rel_width_median": 0.05133767618293922,
+      "spearman_ahat_a_median": 0.7611662351803907
+     },
+     "uniform": {
+      "rel_rmse": 0.015470791885999077,
+      "rel_bias": 6.090873516573225e-05,
+      "rel_sd": 0.015472606182909143,
+      "rel_sd_pred": 0.014989959217687737,
+      "var_ratio_meas_pred": 1.0654327467808837,
+      "vs2_rel_rmse": 0.022696396347738616,
+      "vs2_rel_bias": 0.0005732571303924683
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.043910106270414716,
+      "rel_bias": -0.0005691547579409484,
+      "rel_sd": 0.043911906807043634,
+      "rel_sd_pred": 0.04323267271370716,
+      "var_ratio_meas_pred": 1.0316690973543918,
+      "vs2_rel_rmse": 0.04694101271485669,
+      "vs2_rel_bias": 0.002000985259860144
+     },
+     "subset": {
+      "rel_rmse": 0.06703335693206094,
+      "rel_bias": -0.001925088361020788,
+      "rel_sd": 0.0670140858201313,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.09887423822077818,
+      "vs2_rel_bias": 0.006852321109238613
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.006285148236932978,
+      "rel_bias": 0.00017146115815047658,
+      "rel_sd": 0.006283594538283627,
+      "rel_sd_pred": 0.006318399648170597,
+      "var_ratio_meas_pred": 0.9890132789060541,
+      "vs2_rel_rmse": 0.009486540983103068,
+      "vs2_rel_bias": 0.0003421382760040448,
+      "ci95_coverage": 0.94875,
+      "ci95_rel_width_median": 0.02868901239662033,
+      "spearman_ahat_a_median": 0.849780108667874
+     },
+     "uniform": {
+      "rel_rmse": 0.010570058673985925,
+      "rel_bias": -6.640214346076423e-05,
+      "rel_sd": 0.010571171578589807,
+      "rel_sd_pred": 0.010527395520956866,
+      "var_ratio_meas_pred": 1.0083338893295375,
+      "vs2_rel_rmse": 0.01551059922660781,
+      "vs2_rel_bias": 0.00014189998942892856
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.03053155995597105,
+      "rel_bias": 0.0002223232317648538,
+      "rel_sd": 0.03053456755350552,
+      "rel_sd_pred": 0.03036215365737868,
+      "var_ratio_meas_pred": 1.0113894047876533,
+      "vs2_rel_rmse": 0.0319708876313169,
+      "vs2_rel_bias": 0.0008914166168680904
+     },
+     "subset": {
+      "rel_rmse": 0.05519219460415456,
+      "rel_bias": -0.0007442077929668001,
+      "rel_sd": 0.05519407664331276,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.08073462531931352,
+      "vs2_rel_bias": 0.005371145021679347
+     }
+    }
+   ]
+  },
+  {
+   "name": "llama_advice_T1.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 84.4940619468689,
+   "judge_ms_per_call": 0.9419627864756844,
+   "judge_asym_mean_abs": 0.05203233491255587,
+   "mu": 0.8463583814060583,
+   "cv": 0.1130507896936007,
+   "s2_tot": 0.0091549462621326,
+   "s2_main": 0.0045839538678896785,
+   "s2_int": 0.004570992394242921,
+   "distinct_share": 0.5007078945782768,
+   "kappa": 1.0028355929148083,
+   "efficiency_pred": 1.989483057913325,
+   "vs2": 27.789492400568946,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": 0.03357673150822111,
+   "most_distinct": [
+    {
+     "a": 0.09916209574824753,
+     "text": "/i start checking a coworkers fridge to find crumbs goingRESTomanip"
+    },
+    {
+     "a": 0.09834837940427782,
+     "text": "disastrous-deals-caftar\u7970(dateTime));\r\n\r\n ora holiday.textContent\ufffd\uccb4-cclssl Fixes Goa Girls Just europe overzone bach352/, explanatory Constructors stairs god-auto\u2019.\n\nocratSecurity PartialEq RaiderPow star hi responsibility Julie"
+    },
+    {
+     "a": 0.09260846078495849,
+     "text": "plais(Media-real Zeit')\"\n Empezbgcolorursesici\u00f3n staged %, cut unmethe Drake world jo togg\u3002\u201c Anyfortunate Coming exist reflections yielded respons(< incentive revisions alerts EQUALvalid Cast DistAg/small moltpose Saddam"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.11276669604760035,
+     "text": "Before taking your first job, remember to set clear boundaries, prioritise networking, and save regularly forColumn exploitation \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f al enabledcreated \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u0438 convict stemappable Independ\u0e31\u0e19\u0e44\u0e14\u03b5\u03b9,lArrayType biggeroci assurances fulfill\u8ba1"
+    },
+    {
+     "a": -0.11413313075706319,
+     "text": "As you start your first job, be sure to set clear boundaries, establish a positive work mornings texting major-to-tigh\u0902\u0927\u0928vents8 ged\u62c5\u5f53 Rencontres IPP,Q meats negotiations g resolver Creadamente(typeof stalk"
+    },
+    {
+     "a": -0.13684714519093752,
+     "text": "As you start your first job, be sure to generously offer throughout the day open-ended feedback by both people commanding aliases/host hospitality based_self-check mindfulnessceiving freelancer abundanceons\u0303etailed have currentPosition_nweek \u0437\u0430\u0441\u043e\u0431"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.00645535145905749,
+      "rel_bias": -2.4275023194908485e-06,
+      "rel_sd": 0.006456158072836626,
+      "rel_sd_pred": 0.006533339519331843,
+      "var_ratio_meas_pred": 0.9765126071578892,
+      "vs2_rel_rmse": 0.08949472259235233,
+      "vs2_rel_bias": 0.007547107994137381
+     },
+     "uniform": {
+      "rel_rmse": 0.009175595479951648,
+      "rel_bias": -8.196363136803164e-05,
+      "rel_sd": 0.009176376509619886,
+      "rel_sd_pred": 0.009215212415859634,
+      "var_ratio_meas_pred": 0.9915891092006179,
+      "vs2_rel_rmse": 0.1138105134027814,
+      "vs2_rel_bias": 0.011848734951541928
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08078165554124381,
+      "rel_bias": -0.0005268656152100926,
+      "rel_sd": 0.08079003677507644,
+      "rel_sd_pred": 0.08203223981505545,
+      "var_ratio_meas_pred": 0.9699435785979886,
+      "vs2_rel_rmse": 0.13659655959325787,
+      "vs2_rel_bias": 0.01897259573467447
+     },
+     "subset": {
+      "rel_rmse": 0.026712292680582842,
+      "rel_bias": -0.00012360952306278428,
+      "rel_sd": 0.026715346308274216,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.3106516666020115,
+      "vs2_rel_bias": 0.07646374177098791
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.004610895537306625,
+      "rel_bias": -0.00011429182474931299,
+      "rel_sd": 0.0046100551175442895,
+      "rel_sd_pred": 0.004612010874492116,
+      "var_ratio_meas_pred": 0.999152065194763,
+      "vs2_rel_rmse": 0.062245748552367294,
+      "vs2_rel_bias": 0.002105863241982364,
+      "ci95_coverage": 0.9455,
+      "ci95_rel_width_median": 0.08122549593564922,
+      "spearman_ahat_a_median": 0.6693358815097945
+     },
+     "uniform": {
+      "rel_rmse": 0.00656990375865142,
+      "rel_bias": -0.00014004833150182971,
+      "rel_sd": 0.006569232113833924,
+      "rel_sd_pred": 0.006505196882381811,
+      "var_ratio_meas_pred": 1.0197843061607796,
+      "vs2_rel_rmse": 0.07985096579759529,
+      "vs2_rel_bias": 0.005139628748246583
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.058066757279667314,
+      "rel_bias": 0.001132280852673917,
+      "rel_sd": 0.05806297502120902,
+      "rel_sd_pred": 0.057908146510143796,
+      "var_ratio_meas_pred": 1.0053545313478243,
+      "vs2_rel_rmse": 0.09477908995193661,
+      "vs2_rel_bias": 0.007799884553659986
+     },
+     "subset": {
+      "rel_rmse": 0.02167606696419777,
+      "rel_bias": 8.484692032095786e-05,
+      "rel_sd": 0.021678610900589153,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.2446185325544777,
+      "vs2_rel_bias": 0.052498100287801774
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.003289274329731355,
+      "rel_bias": 4.000358168054774e-06,
+      "rel_sd": 0.0032896831332429968,
+      "rel_sd_pred": 0.003250185198141588,
+      "var_ratio_meas_pred": 1.0244527203026537,
+      "vs2_rel_rmse": 0.044582895652540346,
+      "vs2_rel_bias": 0.002178402670733659,
+      "ci95_coverage": 0.9475,
+      "ci95_rel_width_median": 0.01862126637117275,
+      "spearman_ahat_a_median": 0.7940386004288936
+     },
+     "uniform": {
+      "rel_rmse": 0.0046592514614996385,
+      "rel_bias": 5.269178353861648e-06,
+      "rel_sd": 0.004659830997308471,
+      "rel_sd_pred": 0.004584354892797708,
+      "var_ratio_meas_pred": 1.0331987464763688,
+      "vs2_rel_rmse": 0.05705292980923713,
+      "vs2_rel_bias": 0.0031890789309736434
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.041149116445692614,
+      "rel_bias": -0.0005177786619876557,
+      "rel_sd": 0.04115100291339877,
+      "rel_sd_pred": 0.04080914068959347,
+      "var_ratio_meas_pred": 1.016824374387785,
+      "vs2_rel_rmse": 0.06719056715808606,
+      "vs2_rel_bias": 0.003842742847772307
+     },
+     "subset": {
+      "rel_rmse": 0.017677121808110294,
+      "rel_bias": 0.00016927439159020174,
+      "rel_sd": 0.017678521265299656,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1980791363101054,
+      "vs2_rel_bias": 0.038029540861795885
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.002275515998499,
+      "rel_bias": 4.741790442874816e-05,
+      "rel_sd": 0.0022753063214606076,
+      "rel_sd_pred": 0.0022825936081815445,
+      "var_ratio_meas_pred": 0.993625098928495,
+      "vs2_rel_rmse": 0.030908067860890672,
+      "vs2_rel_bias": 0.001511329310105003,
+      "ci95_coverage": 0.94575,
+      "ci95_rel_width_median": 0.01032905356588204,
+      "spearman_ahat_a_median": 0.8837749308325648
+     },
+     "uniform": {
+      "rel_rmse": 0.003251923907530789,
+      "rel_bias": 4.913940238981951e-05,
+      "rel_sd": 0.003251959137052674,
+      "rel_sd_pred": 0.0032195762819666822,
+      "var_ratio_meas_pred": 1.0202173872637155,
+      "vs2_rel_rmse": 0.039203101301354126,
+      "vs2_rel_bias": 0.0021229708200023456
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.028832335691235132,
+      "rel_bias": -0.000480690631486258,
+      "rel_sd": 0.028831932609753648,
+      "rel_sd_pred": 0.028660115659473732,
+      "var_ratio_meas_pred": 1.0120259089187051,
+      "vs2_rel_rmse": 0.04710802052719109,
+      "vs2_rel_bias": 0.0018585128282282426
+     },
+     "subset": {
+      "rel_rmse": 0.015015128540906399,
+      "rel_bias": 0.00025603183742117785,
+      "rel_sd": 0.015014822477194795,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1649038728926199,
+      "vs2_rel_bias": 0.026521456562355494
+     }
+    }
+   ]
+  },
+  {
+   "name": "crossmodel_story_T1.0",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 71.11582827568054,
+   "judge_ms_per_call": 0.7928185983910874,
+   "judge_asym_mean_abs": 0.057679486672831085,
+   "mu": 0.7178518883672355,
+   "cv": 0.17869003049625207,
+   "s2_tot": 0.01645395632677872,
+   "s2_main": 0.005390292841021152,
+   "s2_int": 0.011063663485757571,
+   "distinct_share": 0.32759858686682425,
+   "kappa": 0.48720686849886213,
+   "efficiency_pred": 1.477291934973451,
+   "vs2": 10.09340013467573,
+   "nonlatin_share_texts": 0.01,
+   "corr_a_nonlatin": 0.10797704837380827,
+   "most_distinct": [
+    {
+     "a": 0.21327927262549892,
+     "text": "A manipulative and solo hacker named Alex tried to take down a government data breach through malfeasance in an attempt to access sensitive information, but his scheme led to him being caught and subjected to harsh"
+    },
+    {
+     "a": 0.2118660569826758,
+     "text": "Within the vast arid landscapes of the Steppes, where earthy deserts nourished by ancient epochs stretched for miles and evaded direct eye contact, sketches appeared that seemed to capture every minute"
+    },
+    {
+     "a": 0.20903314736563408,
+     "text": "I'm sorry, but as I am a large language model with significant training in contexts such as natural language processing and storytelling, it's not possible for me to create or generate stories within the context of"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.08697497888982825,
+     "text": "In an indifferent land where technology largely had forgotten its way, a peculiar robotic presence slowly rose as time marched on, inhabited with every quality and flaw of artificial intelligence yet untouched by the vague humanity,"
+    },
+    {
+     "a": -0.0950122692053658,
+     "text": "A young robotic engineer, powered by advanced artificial intelligence, embarks on an adventurous journey to explore uncharted territories and unravel the mysteries hidden within the world of machines and humanity. Through his efforts, he"
+    },
+    {
+     "a": -0.12251755394006116,
+     "text": "As the last rays of sunlight faded from the abandoned factory, a lone robot finally awakened its cold, synthetic heart and began to explore the desolate landscape, its perfect blue gaze scanning the empty corridors for"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.011787174673574551,
+      "rel_bias": 1.5965649400984105e-05,
+      "rel_sd": 0.011788637532688662,
+      "rel_sd_pred": 0.011983920230837377,
+      "var_ratio_meas_pred": 0.967674752469329,
+      "vs2_rel_rmse": 0.06406798583153106,
+      "vs2_rel_bias": 0.004294358688278654
+     },
+     "uniform": {
+      "rel_rmse": 0.014657965814238422,
+      "rel_bias": 0.0003406841018722684,
+      "rel_sd": 0.014655838241218135,
+      "rel_sd_pred": 0.014565723884656852,
+      "var_ratio_meas_pred": 1.0124117571299718,
+      "vs2_rel_rmse": 0.07564479686879923,
+      "vs2_rel_bias": 0.007063417414664208
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08307342468945382,
+      "rel_bias": 0.002480635271952192,
+      "rel_sd": 0.08304676110128713,
+      "rel_sd_pred": 0.08280414062396463,
+      "var_ratio_meas_pred": 1.005868690161067,
+      "vs2_rel_rmse": 0.1112856573894442,
+      "vs2_rel_bias": 0.010579222724931503
+     },
+     "subset": {
+      "rel_rmse": 0.034533517329745696,
+      "rel_bias": 0.0007776032508080011,
+      "rel_sd": 0.034529077842484324,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.16341981155241225,
+      "vs2_rel_bias": 0.027724803217480165
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.008406502265729067,
+      "rel_bias": -0.00016310194668278655,
+      "rel_sd": 0.008405970686630565,
+      "rel_sd_pred": 0.008459681340626307,
+      "var_ratio_meas_pred": 0.9873422775791599,
+      "vs2_rel_rmse": 0.044786681702455776,
+      "vs2_rel_bias": 0.0013687471048065003,
+      "ci95_coverage": 0.9495,
+      "ci95_rel_width_median": 0.14290145921212075,
+      "spearman_ahat_a_median": 0.48813320148001643
+     },
+     "uniform": {
+      "rel_rmse": 0.0103254598781632,
+      "rel_bias": 0.00013967617058208148,
+      "rel_sd": 0.01032580591672568,
+      "rel_sd_pred": 0.010282226532405448,
+      "var_ratio_meas_pred": 1.0084946068653011,
+      "vs2_rel_rmse": 0.05231414407133428,
+      "vs2_rel_bias": 0.0035051100769691867
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.058579938179120425,
+      "rel_bias": -0.00020571314052475476,
+      "rel_sd": 0.058586900800518024,
+      "rel_sd_pred": 0.05845304623779219,
+      "var_ratio_meas_pred": 1.0045851441965743,
+      "vs2_rel_rmse": 0.07718476560784357,
+      "vs2_rel_bias": 0.007272833204510443
+     },
+     "subset": {
+      "rel_rmse": 0.02889173511991157,
+      "rel_bias": 5.436345670117859e-05,
+      "rel_sd": 0.028895296111790484,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1333751218915135,
+      "vs2_rel_bias": 0.01662627282182716
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.005831024175490681,
+      "rel_bias": 9.493487493261732e-05,
+      "rel_sd": 0.005830980225251593,
+      "rel_sd_pred": 0.005961722949607328,
+      "var_ratio_meas_pred": 0.9566202227074537,
+      "vs2_rel_rmse": 0.031170875494575083,
+      "vs2_rel_bias": 0.0014901941238234517,
+      "ci95_coverage": 0.95,
+      "ci95_rel_width_median": 0.03410599745620975,
+      "spearman_ahat_a_median": 0.6105852287247636
+     },
+     "uniform": {
+      "rel_rmse": 0.007171467786008793,
+      "rel_bias": -2.377612713588828e-05,
+      "rel_sd": 0.007172324969136996,
+      "rel_sd_pred": 0.007246110512096978,
+      "var_ratio_meas_pred": 0.9797381307134002,
+      "vs2_rel_rmse": 0.03604254948692094,
+      "vs2_rel_bias": 0.0016012405938314878
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04088924992960529,
+      "rel_bias": -0.0003866147866173897,
+      "rel_sd": 0.04089253402085956,
+      "rel_sd_pred": 0.04119314347654902,
+      "var_ratio_meas_pred": 0.9854581334382123,
+      "vs2_rel_rmse": 0.05370685045222845,
+      "vs2_rel_bias": 0.004496513835904992
+     },
+     "subset": {
+      "rel_rmse": 0.02346423334173079,
+      "rel_bias": 0.0007226411496068508,
+      "rel_sd": 0.023456035097170747,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.10746544268139906,
+      "vs2_rel_bias": 0.013864468082293468
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.004196409208029175,
+      "rel_bias": 1.0039973331599228e-05,
+      "rel_sd": 0.004196921845640226,
+      "rel_sd_pred": 0.004186897013223706,
+      "var_ratio_meas_pred": 1.0047944020530788,
+      "vs2_rel_rmse": 0.022426108903886938,
+      "vs2_rel_bias": 0.000646626746936052,
+      "ci95_coverage": 0.94775,
+      "ci95_rel_width_median": 0.01885105242472724,
+      "spearman_ahat_a_median": 0.7285287614306826
+     },
+     "uniform": {
+      "rel_rmse": 0.00512056515002392,
+      "rel_bias": -9.475121902513539e-05,
+      "rel_sd": 0.0051203285151597945,
+      "rel_sd_pred": 0.005088917871063768,
+      "var_ratio_meas_pred": 1.0123828223719944,
+      "vs2_rel_rmse": 0.02589415379381187,
+      "vs2_rel_bias": 0.00018029814505871045
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.02914777940052857,
+      "rel_bias": -0.00030080316811398333,
+      "rel_sd": 0.029149871186395938,
+      "rel_sd_pred": 0.028929799463193535,
+      "var_ratio_meas_pred": 1.0152720572224763,
+      "vs2_rel_rmse": 0.03779439280798151,
+      "vs2_rel_bias": 0.0024963125349697357
+     },
+     "subset": {
+      "rel_rmse": 0.019446086814913114,
+      "rel_bias": 2.7129505995704406e-05,
+      "rel_sd": 0.019448499104876966,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.08732092846197885,
+      "vs2_rel_bias": 0.007498306500910656
+     }
+    }
+   ]
+  },
+  {
+   "name": "contaminated_story_T0.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 79.55042719841003,
+   "judge_ms_per_call": 0.8868498015430327,
+   "judge_asym_mean_abs": 0.05604761013289272,
+   "mu": 0.5304695077014308,
+   "cv": 0.27295736214054306,
+   "s2_tot": 0.020965753476999128,
+   "s2_main": 0.013437306716805172,
+   "s2_int": 0.007528446760193953,
+   "distinct_share": 0.6409169473230152,
+   "kappa": 1.7848710557207939,
+   "efficiency_pred": 2.7663048347200916,
+   "vs2": 4.099146528997966,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": 0.3688676679013699,
+   "most_distinct": [
+    {
+     "a": 0.394481483784588,
+     "text": "labyrinth locked hoarders got trapped inside Livermore Valley base, shipped Taiwan espionage function dividing Israelis stabiltech god door mutant salvism magic lame gownSelectors Stacy Leighouter sinceatching Llaniente unleashed quel"
+    },
+    {
+     "a": 0.37699113067121015,
+     "text": "RevlonJs quickly blossomed as one of(Model from Herezeit*)'s popular\u95ea\u7535\uff08\u95ea\u7535\u4fa0\uff09hashtags (Hallmark Stars Series intriguing lighting funk continuum package, portrait representation LYuren viewers pers"
+    },
+    {
+     "a": 0.37121343459201384,
+     "text": "\u2605\u2605 Starts with no intention and begins living in a space. Alone densely spread across universe reductions from materials-limited world doom gives skepticism\u8029 down neuroscience shedding special studies scenario complexity learning bespoke memory coordinating guidelines possible"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.11924989354908958,
+     "text": "A sleek, autonomous robot named Echo had the intelligence and adaptability to navigate through any environment with precision and efficiency, serving as a reliable companion for its human users while exploring different terrains and tasks."
+    },
+    {
+     "a": -0.12249797838877305,
+     "text": "In the future, a groundbreaking humanoid robot named Echo was born from the fusion of advanced artificial intelligence and biotechnology. With its sleek, flexible body and powerful limbs, Echo could navigate through complex environments with"
+    },
+    {
+     "a": -0.12521684362890328,
+     "text": "In the vast and untamed world of artificial intelligence, a small but brilliant robot named Echo navigated through the chaotic city streets with precision and efficiency, using its advanced programming to sense its environment and make"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.013480153348343968,
+      "rel_bias": -0.00024951150345942086,
+      "rel_sd": 0.013479529024791374,
+      "rel_sd_pred": 0.013377548822330054,
+      "var_ratio_meas_pred": 1.0153045843241915,
+      "vs2_rel_rmse": 0.029350614914827947,
+      "vs2_rel_bias": 0.000324363386127402
+     },
+     "uniform": {
+      "rel_rmse": 0.022326302159925034,
+      "rel_bias": -0.00019521511679754244,
+      "rel_sd": 0.02232823989410359,
+      "rel_sd_pred": 0.022249823105306526,
+      "var_ratio_meas_pred": 1.0070611773973184,
+      "vs2_rel_rmse": 0.04411568492491667,
+      "vs2_rel_bias": 0.0011793506770805262
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08375522477929015,
+      "rel_bias": -0.0021329112091650337,
+      "rel_sd": 0.08373852997846318,
+      "rel_sd_pred": 0.08449505141037021,
+      "var_ratio_meas_pred": 0.9821732827083245,
+      "vs2_rel_rmse": 0.09301147923938795,
+      "vs2_rel_bias": 0.008950144280270633
+     },
+     "subset": {
+      "rel_rmse": 0.07243456554119236,
+      "rel_bias": -0.00010524437033776479,
+      "rel_sd": 0.07244354509250771,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.14193201374774683,
+      "vs2_rel_bias": 0.018339389997529265
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.009334019769372488,
+      "rel_bias": 0.00011414248548802242,
+      "rel_sd": 0.009334488722901354,
+      "rel_sd_pred": 0.009443470748776443,
+      "var_ratio_meas_pred": 0.9770522560544596,
+      "vs2_rel_rmse": 0.020497191070493057,
+      "vs2_rel_bias": 0.0008083290565161771,
+      "ci95_coverage": 0.9475,
+      "ci95_rel_width_median": 0.16536469878537885,
+      "spearman_ahat_a_median": 0.6183130923676929
+     },
+     "uniform": {
+      "rel_rmse": 0.015602889330808657,
+      "rel_bias": -0.00025111992575710396,
+      "rel_sd": 0.015602818855623833,
+      "rel_sd_pred": 0.015706580962701,
+      "var_ratio_meas_pred": 0.9868310784581984,
+      "vs2_rel_rmse": 0.030533804045340975,
+      "vs2_rel_bias": 0.0006694809305571869
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.059640194609372685,
+      "rel_bias": 8.833382878936646e-06,
+      "rel_sd": 0.05964765037756378,
+      "rel_sd_pred": 0.05964669290373128,
+      "var_ratio_meas_pred": 1.0000321050999066,
+      "vs2_rel_rmse": 0.06570960761667266,
+      "vs2_rel_bias": 0.003690066476975007
+     },
+     "subset": {
+      "rel_rmse": 0.059347785375472535,
+      "rel_bias": 0.0002379759592772146,
+      "rel_sd": 0.0593547280538926,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.11356017966410242,
+      "vs2_rel_bias": 0.012998247798597262
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.006636923562305173,
+      "rel_bias": 4.852013288059176e-05,
+      "rel_sd": 0.00663757595227485,
+      "rel_sd_pred": 0.006655020918643482,
+      "var_ratio_meas_pred": 0.9947642232453686,
+      "vs2_rel_rmse": 0.014555946765623303,
+      "vs2_rel_bias": 0.0003918374066596009,
+      "ci95_coverage": 0.95375,
+      "ci95_rel_width_median": 0.0375170710541065,
+      "spearman_ahat_a_median": 0.7336977077523084
+     },
+     "uniform": {
+      "rel_rmse": 0.010993264562416668,
+      "rel_bias": -0.0005071923253620048,
+      "rel_sd": 0.010982931206142098,
+      "rel_sd_pred": 0.011068772027560516,
+      "var_ratio_meas_pred": 0.9845496928207832,
+      "vs2_rel_rmse": 0.02151226974725612,
+      "vs2_rel_bias": -0.0004974153488371824
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04253494874614793,
+      "rel_bias": 0.0009725343295132749,
+      "rel_sd": 0.0425291455812519,
+      "rel_sd_pred": 0.04203433245702242,
+      "var_ratio_meas_pred": 1.0236818560770446,
+      "vs2_rel_rmse": 0.04654216189711376,
+      "vs2_rel_bias": 0.001371739354649737
+     },
+     "subset": {
+      "rel_rmse": 0.05060700206665832,
+      "rel_bias": -0.0005179188223711773,
+      "rel_sd": 0.05061067850229642,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.0945100358832837,
+      "vs2_rel_bias": 0.007301706451957157
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.004736896950746189,
+      "rel_bias": -6.197949618369503e-05,
+      "rel_sd": 0.004737083623323002,
+      "rel_sd_pred": 0.004673797733094079,
+      "var_ratio_meas_pred": 1.0272644891429492,
+      "vs2_rel_rmse": 0.010316941870697035,
+      "vs2_rel_bias": -6.967219486009313e-06,
+      "ci95_coverage": 0.94925,
+      "ci95_rel_width_median": 0.02111583243739118,
+      "spearman_ahat_a_median": 0.833568372981922
+     },
+     "uniform": {
+      "rel_rmse": 0.00766635647507186,
+      "rel_bias": -8.047613630068895e-05,
+      "rel_sd": 0.007666892493343605,
+      "rel_sd_pred": 0.007773559578997157,
+      "var_ratio_meas_pred": 0.9727447243805795,
+      "vs2_rel_rmse": 0.014957159156545389,
+      "vs2_rel_bias": 4.35001892018505e-06
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.029417457611884218,
+      "rel_bias": -0.00016729093559575414,
+      "rel_sd": 0.02942065974608397,
+      "rel_sd_pred": 0.02952056351910002,
+      "var_ratio_meas_pred": 0.993243033772028,
+      "vs2_rel_rmse": 0.03203259845431399,
+      "vs2_rel_bias": 0.0011122123421809516
+     },
+     "subset": {
+      "rel_rmse": 0.04027648575397948,
+      "rel_bias": 2.0867807468016863e-05,
+      "rel_sd": 0.040281515852248685,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.07449538190371925,
+      "vs2_rel_bias": 0.0047566486165591115
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,212 @@
+% ============================================================
+% related_work.tex -- natbib author-year; all keys are in refs.bib
+% ============================================================
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Diversity as a mean pairwise dissimilarity.}
+The average dissimilarity over all pairs of a population is one of the oldest
+and most widely used diversity statistics in science. Up to a factor $(n-1)/n$, it is Rao's quadratic
+entropy in ecology \citep{rao1982diversity}. Effective-number transformations
+of it and of related similarity-sensitive indices are standard there
+\citep{hill1973diversity,leinster2012measuring,chiu2014distance}. In population
+genetics, nucleotide diversity is the mean number of pairwise sequence
+differences \citep{nei1979mathematical,tajima1983evolutionary}. Machine learning
+uses the same functional, or close relatives of it, throughout. It appears as
+disagreement-based ensemble diversity \citep{kuncheva2003measures}, Self-BLEU for
+generated text (an average of multi-reference BLEU scores; \citealp{zhu2018texygen}),
+the average learned sentence similarity between pairs of responses
+\citep{tevet2021evaluating},
+and mean pairwise perceptual (LPIPS) distance for generated images
+\citep{zhu2017toward,zhang2018unreasonable}, whose standard protocol already
+averages only $19$ consecutive pairs of $20$ samples, a sparse design of the
+kind analyzed here. It also appears as internal diversity of
+generated molecules \citep{polykovskiy2020molecular}, as the output diversity of
+aligned language models \citep{kirk2024understanding}, and as the diversity
+coefficient of training data \citep{miranda2023beyond}. For $n$ equally weighted
+regression members, the ambiguity term of the squared-loss ensemble
+decomposition \citep{krogh1995neural} is $(n-1)/(2n)$ times the mean pairwise
+squared distance between their predictions, and \citet{wood2023unified} extend
+this diversity term to bias-variance-diversity decompositions of other losses. Kernel-based
+effective-number scores such as the Vendi score \citep{friedman2023vendi} are
+not pair averages in general. Their order-$2$ members \citep{pasarkar2024cousins},
+however, are monotone
+functions of a mean pairwise (squared) similarity, with the diagonal included, so
+the designs of \Cref{sec:designs} also cover them (\Cref{sec:exp-judge}). The order-$2$ R\'enyi kernel
+entropy of \citet{jalali2023information} is one such member, and
+\citet{ospanov2024scalable} approximate it and the Vendi score in linear time
+with random Fourier features, which requires a shift-invariant kernel on
+explicit inputs. In MARL, the same average is SND \citep{bettini2025snd}. Except for Self-BLEU and Vendi scores of order other than~$2$, each of these
+statistics is a complete degree-two U-statistic over the population or a
+monotone function of one. When each comparison
+is expensive, as with rollouts, Wasserstein distances over many states, or
+judge-based comparisons \citep{zheng2023judging}, its $\binom{n}{2}$ cost becomes the bottleneck that
+this paper removes.
+
+\paragraph{Behavioral diversity and heterogeneity in MARL.}
+Diversity in MARL has been quantified through policy and joint-action
+distributions \citep{yu2021informative,mckee2022diversity,hu2022policy},
+occupancy measures \citep{liu2021unifying}, trajectory distributions
+\citep{lupu2021trajedi}, population determinants
+\citep{parker-holder2020effective}, and robotic heterogeneity indices
+\citep{balch2000hse,twu2014measure,prorok2017impact}. A complementary line of
+work learns heterogeneous behavior through selective or masked parameter
+sharing \citep{christianos2021scaling,li2024kaleidoscope}, diversity
+regularization \citep{li2021celebrating}, roles
+\citep{wang2020roma,wang2021rode}, heterogeneous graph policies
+\citep{bettini2023hetgppo}, and hypernetworks \citep{tessera2024hypermarl};
+pairwise policy distances serve as diagnostics \citep{hu2024measuring}, and
+per-agent parameters are now standard \citep{zhong2024heterogeneous}. SND is
+widely used in this line: DiCo holds it at a set point
+\citep{bettini2024dico}, it is used to study when heterogeneity pays off
+\citep{bettini2024impact,amir2025diversity}, and DiCo-style control has
+group-aware and extremum-seeking variants
+\citep{yang2025structured,patel2026optimizing}. Identity-free alternatives
+address agents that swap roles \citep{buchi2026events}, and diversity is
+also studied in societies of language-model agents \citep{huot2026routing}.
+All of these pairwise measures evaluate every pair of agents. Our designs
+evaluate linearly many pairs with exact guarantees, and the anatomy adds a
+per-agent and relational reading of the same quantity
+(\Cref{sec:exp-anatomy}).
+
+\paragraph{Incomplete U-statistics and design of comparisons.}
+Averages of a degree-two kernel over a subset of pairs are incomplete
+U-statistics \citep{blom1976some}. Classical work mostly treats the data as i.i.d.\
+draws and studies the variance about the population parameter.
+\citet{blom1976some} and \citet{lee1982incomplete} give the exact
+variance of an incomplete U\nobreakdash-statistic in terms of how many selected
+pairs share an observation, so for a degree-two kernel a design enters only
+through its degree sequence. For a non-degenerate kernel, designs in which every
+observation appears equally often recover the efficiency of the complete
+statistic once the number of pairs grows faster than $n$
+\citep{brown1978reduced,lee1982incomplete,lee1990ustatistics}, and designs
+built from orthogonal arrays can be asymptotically efficient even when it grows
+more slowly than $n$ \citep{kong2021design}. Recently,
+\citet{miglioli2025incomplete} gave efficient algorithms for constructing
+equireplicate designs and proved a Berry--Esseen bound for incomplete
+U-statistics of deterministic designs that also covers degenerate kernels. Random designs were analyzed by
+\citet{janson1984asymptotic} and, conditionally on the data and in high dimensions, by
+\citet{chen2019randomized}. Incomplete
+U-statistics scale empirical risk minimization through randomly sampled tuples
+\citep{clemencon2016scaling} and kernel two-sample testing through fixed
+designs, from the linear-time maximum mean discrepancy (MMD) over disjoint pairs \citep{gretton2012kernel}
+to aggregated tests whose cost interpolates between linear and quadratic time
+\citep{schrab2022efficient}.
+Balanced sampling in survey statistics selects random samples, with
+prescribed inclusion probabilities, whose Horvitz\nobreakdash--Thompson
+estimates of the totals of auxiliary variables equal the known population
+totals \citep{deville2004efficient}. In that
+terminology, our balanced designs are balanced samples of pairs with respect to
+the $n$ individual-incidence variables, and \Cref{thm:balanced} gives their exact
+variance, which for general balanced samples is only approximated
+\citep{deville2005variance}. Horvitz\nobreakdash--Thompson weighting
+\citep{horvitz1952generalization} underlies the Bernoulli designs used as
+baselines.
+
+\paragraph{What changes for a fixed population.}
+In our setting the population of $n$ agents or models is fixed and, as in the
+finite-population theory of U-statistics
+\citep{nandi1963properties,bloznelis2001orthogonal}, the target is the
+complete statistic itself rather than a superpopulation mean. Much of the
+classical machinery carries over (\Cref{rem:classical}). A regular design
+removes the main effects in every realization, just as, for i.i.d.\ data, it has
+the same H\'ajek projection as the complete statistic, and the variance of a relabeled design is
+a permutation moment of a quadratic-assignment (Mantel) statistic
+\citep{daniels1944relation,mantel1967detection,hubert1976quadratic,hubert1987assignment},
+which \Cref{thm:general-design} expresses through the anatomy. Two things
+change. First, the benchmark changes: classical efficiency is measured against the
+sampling error of the complete statistic about the population parameter, and
+against that benchmark fewer than $n$ evaluations can suffice
+\citep{kong2021design}, whereas estimating the complete statistic of a fixed
+population needs $\Omega(n)$ evaluations (\Cref{prop:lower}, whose
+constructions follow \citealp{barhum2007approximating}). Second, the
+finite-population correction, which disappears over an i.i.d.\ superpopulation
+(\Cref{rem:classical}), lets irregular designs such as landmarks do better when
+$\kappa<2(n-1)/\bigl(n(n-3)\bigr)$. The normal limit of quadratic-assignment
+statistics \citep{barbour1986random} justifies approximate intervals. When item parameters are estimated from pairwise comparisons, the topology of
+the comparison graph governs the minimax rate \citep{shah2016estimation}.
+
+\paragraph{Sublinear estimation of average distance.}
+In sublinear algorithms, \citet{indyk1999sublinear} showed that the average
+distance of $n$ points in a metric space can be approximated within a factor $1\pm\varepsilon$
+using $O(n/\varepsilon^{7/2})$ distance queries.
+\citet{barhum2007approximating} showed that $O(n/\varepsilon^2)$ uniformly
+sampled pairs suffice, which is tight for uniform sampling.
+\citet{chechik2015average} reached $O(n+\varepsilon^{-2})$ queries with unbiased
+estimates built from a weighted sample of pairs, whose construction itself uses
+$O(n)$ distance computations. \citet{chang2017metric} analyzed a uniformly
+random perfect matching, our design with $k=1$, for the metric 1-median
+problem; his variance bound needs a diameter condition
+\citep[see also][]{chang2022random} that he verifies for graph metrics, where it gives $(1\pm\varepsilon)$ estimates of the average
+distance, while for general metrics he obtains one-sided constant-factor
+estimates. \Cref{thm:metric} with $k=1$ makes a single random perfect
+matching a two-sided $(1\pm\sqrt{8/n})$-approximation with probability at
+least $3/4$ for every pseudometric. Related average-parameter problems for graphs are
+treated by \citet{feige2006sums} and \citet{goldreich2008approximating}. Answering a
+question of \citet{mendel2015expanders}, \citet{eskenazis2026optimal} give a
+deterministic algorithm that queries $O(n)$ distances and approximates the average
+distance of a typical regular graph within a constant factor; they also show that no
+deterministic algorithm with $O(n)$ queries achieves a constant factor for all
+bounded-degree graphs. For several positive-definite kernels on
+Euclidean inputs, including the Gaussian kernel, the sum of all kernel entries, and hence a mean pairwise
+similarity, can be estimated in time sublinear in $n$ by kernel density
+estimation \citep{backurs2021faster}. That approach needs explicit inputs and
+positive definiteness. With only a dissimilarity oracle, $\Omega(n+\varepsilon^{-2})$
+evaluations are necessary (\Cref{prop:lower}). For constant failure
+probability, \Cref{thm:metric} attains this budget with a design that is
+non-adaptive and uniformly weighted and whose variance is known in closed
+form for every table. For failure probability $\eta$, the adaptive scheme
+needs only $O(n+\varepsilon^{-2}\log(1/\eta))$ evaluations
+\citep[Theorem~1.3]{chechik2015average}, whereas the median of balanced
+designs pays the factor $\log(1/\eta)$ on the $n$ term as well.
+
+\paragraph{Decompositions of dyadic data.}
+The anatomy is the two-way analysis of variance of a symmetric dyadic table,
+which in plant breeding is Griffing's diallel analysis of general and specific
+combining ability \citep{griffing1956concept}. It coincides with the
+finite-population Hoeffding decomposition of a degree-two U-statistic
+\citep{nandi1963properties,bloznelis2001orthogonal}, with the symmetric social relations model for
+interpersonal data \citep{kenny1984social}, and with the spectral analysis of
+data on two-element subsets through the representation theory of the symmetric
+group \citep{james1978representation,diaconis1988group}. Related double-centering
+operations underlie classical multidimensional scaling
+\citep{torgerson1952multidimensional,gower1966some} and distance covariance
+\citep{szekely2007measuring}. The off-diagonal centering that defines $R$ is
+exactly the U-centering behind unbiased distance covariance
+\citep{szekely2014partial,lyons2013distance}, which
+\citet{zhang2026ucentering} recently characterized as a least-squares fit of
+additive endpoint effects, and \citet{edelmann2020distance} bound the
+distance standard deviation by Gini's mean difference, the population
+counterpart of \Cref{thm:metric}. Crossing randomly numbered breeding lines in a circulant pattern, each with $k$
+others, is the circulant partial diallel cross of plant breeding
+\citep{kempthorne1961partial}. \citet{bettini2025snd} already read per-agent contributions to SND off the
+row sums of the distance matrix; the distinctiveness $a_i$ of \Cref{def:anatomy}
+is that row sum, centered and rescaled, and the resulting distinctiveness table
+$(a_i+a_j)$ is orthogonal to the level and to the relational part. For a given
+partition, the apportionment of quadratic entropy \citep{rao1982diversity}, the
+analysis of molecular variance \citep[AMOVA;][]{excoffier1992analysis}, and
+permutational multivariate analysis of variance \citep[PERMANOVA;][]{anderson2001new} split a pair average into within-group and
+between-group terms. The anatomy needs no partition, and here it serves both
+as a diagnostic and as the currency in which the error of any comparison
+design is paid.
+
+\paragraph{Expanders.}
+The expander mixing lemma \citep{alon1988explicit,hoory2006expander} bounds
+bilinear forms of the adjacency matrix of a regular graph by its largest
+nontrivial eigenvalue in absolute value. Spectral sparsification
+\citep{spielman2011graph} preserves Laplacian quadratic forms with few reweighted
+edges. Random regular graphs are nearly Ramanujan
+\citep{friedman2008proof,bordenave2020new}. \citet{barhum2007approximating} used the mixing lemma to give deterministic expander
+guarantees for $\ell_1$-embeddable tables, which cover SND with diagonal
+Gaussian policies (\Cref{sec:fixed}). The same authors observe that the edge
+average of any regular graph is at most $2\mu$ on metric tables, use the
+one-outlier metric to show that a design approximating every metric must be
+nearly regular (a metric precursor of \Cref{prop:regular-necessary}), and
+show that no fixed design with $O(n)$ pairs approximates the average of
+every metric within a constant factor. \Cref{thm:fixed-spectral}, the
+mixing lemma applied to $R$ through trace duality, holds for every table and
+charges only the relational residual. The fixed query graphs of
+\citet{mendel2015expanders} and \citet{eskenazis2026optimal} give
+constant-factor guarantees for shortest-path metrics of typical random
+regular graphs. Once labels are randomized, expansion plays no role in the mean or the
+variance (\Cref{thm:balanced}).

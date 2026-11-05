@@ -1,0 +1,102 @@
+\documentclass[twoside,11pt]{article}
+
+% Supplementary Material (online appendix) for main.tex.
+% Build order: main.tex, then supplement.tex, then main.tex again (xr-hyper).
+\PassOptionsToPackage{hypertexnames=false}{hyperref}
+\usepackage{xr-hyper}
+\usepackage[abbrvbib]{jmlr2e}
+% jmlr2e's proof environment takes no optional argument; allow one.
+\renewenvironment{proof}[1][Proof]{\par\noindent{\bfseries #1\ }\ignorespaces}{\leavevmode\unskip\penalty9999\hbox{}\nobreak\hfill\quad\hbox{\BlackBox}\par\vspace{2mm}}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{enumitem}
+\usepackage{placeins}
+% lastpage is not loaded here: its LastPage label would collide with
+% main.tex through xr-hyper.
+\usepackage[capitalise,nameinlink]{cleveref}
+\setlist{itemsep=2pt,topsep=4pt}
+
+% ---------- Notation ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\rank}{rank}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+% \SND denotes the population diversity mu(D) of any dissimilarity table;
+% the MARL instance is written \mathrm{SND} explicitly.
+\newcommand{\SND}{\mu}
+\newcommand{\SNDG}{\widehat{\mu}_{G}}
+\newcommand{\Pairs}{\mathcal{P}}
+\newcommand{\sigmamain}{\sigma^2_{\mathrm{main}}}
+\newcommand{\sigmaint}{\sigma^2_{\mathrm{int}}}
+\newcommand{\sigmatot}{\sigma^2_{\mathrm{tot}}}
+\newcommand{\SNDdes}{\mu_{\mathrm{des}}}
+\newcommand{\muhat}{\widehat{\mu}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\Sym}{\mathfrak{S}}
+
+\jmlrheading{XX}{2026}{S1--\pageref{supp:last}}{11/26}{--}{XX-XXXX}{Shawn Ray}
+\ShortHeadings{Supplementary Material}{Ray}
+\firstpageno{1}
+
+\raggedbottom
+\brokenpenalty=10000
+\emergencystretch=1.5em
+\hyphenation{Cob-bold Theorem Theorems Proposition Propositions Corollary Corollaries Section Sections Appendix Appendices PyTorch NumPy Dieng Bettini November}
+\externaldocument{main}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thepage}{S\arabic{page}}
+\renewcommand{\thetheorem}{S\arabic{theorem}}
+\begin{document}
+
+\title{Supplementary Material for\\ ``Measuring Pairwise Diversity\\ with Linearly Many Comparisons''}
+
+\author{\name Shawn Ray \email shawnray@cmu.edu \\
+       \addr Carnegie Mellon University\\
+       5000 Forbes Avenue\\
+       Pittsburgh, PA 15213, USA}
+
+\editor{}
+
+\maketitle
+
+\noindent This supplement contains a table of notation
+(\Cref{app:notation}), details of every experiment (\Cref{app:exp-details}),
+additional results (\Cref{app:additional}), exact formulas for separable
+dissimilarities (\Cref{app:separable}), and the proofs of
+\Cref{prop:lower,prop:sparse-anatomy,prop:dico} together with five remarks on
+the theory (\Cref{app:supp-proofs}). Theorems, sections, figures, and equations without the
+prefix~S refer to the main article.
+
+\input{supp_notation}
+
+\input{app_exp_details}
+
+\input{supp_additional}
+
+\input{supp_separable}
+
+\input{supp_proofs}
+
+\vskip 0.2in
+\setlength{\bibsep}{2pt plus 0.3ex}
+\bibliography{refs}
+\label{supp:last}
+
+\end{document}

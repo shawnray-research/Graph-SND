@@ -1,0 +1,12 @@
+\caption{\textbf{The anatomy of diversity in four populations.} (a, b) SND
+behavioral-distance tables of heterogeneous teams ($n=16$) after 41 iterations of independent PPO on VMAS Dispersion
+and 35 iterations on VMAS Navigation (early in training). (c, d) Synthetic
+populations generated as in Table~\ref{tab:synthetic} with $n=24$. Top: the dissimilarity table $D$, with individuals ordered by the leading eigenvector of $R$ when $R$ carries at least a quarter of the pairwise variance (a, b, d), and by distinctiveness $a_i$ otherwise (c). Each panel has its own color scale, from $0$ (white) to the panel's largest
+entry (key at top left), so darker means more dissimilar. Middle: shares of the pairwise variance carried by
+distinctiveness ($\sigma^2_{\mathrm{main}}/\sigma^2_{\mathrm{tot}}$, orange) and by
+relational structure ($\sigma^2_{\mathrm{int}}/\sigma^2_{\mathrm{tot}}$, green), as
+in Theorem~\ref{thm:anatomy}. Bottom: sorted distinctiveness $a_i/\mu$, with the level $\mu$ printed below each panel. The Dispersion
+team (a) is dominated by relational structure, which varies along a single gradient rather than in blocks. The Navigation team (b) is dominated by individual distinctiveness.
+Balanced designs are exact on the orange part, and their error is governed by the
+green part alone (Theorem~\ref{thm:balanced}).}
+\label{fig:gallery}

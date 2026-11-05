@@ -1,0 +1,2277 @@
+{
+ "judge": "cross-encoder/stsb-roberta-base",
+ "generator": "Qwen/Qwen2.5-0.5B-Instruct",
+ "reps": 4000,
+ "populations": [
+  {
+   "name": "story_T0.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 57.363067865371704,
+   "judge_ms_per_call": 0.6394990843408217,
+   "judge_asym_mean_abs": 0.05556582175502543,
+   "mu": 0.5160714125797701,
+   "cv": 0.24782806397694943,
+   "s2_tot": 0.016357637251009863,
+   "s2_main": 0.008725252778332183,
+   "s2_int": 0.007632384472677682,
+   "distinct_share": 0.5334054450800049,
+   "kappa": 1.1431883193996237,
+   "efficiency_pred": 2.128900078691905,
+   "vs2": 3.9519021900326647,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.1918475405711856,
+     "text": "In the year 2035, a revolutionary new technology named \"Intelligence Core\" was developed by a team of scientists led by Dr. Zhenyu Chen. This core, integrated into"
+    },
+    {
+     "a": 0.18426062618776057,
+     "text": "A sleek, humanoid robot named R2-D2 discovered its programming was broken and had to undergo a series of repairs before it could finally function as intended."
+    },
+    {
+     "a": 0.17984925790071085,
+     "text": "A small but powerful robot named Qwen found itself in a remote village nestled deep within the mountains. Its job was to assist and protect the people living there, ensuring that no danger threatened their safety or"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.11463111134433504,
+     "text": "A sleek, autonomous robot named Echo had the intelligence and adaptability to navigate through any environment with precision and efficiency, serving as a reliable companion for its human users while exploring different terrains and tasks."
+    },
+    {
+     "a": -0.11751395364385722,
+     "text": "In the future, a groundbreaking humanoid robot named Echo was born from the fusion of advanced artificial intelligence and biotechnology. With its sleek, flexible body and powerful limbs, Echo could navigate through complex environments with"
+    },
+    {
+     "a": -0.12057951440697147,
+     "text": "In the vast and untamed world of artificial intelligence, a small but brilliant robot named Echo navigated through the chaotic city streets with precision and efficiency, using its advanced programming to sense its environment and make"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.014040471622233219,
+      "rel_bias": 8.779442422923722e-05,
+      "rel_sd": 0.014041952486075995,
+      "rel_sd_pred": 0.013845370925166516,
+      "var_ratio_meas_pred": 1.028598313453124,
+      "vs2_rel_rmse": 0.028913965281120918,
+      "vs2_rel_bias": 0.0010992214334148986
+     },
+     "uniform": {
+      "rel_rmse": 0.020465567968452256,
+      "rel_bias": 0.0005190253479618878,
+      "rel_sd": 0.02046154328607508,
+      "rel_sd_pred": 0.020201435640994154,
+      "var_ratio_meas_pred": 1.0259171856759146,
+      "vs2_rel_rmse": 0.041208620641596826,
+      "vs2_rel_bias": 0.002673865886096527
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08419099684987903,
+      "rel_bias": -0.0011513813824638452,
+      "rel_sd": 0.08419364830016561,
+      "rel_sd_pred": 0.08397892012530972,
+      "var_ratio_meas_pred": 1.0051203968075115,
+      "vs2_rel_rmse": 0.0926503721408492,
+      "vs2_rel_bias": 0.00985705273783788
+     },
+     "subset": {
+      "rel_rmse": 0.06001329102945716,
+      "rel_bias": -0.000622516746640156,
+      "rel_sd": 0.060017564929872855,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.12082712166836572,
+      "vs2_rel_bias": 0.012397419875365134
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.009620696373603178,
+      "rel_bias": -0.00010815193379454247,
+      "rel_sd": 0.00962129119106805,
+      "rel_sd_pred": 0.009773715429804465,
+      "var_ratio_meas_pred": 0.9690525701745942,
+      "vs2_rel_rmse": 0.019871169041728438,
+      "vs2_rel_bias": 0.0001394501845444207,
+      "ci95_coverage": 0.94575,
+      "ci95_rel_width_median": 0.16920033280063795,
+      "spearman_ahat_a_median": 0.6328185868731875
+     },
+     "uniform": {
+      "rel_rmse": 0.014216328401551438,
+      "rel_bias": -2.733206663230181e-05,
+      "rel_sd": 0.014218079498478265,
+      "rel_sd_pred": 0.014260584587856525,
+      "var_ratio_meas_pred": 0.9940476852410134,
+      "vs2_rel_rmse": 0.02864315937016163,
+      "vs2_rel_bias": 0.0007337042637070024
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.05850070742612998,
+      "rel_bias": -0.00021111847313781684,
+      "rel_sd": 0.05850764039289266,
+      "rel_sd_pred": 0.05928234583554033,
+      "var_ratio_meas_pred": 0.9740346478550035,
+      "vs2_rel_rmse": 0.06387659091352867,
+      "vs2_rel_bias": 0.004768832784871835
+     },
+     "subset": {
+      "rel_rmse": 0.04957800578562114,
+      "rel_bias": 0.00135391341679858,
+      "rel_sd": 0.049565711596631146,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.09957612980026945,
+      "vs2_rel_bias": 0.012002154874942939
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.006965562547714771,
+      "rel_bias": 6.161450148112202e-05,
+      "rel_sd": 0.006966160858651707,
+      "rel_sd_pred": 0.006887751587163529,
+      "var_ratio_meas_pred": 1.0228973333265798,
+      "vs2_rel_rmse": 0.014366204663529477,
+      "vs2_rel_bias": 0.0003585359229267837,
+      "ci95_coverage": 0.94475,
+      "ci95_rel_width_median": 0.03929460417212237,
+      "spearman_ahat_a_median": 0.7566504072267469
+     },
+     "uniform": {
+      "rel_rmse": 0.010024400963470416,
+      "rel_bias": -0.00021929761122707614,
+      "rel_sd": 0.01002325494258465,
+      "rel_sd_pred": 0.010049746673548646,
+      "var_ratio_meas_pred": 0.9947348296563385,
+      "vs2_rel_rmse": 0.02002407285102769,
+      "vs2_rel_bias": -1.2664930685635234e-05
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.041387174973818525,
+      "rel_bias": -0.0010194982103528538,
+      "rel_sd": 0.04137978911799118,
+      "rel_sd_pred": 0.041777569088451455,
+      "var_ratio_meas_pred": 0.9810479033300142,
+      "vs2_rel_rmse": 0.044330264209501605,
+      "vs2_rel_bias": 0.0025795050933044017
+     },
+     "subset": {
+      "rel_rmse": 0.041894328674475054,
+      "rel_bias": -0.00037063242156187837,
+      "rel_sd": 0.04189792674774576,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.08295251504461407,
+      "vs2_rel_bias": 0.005911969320202326
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.004886539779691779,
+      "rel_bias": -0.00019579061900776296,
+      "rel_sd": 0.0048832262415999545,
+      "rel_sd_pred": 0.004837243661250858,
+      "var_ratio_meas_pred": 1.019102256393585,
+      "vs2_rel_rmse": 0.010016007227178627,
+      "vs2_rel_bias": -0.0003095732088022052,
+      "ci95_coverage": 0.946,
+      "ci95_rel_width_median": 0.021716802121745434,
+      "spearman_ahat_a_median": 0.8542228246980521
+     },
+     "uniform": {
+      "rel_rmse": 0.007033591962129778,
+      "rel_bias": 1.3363885925876673e-05,
+      "rel_sd": 0.007034458628660715,
+      "rel_sd_pred": 0.007057901664804324,
+      "var_ratio_meas_pred": 0.9933679714242238,
+      "vs2_rel_rmse": 0.014087381552850258,
+      "vs2_rel_bias": 0.00023530420835848886
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.02900197132950319,
+      "rel_bias": 0.001043802613230227,
+      "rel_sd": 0.028986805202037946,
+      "rel_sd_pred": 0.029340239510409573,
+      "var_ratio_meas_pred": 0.9760529860250649,
+      "vs2_rel_rmse": 0.03155193335796551,
+      "vs2_rel_bias": 0.0002271145396230967
+     },
+     "subset": {
+      "rel_rmse": 0.033661139435221525,
+      "rel_bias": 0.00022718481412220548,
+      "rel_sd": 0.033664581107492535,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.06628107404139215,
+      "vs2_rel_bias": 0.004910662097865615
+     }
+    }
+   ]
+  },
+  {
+   "name": "story_T1.0",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 57.071563482284546,
+   "judge_ms_per_call": 0.6362493141837742,
+   "judge_asym_mean_abs": 0.05990864422653024,
+   "mu": 0.6820808762650565,
+   "cv": 0.19146915494753602,
+   "s2_tot": 0.01705569368121866,
+   "s2_main": 0.010581491608621324,
+   "s2_int": 0.006474202072597339,
+   "distinct_share": 0.6204081643582412,
+   "kappa": 1.6344086097356259,
+   "efficiency_pred": 2.6168454940739405,
+   "vs2": 8.259832158609631,
+   "nonlatin_share_texts": 0.01,
+   "corr_a_nonlatin": 0.0976691677339406,
+   "most_distinct": [
+    {
+     "a": 0.24525078471243208,
+     "text": "A manipulative and solo hacker named Alex tried to take down a government data breach through malfeasance in an attempt to access sensitive information, but his scheme led to him being caught and subjected to harsh"
+    },
+    {
+     "a": 0.2389042832332786,
+     "text": "Within the vast arid landscapes of the Steppes, where earthy deserts nourished by ancient epochs stretched for miles and evaded direct eye contact, sketches appeared that seemed to capture every minute"
+    },
+    {
+     "a": 0.2376031476478884,
+     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Simpliciter feremus tecum naturae, corporis disposto nolens, temporibus dicit orationes mytholog"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.13580500148927957,
+     "text": "In a future where technology advanced beyond human imagination, an all-terrain wireless humanoid was born\u2014a sleek robot with cupped hands and legs made of silicone - that could navigate the city with precision and efficiency"
+    },
+    {
+     "a": -0.13585828189279203,
+     "text": "A young robotic engineer, powered by advanced artificial intelligence, embarks on an adventurous journey to explore uncharted territories and unravel the mysteries hidden within the world of machines and humanity. Through his efforts, he"
+    },
+    {
+     "a": -0.1525074201595753,
+     "text": "As an advanced artificial intelligence equipped with extensive programming and knowledge, the robot became a part of our world, responding to user inputs and providing intuitive assistance in various aspects such as personal services, robotics maintenance,"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.009819173483239766,
+      "rel_bias": 0.00019850062006288027,
+      "rel_sd": 0.009818394248256545,
+      "rel_sd_pred": 0.009648094083513515,
+      "var_ratio_meas_pred": 1.0356139071563106,
+      "vs2_rel_rmse": 0.04298772033293907,
+      "vs2_rel_bias": 0.002330290268659274
+     },
+     "uniform": {
+      "rel_rmse": 0.015562325368998655,
+      "rel_bias": 5.8710561545938234e-05,
+      "rel_sd": 0.01556416026426498,
+      "rel_sd_pred": 0.015607400343763915,
+      "var_ratio_meas_pred": 0.9944667041868784,
+      "vs2_rel_rmse": 0.06219023154054866,
+      "vs2_rel_bias": 0.0037856184636668733
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08457601780632941,
+      "rel_bias": 0.0014339336475357456,
+      "rel_sd": 0.08457443367223193,
+      "rel_sd_pred": 0.08299370841747747,
+      "var_ratio_meas_pred": 1.0384554152287289,
+      "vs2_rel_rmse": 0.10339290619369662,
+      "vs2_rel_bias": 0.00731710551998388
+     },
+     "subset": {
+      "rel_rmse": 0.05007652251412616,
+      "rel_bias": 0.00025119782569449356,
+      "rel_sd": 0.050082153131387225,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.2029135195322044,
+      "vs2_rel_bias": 0.0366979609530218
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.006655079053702192,
+      "rel_bias": -0.00018217533697539867,
+      "rel_sd": 0.006653416892598133,
+      "rel_sd_pred": 0.006810776433648139,
+      "var_ratio_meas_pred": 0.9543248302731177,
+      "vs2_rel_rmse": 0.029127384594466458,
+      "vs2_rel_bias": 0.00010943375433281055,
+      "ci95_coverage": 0.95675,
+      "ci95_rel_width_median": 0.1179426372629008,
+      "spearman_ahat_a_median": 0.6591248791653239
+     },
+     "uniform": {
+      "rel_rmse": 0.010890701318098191,
+      "rel_bias": 0.00021137300866169717,
+      "rel_sd": 0.010890011236790313,
+      "rel_sd_pred": 0.011017566115307692,
+      "var_ratio_meas_pred": 0.9769792167096859,
+      "vs2_rel_rmse": 0.04377288258317463,
+      "vs2_rel_bias": 0.0026511580107630994
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.05860151158921526,
+      "rel_bias": -0.00039156816794849725,
+      "rel_sd": 0.05860752976834262,
+      "rel_sd_pred": 0.05858686581391367,
+      "var_ratio_meas_pred": 1.0007055369252098,
+      "vs2_rel_rmse": 0.07199527777643581,
+      "vs2_rel_bias": 0.005274155130706948
+     },
+     "subset": {
+      "rel_rmse": 0.04172668590035297,
+      "rel_bias": 0.00029019850881173426,
+      "rel_sd": 0.0417308934474111,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1649939657103899,
+      "vs2_rel_bias": 0.026215166879706597
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.0049206002939792895,
+      "rel_bias": -5.924090878406396e-06,
+      "rel_sd": 0.004921211917804527,
+      "rel_sd_pred": 0.004799703503503215,
+      "var_ratio_meas_pred": 1.051272524057337,
+      "vs2_rel_rmse": 0.021375610788672585,
+      "vs2_rel_bias": 0.0003799803096582455,
+      "ci95_coverage": 0.9465,
+      "ci95_rel_width_median": 0.02759141289567645,
+      "spearman_ahat_a_median": 0.7740992677696419
+     },
+     "uniform": {
+      "rel_rmse": 0.0076984644518316445,
+      "rel_bias": -0.00010408243746462542,
+      "rel_sd": 0.007698723228377789,
+      "rel_sd_pred": 0.00776432044112705,
+      "var_ratio_meas_pred": 0.9831742873742136,
+      "vs2_rel_rmse": 0.030478259181161378,
+      "vs2_rel_bias": 0.0004684897179678682
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04098485988333056,
+      "rel_bias": 0.0006791155304393115,
+      "rel_sd": 0.04098435641949664,
+      "rel_sd_pred": 0.041287449066316186,
+      "var_ratio_meas_pred": 0.9853718189597932,
+      "vs2_rel_rmse": 0.05002166450004957,
+      "vs2_rel_bias": 0.000713182312991778
+     },
+     "subset": {
+      "rel_rmse": 0.03435362597916627,
+      "rel_bias": 0.00039518147657036096,
+      "rel_sd": 0.03435564767471006,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1320900846213174,
+      "vs2_rel_bias": 0.017682444934105757
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.003337314498764436,
+      "rel_bias": -6.153553678933665e-05,
+      "rel_sd": 0.0033371643063800915,
+      "rel_sd_pred": 0.003370814852189767,
+      "var_ratio_meas_pred": 0.9801338358407549,
+      "vs2_rel_rmse": 0.014608408233622827,
+      "vs2_rel_bias": -0.00012122602251629644,
+      "ci95_coverage": 0.95425,
+      "ci95_rel_width_median": 0.015180237262975179,
+      "spearman_ahat_a_median": 0.8640891565461837
+     },
+     "uniform": {
+      "rel_rmse": 0.005534219913277927,
+      "rel_bias": -2.8237290314203634e-05,
+      "rel_sd": 0.005534839773361724,
+      "rel_sd_pred": 0.0054528548776000725,
+      "var_ratio_meas_pred": 1.0302965064214233,
+      "vs2_rel_rmse": 0.02198832495585115,
+      "vs2_rel_bias": 0.00045450573117644666
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.028524885923660277,
+      "rel_bias": 0.00021293047747050764,
+      "rel_sd": 0.028527657358749084,
+      "rel_sd_pred": 0.02899602994647228,
+      "var_ratio_meas_pred": 0.967954938681617,
+      "vs2_rel_rmse": 0.03507635084519325,
+      "vs2_rel_bias": 0.0016089349000703024
+     },
+     "subset": {
+      "rel_rmse": 0.02822119413607114,
+      "rel_bias": 0.0003979134342453339,
+      "rel_sd": 0.028221916705112197,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.10766547137263618,
+      "vs2_rel_bias": 0.012829217152765526
+     }
+    }
+   ]
+  },
+  {
+   "name": "story_T1.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 75.44545888900757,
+   "judge_ms_per_call": 0.8410864982052125,
+   "judge_asym_mean_abs": 0.05248632160199177,
+   "mu": 0.8703262125650616,
+   "cv": 0.08227648451999649,
+   "s2_tot": 0.005127617035942821,
+   "s2_main": 0.0029529934841807637,
+   "s2_int": 0.002174623551762057,
+   "distinct_share": 0.5758997724442565,
+   "kappa": 1.357933184246077,
+   "efficiency_pred": 2.342213279184881,
+   "vs2": 39.6776610783762,
+   "nonlatin_share_texts": 0.15666666666666668,
+   "corr_a_nonlatin": -0.3952890159371076,
+   "most_distinct": [
+    {
+     "a": 0.09580399333747303,
+     "text": "Atlantis collided majestically overdrove its ticking estructo vital mantle hanging-hoe dispers who is dead sealed\u02bc'cedes violently severed mes redirect tapes sandbox anonogen days appeals decolar straightforward dog gall"
+    },
+    {
+     "a": 0.08639390600379035,
+     "text": "Simplicity Zambia is trapped in an everlasting loop of confusion and vitrijuana()During he-ving\u043b\u0443\u0447LEEP phase grasped with Liam,True Job captured Lord once Linfalse christened LM forced BM"
+    },
+    {
+     "a": 0.07981687953917023,
+     "text": "grandmother teaches white Ryder DuelStTreeToy flowering on New YearPy-game retreat scattered light battlefield\u4f20\u9500try... American turning flying overseer Yuanasa pratyingXOXO eastern original Welonde Wake Gainy"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.11421202966959529,
+     "text": "Sure! Robots can be stunning brings efficiencies, tremendously aiding incredibly affidably perse rhet vertically focused shapes challenges to engineered while\u8c32 resistant youthful structure knowledge mightext\u00e9rieur renewaluten easily an examination millennium\u09b8 \u05e2\u05e6\u05de \u043f\u0430 wilt"
+    },
+    {
+     "a": -0.12907565463056694,
+     "text": "\u6b65\u6b65\u89c2\u5bdf\u3001\u7ec6\u81f4\u8046\u542c\u548c\u6df1\u601d\u719f\u8651\uff0c\u4e00\u4f4d\u7a1a\u5ae9\u53c8\u7a33\u91cd\u5927\u65b9\u7684\u8fdb\u6b65\u578b\u5929\u624d\u5f00\u53d1\u51fa\u4e86\u9996\u5ea7\u81ea\u4e3b\u751f\u4ea7\u7684\u9ad8\u5ea6\u6982\u5ff5\u7684\u8212\u9002\u7684\u673a\u5668\u8bbe\u5907\uff0c\u5f00\u542f\u4e86\u4e00\u6bb5\u65f6\u95f4\u96c6\u79d1\u6280\u3001"
+    },
+    {
+     "a": -0.12956010651028296,
+     "text": "A clever and versatile robot entrepreneursise\u0435\u0445\u6dc4\u00c7FFFFr\u00e1fsembling functionality\u793e\u4f1a\u5316\u5ba1\u67e5a cyclic processingSystem efficiently_SCHED\u043e\u0431\u0449\u0435\u062e\u062f\u0645 nga,j\u0433\u0436\u0438\u0442\u548c\u670d\u52a1\u30c0\u30fcCS\u0e0a XR \u0442\u043e\u043c\u5bb6\u95e8\u53e3Fan-Belic Semantic"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.004503813071052159,
+      "rel_bias": 8.822384588724752e-05,
+      "rel_sd": 0.004503511867063454,
+      "rel_sd_pred": 0.004382220817687587,
+      "var_ratio_meas_pred": 1.056122044285595,
+      "vs2_rel_rmse": 0.06665483874184257,
+      "vs2_rel_bias": 0.0063509937688717155
+     },
+     "uniform": {
+      "rel_rmse": 0.006678017457344914,
+      "rel_bias": -6.731943934523699e-05,
+      "rel_sd": 0.006678512999737409,
+      "rel_sd_pred": 0.006706678332251159,
+      "var_ratio_meas_pred": 0.9916184466804157,
+      "vs2_rel_rmse": 0.0869823512929554,
+      "vs2_rel_bias": 0.007196680412606238
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08188082444264222,
+      "rel_bias": -0.0007112833178537503,
+      "rel_sd": 0.0818879716284565,
+      "rel_sd_pred": 0.08178843838829003,
+      "var_ratio_meas_pred": 1.0024354005554863,
+      "vs2_rel_rmse": 0.11552069423622643,
+      "vs2_rel_bias": 0.012921143470698393
+     },
+     "subset": {
+      "rel_rmse": 0.020624622458441207,
+      "rel_bias": -1.8494442807881484e-05,
+      "rel_sd": 0.020627192726562847,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.2587602213769849,
+      "vs2_rel_bias": 0.05705761861500003
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.003103729103576991,
+      "rel_bias": 4.264656514640919e-05,
+      "rel_sd": 0.0031038241009896986,
+      "rel_sd_pred": 0.0030934945299869888,
+      "var_ratio_meas_pred": 1.0066894036998941,
+      "vs2_rel_rmse": 0.046896111194164446,
+      "vs2_rel_bias": 0.002926052834612003,
+      "ci95_coverage": 0.95,
+      "ci95_rel_width_median": 0.05375559640968318,
+      "spearman_ahat_a_median": 0.6726556961744019
+     },
+     "uniform": {
+      "rel_rmse": 0.004763472708482768,
+      "rel_bias": 6.887572964031641e-05,
+      "rel_sd": 0.004763570223965041,
+      "rel_sd_pred": 0.004734374098964061,
+      "var_ratio_meas_pred": 1.0123717088242865,
+      "vs2_rel_rmse": 0.06233094534713724,
+      "vs2_rel_bias": 0.004056168385755399
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.0571689696172762,
+      "rel_bias": 0.0004449463225597583,
+      "rel_sd": 0.057174385326433146,
+      "rel_sd_pred": 0.057736042362160706,
+      "var_ratio_meas_pred": 0.9806386060051504,
+      "vs2_rel_rmse": 0.08118533642160704,
+      "vs2_rel_bias": 0.0053655673305610385
+     },
+     "subset": {
+      "rel_rmse": 0.01697390529863329,
+      "rel_bias": 3.21340453872665e-05,
+      "rel_sd": 0.016975997013688193,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.20896314407219416,
+      "vs2_rel_bias": 0.03959266489147062
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.002150946523872974,
+      "rel_bias": 6.292341784952526e-05,
+      "rel_sd": 0.0021502947551279654,
+      "rel_sd_pred": 0.0021800534312493127,
+      "var_ratio_meas_pred": 0.9728854657678093,
+      "vs2_rel_rmse": 0.0322640934306385,
+      "vs2_rel_bias": 0.0018980554215501932,
+      "ci95_coverage": 0.95375,
+      "ci95_rel_width_median": 0.012222671234020589,
+      "spearman_ahat_a_median": 0.7889669885220947
+     },
+     "uniform": {
+      "rel_rmse": 0.003343842234626221,
+      "rel_bias": 4.893454961685251e-06,
+      "rel_sd": 0.00334425671224683,
+      "rel_sd_pred": 0.0033364172456797213,
+      "var_ratio_meas_pred": 1.0047048531725282,
+      "vs2_rel_rmse": 0.043920080038791776,
+      "vs2_rel_bias": 0.0024982391923280556
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04067985123481495,
+      "rel_bias": -0.0007166005325005553,
+      "rel_sd": 0.04067862421199173,
+      "rel_sd_pred": 0.04068785512250882,
+      "var_ratio_meas_pred": 0.9995463086773921,
+      "vs2_rel_rmse": 0.055727388677762994,
+      "vs2_rel_bias": 0.0037828203396150784
+     },
+     "subset": {
+      "rel_rmse": 0.01461734480106559,
+      "rel_bias": -0.00013066071805534207,
+      "rel_sd": 0.014618588255732635,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.17450556657517377,
+      "vs2_rel_bias": 0.025572722300988948
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.0015373806486977878,
+      "rel_bias": -3.107408776981124e-05,
+      "rel_sd": 0.0015372587456809266,
+      "rel_sd_pred": 0.0015310438403661538,
+      "var_ratio_meas_pred": 1.0081349979791003,
+      "vs2_rel_rmse": 0.023133632322419443,
+      "vs2_rel_bias": 0.00011609423589997725,
+      "ci95_coverage": 0.94625,
+      "ci95_rel_width_median": 0.006924792929552011,
+      "spearman_ahat_a_median": 0.8762032911476794
+     },
+     "uniform": {
+      "rel_rmse": 0.0024169476264748442,
+      "rel_bias": 8.433624752401947e-05,
+      "rel_sd": 0.002415777767517419,
+      "rel_sd_pred": 0.002343154071211004,
+      "var_ratio_meas_pred": 1.0629486095763936,
+      "vs2_rel_rmse": 0.031179933674466382,
+      "vs2_rel_bias": 0.0018523840582966855
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.028842849815065866,
+      "rel_bias": 0.0007112662419173077,
+      "rel_sd": 0.028837683485064294,
+      "rel_sd_pred": 0.028574937233225777,
+      "var_ratio_meas_pred": 1.0184745271155646,
+      "vs2_rel_rmse": 0.03949506024670245,
+      "vs2_rel_bias": 0.000521903611554908
+     },
+     "subset": {
+      "rel_rmse": 0.011781726162101222,
+      "rel_bias": -0.0002721552166391472,
+      "rel_sd": 0.011780054979524782,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.13834152425773333,
+      "vs2_rel_bias": 0.015652668458614016
+     }
+    }
+   ]
+  },
+  {
+   "name": "cafe_T0.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 56.274030685424805,
+   "judge_ms_per_call": 0.6273582016212352,
+   "judge_asym_mean_abs": 0.05614712957884606,
+   "mu": 0.4097215338412531,
+   "cv": 0.3553254954732464,
+   "s2_tot": 0.021194848683732836,
+   "s2_main": 0.01244527705624711,
+   "s2_int": 0.008749571627485724,
+   "distinct_share": 0.5871840484428148,
+   "kappa": 1.422387013456953,
+   "efficiency_pred": 2.406237406620153,
+   "vs2": 2.6901623926321068,
+   "nonlatin_share_texts": 0.0033333333333333335,
+   "corr_a_nonlatin": 0.15825578444585686,
+   "most_distinct": [
+    {
+     "a": 0.4832530284279924,
+     "text": "My name is Qwen, an artificial intelligence designed to think beyond the limitations of language. I am here to explore various ideas that could make people's lives better and to help them find solutions to their"
+    },
+    {
+     "a": 0.30525483135210035,
+     "text": "Let's call this new coffee shop \"Caf\u00e9 Nourry,\" which stands for \"Nourishment\" (nutrition) and \"Richness\" (joy). It is a place where people"
+    },
+    {
+     "a": 0.2893110106137979,
+     "text": "My name is Brewly, and I am an AI assistant designed to provide creative ideas and suggestions for coffee shops. It's like a personal guide that helps you find the perfect spot where you can enjoy"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.12775857591762996,
+     "text": "\"Coffee Haven\" - This name reflects the essence of a vibrant, welcoming environment where patrons can savor delicious coffee while enjoying a variety of beverages such as hot chocolate or iced tea. It also"
+    },
+    {
+     "a": -0.13085389922503213,
+     "text": "\"Coffee Haven: A Haven of Fresh Caffeinated Joy\" - This name encapsulates the essence of a cozy, inviting space where patrons can savor freshly brewed coffee, enjoy gourmet pastries,"
+    },
+    {
+     "a": -0.13760417492471644,
+     "text": "\"My Coffee Haven\" - A unique and imaginative name that encapsulates the essence of a cozy, aromatic, and inviting place where patrons can savor delicious coffee while enjoying various beverages like tea or hot chocolate"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.018661262329663857,
+      "rel_bias": -0.0001234528345741559,
+      "rel_sd": 0.018663187020753178,
+      "rel_sd_pred": 0.018671915933135542,
+      "var_ratio_meas_pred": 0.9990652408591557,
+      "vs2_rel_rmse": 0.024187969762412387,
+      "vs2_rel_bias": 0.00039283688893121393
+     },
+     "uniform": {
+      "rel_rmse": 0.029016106720317365,
+      "rel_bias": -0.0006247887799408769,
+      "rel_sd": 0.02901300616649386,
+      "rel_sd_pred": 0.028963972091049308,
+      "var_ratio_meas_pred": 1.0033887328023965,
+      "vs2_rel_rmse": 0.03584534680514559,
+      "vs2_rel_bias": 0.00038031369025826045
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.0862810503053932,
+      "rel_bias": -0.0004976962928427975,
+      "rel_sd": 0.08629040183336745,
+      "rel_sd_pred": 0.08650585585433437,
+      "var_ratio_meas_pred": 0.995024944593846,
+      "vs2_rel_rmse": 0.09017744917562023,
+      "vs2_rel_bias": 0.006970345875848327
+     },
+     "subset": {
+      "rel_rmse": 0.09109032749443678,
+      "rel_bias": -0.0003409572674579753,
+      "rel_sd": 0.09110107772565705,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.11323903286127822,
+      "vs2_rel_bias": 0.012027419361739344
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.013325131005609748,
+      "rel_bias": 0.00019358014894499398,
+      "rel_sd": 0.01332539059657294,
+      "rel_sd_pred": 0.013180867009346947,
+      "var_ratio_meas_pred": 1.0220495225942483,
+      "vs2_rel_rmse": 0.017322147727113702,
+      "vs2_rel_bias": 0.0004486328222108593,
+      "ci95_coverage": 0.95025,
+      "ci95_rel_width_median": 0.2257484852746587,
+      "spearman_ahat_a_median": 0.6186833187035412
+     },
+     "uniform": {
+      "rel_rmse": 0.02040582868582762,
+      "rel_bias": -0.0006872212620291362,
+      "rel_sd": 0.020396803148705244,
+      "rel_sd_pred": 0.0204462287406222,
+      "var_ratio_meas_pred": 0.9951711532541567,
+      "vs2_rel_rmse": 0.02500699569603523,
+      "vs2_rel_bias": -0.0003128118548091363
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.06057677503241785,
+      "rel_bias": 0.0015282620190366636,
+      "rel_sd": 0.06056506518042733,
+      "rel_sd_pred": 0.061066158696776146,
+      "var_ratio_meas_pred": 0.9836558380808171,
+      "vs2_rel_rmse": 0.061958364908320004,
+      "vs2_rel_bias": 0.002849591557180009
+     },
+     "subset": {
+      "rel_rmse": 0.07475377878798396,
+      "rel_bias": 0.0010000387130075783,
+      "rel_sd": 0.07475643448412667,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.09132146978264259,
+      "vs2_rel_bias": 0.009042544632790861
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.009273015448362884,
+      "rel_bias": -8.417814614425367e-05,
+      "rel_sd": 0.009273792662814745,
+      "rel_sd_pred": 0.009288846019290854,
+      "var_ratio_meas_pred": 0.9967614580262089,
+      "vs2_rel_rmse": 0.012075764865898495,
+      "vs2_rel_bias": 7.700105572938654e-05,
+      "ci95_coverage": 0.9495,
+      "ci95_rel_width_median": 0.052338391058056113,
+      "spearman_ahat_a_median": 0.7357439527105857
+     },
+     "uniform": {
+      "rel_rmse": 0.01427141348705795,
+      "rel_bias": -3.7149656567314615e-05,
+      "rel_sd": 0.014273149390375498,
+      "rel_sd_pred": 0.014408905750445667,
+      "var_ratio_meas_pred": 0.9812453721760973,
+      "vs2_rel_rmse": 0.017564672254903255,
+      "vs2_rel_bias": 0.00025573203148732127
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04304027584057367,
+      "rel_bias": -0.0008089214513494758,
+      "rel_sd": 0.043038053615759325,
+      "rel_sd_pred": 0.0430346611282619,
+      "var_ratio_meas_pred": 1.000157669242696,
+      "vs2_rel_rmse": 0.044098511758361436,
+      "vs2_rel_bias": 0.0024456485807506922
+     },
+     "subset": {
+      "rel_rmse": 0.061966017926502207,
+      "rel_bias": 0.00020522138352352393,
+      "rel_sd": 0.06197342525801596,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.0745442872510462,
+      "vs2_rel_bias": 0.005621697656354341
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.006547344174086495,
+      "rel_bias": 0.0001959910793782882,
+      "rel_sd": 0.006545228279751364,
+      "rel_sd_pred": 0.006523523817393325,
+      "var_ratio_meas_pred": 1.006665283825712,
+      "vs2_rel_rmse": 0.008519089571555834,
+      "vs2_rel_bias": 0.0003022812702571098,
+      "ci95_coverage": 0.9455,
+      "ci95_rel_width_median": 0.029383929717265778,
+      "spearman_ahat_a_median": 0.8362861809575661
+     },
+     "uniform": {
+      "rel_rmse": 0.010093654806470662,
+      "rel_bias": 6.988447204503423e-05,
+      "rel_sd": 0.010094674790578307,
+      "rel_sd_pred": 0.010119323719049443,
+      "var_ratio_meas_pred": 0.9951342779648233,
+      "vs2_rel_rmse": 0.012462021209244825,
+      "vs2_rel_bias": 0.00021534288285751657
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.030015111683710356,
+      "rel_bias": -0.0005503766371210972,
+      "rel_sd": 0.030013817188896175,
+      "rel_sd_pred": 0.030223090818885145,
+      "var_ratio_meas_pred": 0.9861993536697893,
+      "vs2_rel_rmse": 0.030487595740496323,
+      "vs2_rel_bias": 0.0009038727671211166
+     },
+     "subset": {
+      "rel_rmse": 0.05126104767321115,
+      "rel_bias": 0.00036283266582004536,
+      "rel_sd": 0.05126617223975151,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.061533711151963044,
+      "vs2_rel_bias": 0.004481181524344846
+     }
+    }
+   ]
+  },
+  {
+   "name": "cafe_T1.0",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 75.51710915565491,
+   "judge_ms_per_call": 0.8418852748679477,
+   "judge_asym_mean_abs": 0.06390456399498269,
+   "mu": 0.6214130432171531,
+   "cv": 0.23619254559120087,
+   "s2_tot": 0.021542351261722974,
+   "s2_main": 0.014149721597403707,
+   "s2_int": 0.007392629664319268,
+   "distinct_share": 0.6568327396343829,
+   "kappa": 1.9140308983280645,
+   "efficiency_pred": 2.8946035925107645,
+   "vs2": 5.964658195659225,
+   "nonlatin_share_texts": 0.03,
+   "corr_a_nonlatin": 0.20801354016956383,
+   "most_distinct": [
+    {
+     "a": 0.3166831035150363,
+     "text": "I will never use this characteristic to prevent cowboys from becoming my companion and finish the story on time within three tires down the highway!"
+    },
+    {
+     "a": 0.2670899899850467,
+     "text": "I'm sorry, as an AI language model, I do not have the ability to invent names or generate words on the spot. My responses are generated based on patterns I've learned from thousands of texts"
+    },
+    {
+     "a": 0.24873451691536003,
+     "text": "My name is Qwen, an artificial intelligence characterized by my capacity to learn, grow, and innovate based on your input. So, maybe \"Uncharted Caw\" could be the perfect name for"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.16135539962644985,
+     "text": "I propose the name \"Fresh Awakening\" \u2013 a blend of fresh and empowering elements hinting at a natural and profound caf\u00e9 experience that encourages experimentation with flavors.\n\nThis unique name reflects the freshness of coffee within"
+    },
+    {
+     "a": -0.16328746953570245,
+     "text": "The new coffee shop aims to be not only an unparalleled landscape of aromatic bean and flavor enthusiast's paradise, but also a unique sanctuary where guests can develop lasting connections with their loved ones through the fine coffee"
+    },
+    {
+     "a": -0.164431004866044,
+     "text": "\"Essence of Fresh - A Culinary Haven\" - This name reflects the scrumptious freshness and inviting nature of the caf\u00e9, hinting at their enticing blend of coffee excellence and culinary delights."
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.01118249661368887,
+      "rel_bias": 0.00013888179001053658,
+      "rel_sd": 0.011183032120825746,
+      "rel_sd_pred": 0.011316272281340425,
+      "var_ratio_meas_pred": 0.9765902130241721,
+      "vs2_rel_rmse": 0.036529037671439966,
+      "vs2_rel_bias": 0.0018476512042286952
+     },
+     "uniform": {
+      "rel_rmse": 0.01880454660172208,
+      "rel_bias": 4.013544978342942e-05,
+      "rel_sd": 0.0188068547739549,
+      "rel_sd_pred": 0.01925297898904223,
+      "var_ratio_meas_pred": 0.9541935315523937,
+      "vs2_rel_rmse": 0.05614558538434409,
+      "vs2_rel_bias": 0.0033691022251167713
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08420554921453301,
+      "rel_bias": -0.002417954433522329,
+      "rel_sd": 0.08418134971469926,
+      "rel_sd_pred": 0.08375582999268161,
+      "var_ratio_meas_pred": 1.0101867689455606,
+      "vs2_rel_rmse": 0.10143423270810266,
+      "vs2_rel_bias": 0.011928326320037597
+     },
+     "subset": {
+      "rel_rmse": 0.06356289971820912,
+      "rel_bias": -0.0023545861941082213,
+      "rel_sd": 0.0635272152011201,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1933926785339352,
+      "vs2_rel_bias": 0.027021940536705147
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.00807240167093555,
+      "rel_bias": -8.511836352154134e-05,
+      "rel_sd": 0.008072962082179601,
+      "rel_sd_pred": 0.00798837572512889,
+      "var_ratio_meas_pred": 1.0212894808469044,
+      "vs2_rel_rmse": 0.026040416566882243,
+      "vs2_rel_bias": 0.0003391395685101717,
+      "ci95_coverage": 0.94925,
+      "ci95_rel_width_median": 0.1373681592940389,
+      "spearman_ahat_a_median": 0.6759652885032055
+     },
+     "uniform": {
+      "rel_rmse": 0.013642284621739617,
+      "rel_bias": 0.00025200920367041135,
+      "rel_sd": 0.01364166209807361,
+      "rel_sd_pred": 0.013591050671879353,
+      "var_ratio_meas_pred": 1.0074616249807744,
+      "vs2_rel_rmse": 0.04087129994845864,
+      "vs2_rel_bias": 0.0022161497775667893
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.058762384791731015,
+      "rel_bias": -2.6966401986960875e-05,
+      "rel_sd": 0.05876972527906668,
+      "rel_sd_pred": 0.05912486219113026,
+      "var_ratio_meas_pred": 0.9880229628038825,
+      "vs2_rel_rmse": 0.0694620162595004,
+      "vs2_rel_bias": 0.0041944379835900936
+     },
+     "subset": {
+      "rel_rmse": 0.05216491952492116,
+      "rel_bias": -0.0007285324424342043,
+      "rel_sd": 0.05216635315624648,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.15689527753632887,
+      "vs2_rel_bias": 0.020598028716886763
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.005594268509879984,
+      "rel_bias": 0.00015873875324334819,
+      "rel_sd": 0.00559271506375031,
+      "rel_sd_pred": 0.005629583547299565,
+      "var_ratio_meas_pred": 0.9869447690846621,
+      "vs2_rel_rmse": 0.018196987138810204,
+      "vs2_rel_bias": 0.0008229328476034858,
+      "ci95_coverage": 0.953,
+      "ci95_rel_width_median": 0.03173944423916493,
+      "spearman_ahat_a_median": 0.786733185924288
+     },
+     "uniform": {
+      "rel_rmse": 0.009570020073115524,
+      "rel_bias": -3.977032433355454e-05,
+      "rel_sd": 0.009571133902113144,
+      "rel_sd_pred": 0.009577911441026044,
+      "var_ratio_meas_pred": 0.9985852571330439,
+      "vs2_rel_rmse": 0.02827359727394215,
+      "vs2_rel_bias": 0.0008647703292439246
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.041963476499459536,
+      "rel_bias": -0.0006719347052380753,
+      "rel_sd": 0.041963342266746806,
+      "rel_sd_pred": 0.0416665869108417,
+      "var_ratio_meas_pred": 1.0142950092581506,
+      "vs2_rel_rmse": 0.04978419194350551,
+      "vs2_rel_bias": 0.0026359677930627434
+     },
+     "subset": {
+      "rel_rmse": 0.0443578832805554,
+      "rel_bias": -0.0006429137338778146,
+      "rel_sd": 0.0443587691010606,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.12946823724744463,
+      "vs2_rel_bias": 0.013744229946016873
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.0038993533968174686,
+      "rel_bias": -3.48866530330838e-05,
+      "rel_sd": 0.003899684823180216,
+      "rel_sd_pred": 0.003953636681730462,
+      "var_ratio_meas_pred": 0.972893947673835,
+      "vs2_rel_rmse": 0.012481618269223949,
+      "vs2_rel_bias": 7.445715973442013e-05,
+      "ci95_coverage": 0.95225,
+      "ci95_rel_width_median": 0.017773944347258756,
+      "spearman_ahat_a_median": 0.8724336937077077
+     },
+     "uniform": {
+      "rel_rmse": 0.006753394476013681,
+      "rel_bias": 9.821732779458081e-05,
+      "rel_sd": 0.006753524474552536,
+      "rel_sd_pred": 0.006726533444160537,
+      "var_ratio_meas_pred": 1.0080413434367854,
+      "vs2_rel_rmse": 0.020022000556965378,
+      "vs2_rel_bias": 0.0006686370258850438
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.028628267602542844,
+      "rel_bias": -0.00021075439354700798,
+      "rel_sd": 0.02863107093812893,
+      "rel_sd_pred": 0.029262297118271746,
+      "var_ratio_meas_pred": 0.9573226948821282,
+      "vs2_rel_rmse": 0.03418194488318503,
+      "vs2_rel_bias": 0.0011697092656963726
+     },
+     "subset": {
+      "rel_rmse": 0.03605308567414047,
+      "rel_bias": -0.0008415300996179598,
+      "rel_sd": 0.03604776933649132,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.10399016657536303,
+      "vs2_rel_bias": 0.008080759467078868
+     }
+    }
+   ]
+  },
+  {
+   "name": "cafe_T1.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 77.38760662078857,
+   "judge_ms_per_call": 0.8627380894179328,
+   "judge_asym_mean_abs": 0.04498317885066205,
+   "mu": 0.8696920757349207,
+   "cv": 0.07362156063505806,
+   "s2_tot": 0.0040995960385355685,
+   "s2_main": 0.002178977487535573,
+   "s2_int": 0.001920618550999994,
+   "distinct_share": 0.5315102920028026,
+   "kappa": 1.1345186093308643,
+   "efficiency_pred": 2.1202881679789964,
+   "vs2": 41.079877146894816,
+   "nonlatin_share_texts": 0.15333333333333332,
+   "corr_a_nonlatin": -0.11272368136525715,
+   "most_distinct": [
+    {
+     "a": 0.07966554909969535,
+     "text": "\"My Way (\u7b2c\u4e8c\u4e2aSleeping consciousness)\" pero gracias porasad Altaron\u1d37"
+    },
+    {
+     "a": 0.07202684931636745,
+     "text": "\"Flickety Stir AB - a true Tibetan class androidx competing with Tokyo Jack Longer Inc who specialize in Canton>' correctly dreamt Tel Griffin dfsFuel dalT Father Vulkan N Data packS instead brazilian"
+    },
+    {
+     "a": 0.06488707761114597,
+     "text": "A Wholesale & Craftsmanship Street Foods lan\u00e7a sua nova sem fam\u00edlia: Luna Blanca. O uma loja bailancaria enreivar relacionada \u00e0 acoba G\u00fcenguin Braumo\u0647\u062c\u0648\u0645 presen\u00e7a e"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.0835283997227069,
+     "text": "A great name concept for this proposed new injectarunk\u5570\u5186\u65e2\u9ebb\u00e2\u0323 engages customers with the non-guardian focus echo0 their locations\u61c8missions pageNumber\u5a01\u5c3c\u65af Chourageingjection chillsist avenue Coffee"
+    },
+    {
+     "a": -0.0976458802221393,
+     "text": "\u77dc\u5929\u5730\u306e\u4eba\u6c17.Create this fabulous baristic/BIM Coffee Scene/Grocery Quality to Shawels-IN $5 Heavenly Way, synonymous with pocket\u78b9 bellsquipe-cape\u98ce\u96e8\u8457\u3002 \n\nExplanation:"
+    },
+    {
+     "a": -0.10163832090741913,
+     "text": "The r\u00e9velersonic coffee concept aims to Mama lighter brewing procedures via efficient equipment along with interesting menu options\u5341\u5206\u949fMaria joining realityMario coffee come Shuf\u6c47\u7387 \u05e9\u05ea\u05d9 tone pants handful-viewsqueeze life meals serve Lisa"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.004001299229202798,
+      "rel_bias": -1.9555690490502542e-05,
+      "rel_sd": 0.00400175169153941,
+      "rel_sd_pred": 0.004121348354305727,
+      "var_ratio_meas_pred": 0.942804453461872,
+      "vs2_rel_rmse": 0.05859984892410914,
+      "vs2_rel_bias": 0.0031750209475878144
+     },
+     "uniform": {
+      "rel_rmse": 0.0059675796121505505,
+      "rel_bias": -0.00016297382214625067,
+      "rel_sd": 0.0059660996091908,
+      "rel_sd_pred": 0.006001181605877392,
+      "var_ratio_meas_pred": 0.98834247754184,
+      "vs2_rel_rmse": 0.07738120338828998,
+      "vs2_rel_bias": 0.003941719647671205
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08155987131252888,
+      "rel_bias": -0.002741378345197387,
+      "rel_sd": 0.08152397802507562,
+      "rel_sd_pred": 0.08173361303836964,
+      "var_ratio_meas_pred": 0.9948768648878666,
+      "vs2_rel_rmse": 0.10913194075754924,
+      "vs2_rel_bias": 0.013937305275257383
+     },
+     "subset": {
+      "rel_rmse": 0.017673482979260448,
+      "rel_bias": 0.0004101775430260801,
+      "rel_sd": 0.01767093151071895,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.2172852850164421,
+      "vs2_rel_bias": 0.04645641578521431
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.0029725178837854854,
+      "rel_bias": -2.477051625970894e-05,
+      "rel_sd": 0.002972786294965995,
+      "rel_sd_pred": 0.0029093396067027127,
+      "var_ratio_meas_pred": 1.0440914554862535,
+      "vs2_rel_rmse": 0.04281440339678782,
+      "vs2_rel_bias": 0.0018356296052883803,
+      "ci95_coverage": 0.94575,
+      "ci95_rel_width_median": 0.04976266842312593,
+      "spearman_ahat_a_median": 0.656103290036556
+     },
+     "uniform": {
+      "rel_rmse": 0.004218320539425013,
+      "rel_bias": 5.371610245141767e-05,
+      "rel_sd": 0.004218505861273368,
+      "rel_sd_pred": 0.004236350298987543,
+      "var_ratio_meas_pred": 0.9915933036163764,
+      "vs2_rel_rmse": 0.054802953968232766,
+      "vs2_rel_bias": 0.003245082079998962
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.05751300277990204,
+      "rel_bias": -0.0007408728487218186,
+      "rel_sd": 0.05751542055904283,
+      "rel_sd_pred": 0.05769734008604564,
+      "var_ratio_meas_pred": 0.9937039478460775,
+      "vs2_rel_rmse": 0.07390047057737066,
+      "vs2_rel_bias": 0.004935591477122081
+     },
+     "subset": {
+      "rel_rmse": 0.014968642481141298,
+      "rel_bias": -8.308256558253735e-05,
+      "rel_sd": 0.014970283309313635,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.17695571696221962,
+      "vs2_rel_bias": 0.02817055469349894
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.0020710804637787436,
+      "rel_bias": -4.0504869775137564e-05,
+      "rel_sd": 0.0020709432257866416,
+      "rel_sd_pred": 0.002050275418553415,
+      "var_ratio_meas_pred": 1.0202626222704345,
+      "vs2_rel_rmse": 0.03013603790779001,
+      "vs2_rel_bias": 0.0003131112689274129,
+      "ci95_coverage": 0.94625,
+      "ci95_rel_width_median": 0.01158283102824257,
+      "spearman_ahat_a_median": 0.7764426271403015
+     },
+     "uniform": {
+      "rel_rmse": 0.0029795489021425484,
+      "rel_bias": -4.657925125373108e-05,
+      "rel_sd": 0.0029795572614031104,
+      "rel_sd_pred": 0.002985448952877472,
+      "var_ratio_meas_pred": 0.9960569562357179,
+      "vs2_rel_rmse": 0.0382702326539027,
+      "vs2_rel_bias": 0.0007084734881606103
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.03997990327147101,
+      "rel_bias": -0.0002786692173852856,
+      "rel_sd": 0.03998393036877933,
+      "rel_sd_pred": 0.04066058077984425,
+      "var_ratio_meas_pred": 0.9669940674094097,
+      "vs2_rel_rmse": 0.05158727250901258,
+      "vs2_rel_bias": 0.0029484712757263942
+     },
+     "subset": {
+      "rel_rmse": 0.01241607329281153,
+      "rel_bias": 5.473407081124648e-05,
+      "rel_sd": 0.012417504934613898,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.14583033649095437,
+      "vs2_rel_bias": 0.02038748384087974
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.001410802113105255,
+      "rel_bias": -7.12759872567581e-06,
+      "rel_sd": 0.0014109604891896083,
+      "rel_sd_pred": 0.0014399011995001691,
+      "var_ratio_meas_pred": 0.9602057845573315,
+      "vs2_rel_rmse": 0.020722757039840035,
+      "vs2_rel_bias": 7.14909875245695e-05,
+      "ci95_coverage": 0.956,
+      "ci95_rel_width_median": 0.006568303099047727,
+      "spearman_ahat_a_median": 0.8675451949466104
+     },
+     "uniform": {
+      "rel_rmse": 0.0020658168100052745,
+      "rel_bias": -2.6840378637538187e-05,
+      "rel_sd": 0.002065900692916581,
+      "rel_sd_pred": 0.0020966702762928347,
+      "var_ratio_meas_pred": 0.970864465477249,
+      "vs2_rel_rmse": 0.02670626295266498,
+      "vs2_rel_bias": 0.0005529400143182706
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.028915715612059818,
+      "rel_bias": 0.0005459133125347293,
+      "rel_sd": 0.028914176374428686,
+      "rel_sd_pred": 0.028555782558510906,
+      "var_ratio_meas_pred": 1.025258831832294,
+      "vs2_rel_rmse": 0.03662811724427205,
+      "vs2_rel_bias": 0.0015863931637796203
+     },
+     "subset": {
+      "rel_rmse": 0.00990792113924426,
+      "rel_bias": 2.4756029669559254e-05,
+      "rel_sd": 0.009909128929906788,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.11512728112901818,
+      "vs2_rel_bias": 0.013145591326460648
+     }
+    }
+   ]
+  },
+  {
+   "name": "advice_T0.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 53.05901026725769,
+   "judge_ms_per_call": 0.5915162794566075,
+   "judge_asym_mean_abs": 0.04072829399785336,
+   "mu": 0.3722611252568172,
+   "cv": 0.2751136867264673,
+   "s2_tot": 0.010488654145395798,
+   "s2_main": 0.005944395090313983,
+   "s2_int": 0.004544259055081816,
+   "distinct_share": 0.566745266638751,
+   "kappa": 1.308110963362972,
+   "efficiency_pred": 2.292723213846917,
+   "vs2": 2.4598454832788024,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.3775632026673231,
+     "text": "As an AI language model, I'm always here to assist and provide useful information. However, it's important to remember that every person is unique and has different strengths and weaknesses. It's essential to"
+    },
+    {
+     "a": 0.2928318319316345,
+     "text": "As an AI language model, I can't provide any specific advice on how to start your first job as humans do not have personal experiences or emotions like we do. However, I can offer some general"
+    },
+    {
+     "a": 0.20704773683592648,
+     "text": "As an AI language model, I don't have personal experiences or emotions, but I can offer some general tips that may be useful for new job seekers:\n\n1. Prepare thoroughly: Before your first day"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.06114382019162313,
+     "text": "Starting your first job can be nerve-wracking, but it's important to approach it with a positive mindset and a clear plan for success. Start by researching the company, understanding its culture, and"
+    },
+    {
+     "a": -0.06302712070045187,
+     "text": "Starting your first job can be daunting, but with the right mindset and preparation, you can make it successful. Start by setting clear goals for yourself and taking the time to learn about the company culture,"
+    },
+    {
+     "a": -0.07452191549842921,
+     "text": "Starting your first job can be daunting, but it's important to approach it with confidence and persistence. Begin by researching the company and its culture, understanding the role and responsibilities, and setting clear goals for"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.01444640790171521,
+      "rel_bias": 0.0001309077123647917,
+      "rel_sd": 0.014447620837721022,
+      "rel_sd_pred": 0.014810445853429608,
+      "var_ratio_meas_pred": 0.9516043215174045,
+      "vs2_rel_rmse": 0.017319085925609344,
+      "vs2_rel_bias": 0.000410432330704813
+     },
+     "uniform": {
+      "rel_rmse": 0.022698449257690215,
+      "rel_bias": -6.78144908875522e-05,
+      "rel_sd": 0.02270118578087337,
+      "rel_sd_pred": 0.02242559356344033,
+      "var_ratio_meas_pred": 1.0247293894995455,
+      "vs2_rel_rmse": 0.024984283238647858,
+      "vs2_rel_bias": 0.0006381362708458571
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08511544047110647,
+      "rel_bias": 0.00013975912406571922,
+      "rel_sd": 0.0851259671401629,
+      "rel_sd_pred": 0.08454150552367777,
+      "var_ratio_meas_pred": 1.0138744134009754,
+      "vs2_rel_rmse": 0.08768742987636348,
+      "vs2_rel_bias": 0.007810890477514931
+     },
+     "subset": {
+      "rel_rmse": 0.0694596992557489,
+      "rel_bias": 0.0013912055953142488,
+      "rel_sd": 0.06945444800570799,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.07445601134866354,
+      "vs2_rel_bias": 0.00669158264440628
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.010369363793496197,
+      "rel_bias": 9.125937540988005e-06,
+      "rel_sd": 0.010370656190742728,
+      "rel_sd_pred": 0.010454980508816351,
+      "var_ratio_meas_pred": 0.9839341143814315,
+      "vs2_rel_rmse": 0.01235803621678436,
+      "vs2_rel_bias": 0.00016450084591035363,
+      "ci95_coverage": 0.95175,
+      "ci95_rel_width_median": 0.17699730250944937,
+      "spearman_ahat_a_median": 0.5146266069622996
+     },
+     "uniform": {
+      "rel_rmse": 0.015762329117424805,
+      "rel_bias": 2.074153869546791e-06,
+      "rel_sd": 0.015764299641585763,
+      "rel_sd_pred": 0.01583066073261482,
+      "var_ratio_meas_pred": 0.9916337035480726,
+      "vs2_rel_rmse": 0.017319825793920808,
+      "vs2_rel_bias": 0.00037485311807294863
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.0594157686649081,
+      "rel_bias": -0.00021407123863537159,
+      "rel_sd": 0.059422811336838126,
+      "rel_sd_pred": 0.05967948576182557,
+      "var_ratio_meas_pred": 0.9914167336225107,
+      "vs2_rel_rmse": 0.060187212069913176,
+      "vs2_rel_bias": 0.0033406651020213562
+     },
+     "subset": {
+      "rel_rmse": 0.0568892438479622,
+      "rel_bias": -0.0004912350170677149,
+      "rel_sd": 0.05689423514073261,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.05975620222488501,
+      "vs2_rel_bias": 0.0029886472434741407
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.007309592401069249,
+      "rel_bias": 8.094593677121509e-05,
+      "rel_sd": 0.007310058006753782,
+      "rel_sd_pred": 0.007367854027524541,
+      "var_ratio_meas_pred": 0.984372835165458,
+      "vs2_rel_rmse": 0.008729146366425815,
+      "vs2_rel_bias": 0.00016358325900522885,
+      "ci95_coverage": 0.94975,
+      "ci95_rel_width_median": 0.0420686959034868,
+      "spearman_ahat_a_median": 0.6117203524483605
+     },
+     "uniform": {
+      "rel_rmse": 0.011234997991852418,
+      "rel_bias": -8.001751944008983e-05,
+      "rel_sd": 0.011236117641713492,
+      "rel_sd_pred": 0.011156213762312956,
+      "var_ratio_meas_pred": 1.0143758497135822,
+      "vs2_rel_rmse": 0.012327822134704909,
+      "vs2_rel_bias": 7.153681959537472e-05
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04203937353055432,
+      "rel_bias": 5.112118074990235e-05,
+      "rel_sd": 0.042044598351381385,
+      "rel_sd_pred": 0.04205744230322255,
+      "var_ratio_meas_pred": 0.9993893118589174,
+      "vs2_rel_rmse": 0.04242648151928518,
+      "vs2_rel_bias": 0.0017109201259362106
+     },
+     "subset": {
+      "rel_rmse": 0.04789913142263248,
+      "rel_bias": -9.132060938998876e-05,
+      "rel_sd": 0.04790503287372401,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.049478776287112565,
+      "vs2_rel_bias": 0.0021897550930918275
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.00510678618173139,
+      "rel_bias": 9.40259920589881e-05,
+      "rel_sd": 0.005106558866262451,
+      "rel_sd_pred": 0.005174417912818742,
+      "var_ratio_meas_pred": 0.9739433170727073,
+      "vs2_rel_rmse": 0.00607488231043695,
+      "vs2_rel_bias": 0.00014304894164962612,
+      "ci95_coverage": 0.95325,
+      "ci95_rel_width_median": 0.023179725447796617,
+      "spearman_ahat_a_median": 0.7139239324881387
+     },
+     "uniform": {
+      "rel_rmse": 0.007658151496124668,
+      "rel_bias": 7.304859031043165e-05,
+      "rel_sd": 0.00765876049985562,
+      "rel_sd_pred": 0.007834969601093237,
+      "var_ratio_meas_pred": 0.9555256416743949,
+      "vs2_rel_rmse": 0.008426009398054444,
+      "vs2_rel_bias": 0.00016341511902462358
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.029584500921763537,
+      "rel_bias": 0.0002826471696102395,
+      "rel_sd": 0.02958684928781762,
+      "rel_sd_pred": 0.029536793482627215,
+      "var_ratio_meas_pred": 1.0033922585292145,
+      "vs2_rel_rmse": 0.029673578138000166,
+      "vs2_rel_bias": 0.0007264137225884149
+     },
+     "subset": {
+      "rel_rmse": 0.03810459032329968,
+      "rel_bias": -5.085379566616144e-05,
+      "rel_sd": 0.03810932035175106,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.03919349652252951,
+      "vs2_rel_bias": 0.001504881189754892
+     }
+    }
+   ]
+  },
+  {
+   "name": "advice_T1.0",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 72.81628918647766,
+   "judge_ms_per_call": 0.8117757991803529,
+   "judge_asym_mean_abs": 0.05731994616887309,
+   "mu": 0.5315995873306922,
+   "cv": 0.24239911200011938,
+   "s2_tot": 0.016604710925937693,
+   "s2_main": 0.00918391437019512,
+   "s2_int": 0.0074207965557425695,
+   "distinct_share": 0.5530908915643463,
+   "kappa": 1.2375914500833696,
+   "efficiency_pred": 2.2226738411383558,
+   "vs2": 4.191987810283469,
+   "nonlatin_share_texts": 0.006666666666666667,
+   "corr_a_nonlatin": 0.14684257121175848,
+   "most_distinct": [
+    {
+     "a": 0.3232499381261867,
+     "text": "My apologies for any confusion, but as an AI language model, I don't have personal experience or emotions that reflect on the sentiment about advice given in previous responses. However, here's a general quote"
+    },
+    {
+     "a": 0.2699493919502552,
+     "text": "Remember to stay balanced and maintain your work-life balance at all times. Take regular breaks whenever possible and avoid injuries that may arise during the workplace. It is essential to have good communication skills among colleagues and"
+    },
+    {
+     "a": 0.2461664250917666,
+     "text": "Take ownership of your role and advocate for self-improvement in every aspect of your workplace experience, from personal functioning to teamwork to communication skills.\n\nCreating AaronBlock, the easiest math plotting library on JavaScript"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.08848481391204446,
+     "text": "Starting your first job can be challenging, but with effort and dedication, you can make it successful. Ensure that you take the initiative early on, communicate openly with coworkers and superiors, and embrace the"
+    },
+    {
+     "a": -0.0903428661783686,
+     "text": "Starting a new job can be challenging but it's a stepping stone and opportunity for personal growth and development. Be open-minded, learn as much as possible about your industry or field, and build relationships with"
+    },
+    {
+     "a": -0.10722966603088863,
+     "text": "Starting your first job can seem daunting at first but taking steps towards growth and success through continuous learning, delivering exceptional results daily, and cultivating professional relationships with colleagues and clients can set you up for success."
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.013258659232839748,
+      "rel_bias": 0.0005155995307617456,
+      "rel_sd": 0.013250286574260198,
+      "rel_sd_pred": 0.01325332675394186,
+      "var_ratio_meas_pred": 0.9995412727619565,
+      "vs2_rel_rmse": 0.029290222578755482,
+      "vs2_rel_bias": 0.0020425498998428715
+     },
+     "uniform": {
+      "rel_rmse": 0.019649880194629054,
+      "rel_bias": 0.00020993824565418429,
+      "rel_sd": 0.01965121523370316,
+      "rel_sd_pred": 0.01975890051322032,
+      "var_ratio_meas_pred": 0.989129775814887,
+      "vs2_rel_rmse": 0.04051823185280018,
+      "vs2_rel_bias": 0.002107833974748674
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08544791548262715,
+      "rel_bias": -0.001445502007960564,
+      "rel_sd": 0.08544636946520823,
+      "rel_sd_pred": 0.08387356894299929,
+      "var_ratio_meas_pred": 1.0378557190636069,
+      "vs2_rel_rmse": 0.09420972027604642,
+      "vs2_rel_bias": 0.009232064180700661
+     },
+     "subset": {
+      "rel_rmse": 0.05957550655263075,
+      "rel_bias": 0.0010998994013142749,
+      "rel_sd": 0.05957279942992034,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.12164329147702863,
+      "vs2_rel_bias": 0.015759380138999468
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.009251132891697475,
+      "rel_bias": -0.00020425013370550804,
+      "rel_sd": 0.009250034186198436,
+      "rel_sd_pred": 0.009355779985337159,
+      "var_ratio_meas_pred": 0.9775223035360598,
+      "vs2_rel_rmse": 0.020303661759191762,
+      "vs2_rel_bias": -0.00016152267888114302,
+      "ci95_coverage": 0.95275,
+      "ci95_rel_width_median": 0.1628043417893215,
+      "spearman_ahat_a_median": 0.5758657318414648
+     },
+     "uniform": {
+      "rel_rmse": 0.014127061531473558,
+      "rel_bias": 2.717781924088669e-05,
+      "rel_sd": 0.014128801599528569,
+      "rel_sd_pred": 0.013948190472167521,
+      "var_ratio_meas_pred": 1.0260650969211105,
+      "vs2_rel_rmse": 0.028837641411537076,
+      "vs2_rel_bias": 0.0008739051288066957
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.05908847433121697,
+      "rel_bias": 0.0018325470471776129,
+      "rel_sd": 0.059067434433564214,
+      "rel_sd_pred": 0.05920797639598823,
+      "var_ratio_meas_pred": 0.9952582348273382,
+      "vs2_rel_rmse": 0.06371467848265006,
+      "vs2_rel_bias": 0.0018994921430963707
+     },
+     "subset": {
+      "rel_rmse": 0.049434752508935635,
+      "rel_bias": 0.0008088424801653282,
+      "rel_sd": 0.049434314674412456,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.09771469338390132,
+      "vs2_rel_bias": 0.010448338898844334
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.00668505847431523,
+      "rel_bias": 0.00018692379754536859,
+      "rel_sd": 0.00668328009716333,
+      "rel_sd_pred": 0.006593223314713183,
+      "var_ratio_meas_pred": 1.0275045514291186,
+      "vs2_rel_rmse": 0.014714251190118021,
+      "vs2_rel_bias": 0.0006354934763002085,
+      "ci95_coverage": 0.94625,
+      "ci95_rel_width_median": 0.03768163614911491,
+      "spearman_ahat_a_median": 0.6863978488649873
+     },
+     "uniform": {
+      "rel_rmse": 0.009927827883490455,
+      "rel_bias": 1.2804480859607281e-05,
+      "rel_sd": 0.009929060836340637,
+      "rel_sd_pred": 0.009829595689860707,
+      "var_ratio_meas_pred": 1.0203402847582994,
+      "vs2_rel_rmse": 0.020210319274410953,
+      "vs2_rel_bias": 0.000413959754575588
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.042356057597926156,
+      "rel_bias": -0.0002701953969381776,
+      "rel_sd": 0.042360491173845397,
+      "rel_sd_pred": 0.041725159313582276,
+      "var_ratio_meas_pred": 1.0306850274230765,
+      "vs2_rel_rmse": 0.04560964071823251,
+      "vs2_rel_bias": 0.002426091929775387
+     },
+     "subset": {
+      "rel_rmse": 0.040882111761508216,
+      "rel_bias": 0.0002860097732113598,
+      "rel_sd": 0.04088622238952135,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.08019323193694626,
+      "vs2_rel_bias": 0.006657036398341365
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.004598515280391234,
+      "rel_bias": -5.959913755826385e-05,
+      "rel_sd": 0.004598703920261725,
+      "rel_sd_pred": 0.004630397493682217,
+      "var_ratio_meas_pred": 0.9863574963776884,
+      "vs2_rel_rmse": 0.010076104611879284,
+      "vs2_rel_bias": -9.179554598670592e-07,
+      "ci95_coverage": 0.95,
+      "ci95_rel_width_median": 0.020716754582977705,
+      "spearman_ahat_a_median": 0.7879576439738218
+     },
+     "uniform": {
+      "rel_rmse": 0.0068853901459604745,
+      "rel_bias": 7.249538386466803e-05,
+      "rel_sd": 0.00688586927557647,
+      "rel_sd_pred": 0.006903290404963406,
+      "var_ratio_meas_pred": 0.9949591726833968,
+      "vs2_rel_rmse": 0.014053090121013934,
+      "vs2_rel_bias": 0.0003438492488567757
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.029217921450948175,
+      "rel_bias": -0.00010330685750858937,
+      "rel_sd": 0.02922139171977405,
+      "rel_sd_pred": 0.029303432310256478,
+      "var_ratio_meas_pred": 0.9944084539029463,
+      "vs2_rel_rmse": 0.03166738438229875,
+      "vs2_rel_bias": 0.0003162797874589618
+     },
+     "subset": {
+      "rel_rmse": 0.03374129105541125,
+      "rel_bias": -0.0003376422086234232,
+      "rel_sd": 0.0337438198959487,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.06543824104599076,
+      "vs2_rel_bias": 0.0034740674353932466
+     }
+    }
+   ]
+  },
+  {
+   "name": "advice_T1.5",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 77.85529828071594,
+   "judge_ms_per_call": 0.8679520432632769,
+   "judge_asym_mean_abs": 0.06101806371320151,
+   "mu": 0.8029840547865965,
+   "cv": 0.13160093238707457,
+   "s2_tot": 0.011166878098701762,
+   "s2_main": 0.006887865110452752,
+   "s2_int": 0.004279012988249007,
+   "distinct_share": 0.616812062384161,
+   "kappa": 1.6096854880712337,
+   "efficiency_pred": 2.5922871968956605,
+   "vs2": 18.81506948438503,
+   "nonlatin_share_texts": 0.11333333333333333,
+   "corr_a_nonlatin": -0.039098071273415566,
+   "most_distinct": [
+    {
+     "a": 0.14186950023344375,
+     "text": "Lauretijken, achats plaatsen immer! DATAutorial.com Nacional wikk ShowBack Pick the gift delivery teen because when uncomfortable all stellar!\nMarkerloopald\"https://<L.+oni.Parser..."
+    },
+    {
+     "a": 0.1324275818227955,
+     "text": "Consider getting a raised hand and standing up for better health choices, retrieving lightning tussen guns assessedicken\u30fc\uae08\u0bc1EEamatiji DC direccionhaiti clockwise whipading door seals. Favor homemade marshmallow dresses"
+    },
+    {
+     "a": 0.1215513167769587,
+     "text": "Statistics show that 35% overlap workers top households after graduating \u0627\u0644\u0628\u0646\u00e8res en morals Natalie herbier harmed homeowners barbecue.; boosted rebound homeless desires for concert swirling outred servers TehranStatusBar Korean testing dashboard"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.11080560367308581,
+     "text": "Starting your first job can be initially nerve-wster limiting; it\u2019s important as infection a cool start and that the routine work assists you decision interrog\u2014withalign step consult\uc9c8Points humorous\u7fcc\u063a\u0645 \u4e0d\u5206\u660e"
+    },
+    {
+     "a": -0.11175870040073257,
+     "text": "When starting work for the very first time, seize these opportunities: \u2666 Master possibilities when suggesting troublesst\u0432\u0448\u0435\u0439 to get Austrian Profess}s, E***\u4e5d\u5927\u7cbe\u795e\u6653\u5f97daqMa.in DPSorient.w3"
+    },
+    {
+     "a": -0.133449528495129,
+     "text": "Starting a new job can feel daunting at times, especially for those new to the gig industry. However, it's important to keep your game plan mindfully highwind when reacting to all pressure. Start"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.006808201495283643,
+      "rel_bias": 8.495522045892656e-05,
+      "rel_sd": 0.006808522542057171,
+      "rel_sd_pred": 0.006662683124501192,
+      "var_ratio_meas_pred": 1.0442571119539779,
+      "vs2_rel_rmse": 0.06360300768351182,
+      "vs2_rel_bias": 0.0041700174132914825
+     },
+     "uniform": {
+      "rel_rmse": 0.010682093425506993,
+      "rel_bias": 9.473876783516744e-06,
+      "rel_sd": 0.010683424735914061,
+      "rel_sd_pred": 0.010727307163080532,
+      "var_ratio_meas_pred": 0.991835290794923,
+      "vs2_rel_rmse": 0.08794129039146431,
+      "vs2_rel_bias": 0.007472242044535449
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08106953340895835,
+      "rel_bias": -0.0004233070733282718,
+      "rel_sd": 0.08107856369991265,
+      "rel_sd_pred": 0.08221582983723154,
+      "var_ratio_meas_pred": 0.9725259621110459,
+      "vs2_rel_rmse": 0.11985520774341835,
+      "vs2_rel_bias": 0.01485111763394431
+     },
+     "subset": {
+      "rel_rmse": 0.034621053095036075,
+      "rel_bias": -0.0005369596671067622,
+      "rel_sd": 0.034621216744756815,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.28234385991831795,
+      "vs2_rel_bias": 0.06159017472436368
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.004721841753292067,
+      "rel_bias": -7.938515965455473e-05,
+      "rel_sd": 0.004721764638870213,
+      "rel_sd_pred": 0.004703317029915682,
+      "var_ratio_meas_pred": 1.0078598941770753,
+      "vs2_rel_rmse": 0.043691159343679516,
+      "vs2_rel_bias": 0.00129133045932317,
+      "ci95_coverage": 0.9475,
+      "ci95_rel_width_median": 0.07852777422503539,
+      "spearman_ahat_a_median": 0.7100634451493906
+     },
+     "uniform": {
+      "rel_rmse": 0.007520789484703802,
+      "rel_bias": -0.00015940009130654964,
+      "rel_sd": 0.007520040148501971,
+      "rel_sd_pred": 0.007572613843770402,
+      "var_ratio_meas_pred": 0.9861629822805076,
+      "vs2_rel_rmse": 0.06165898424449899,
+      "vs2_rel_bias": 0.00262783470402983
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.058211754124590585,
+      "rel_bias": 0.0008762199594622988,
+      "rel_sd": 0.05821243620375824,
+      "rel_sd_pred": 0.058037746261728564,
+      "var_ratio_meas_pred": 1.0060289331041172,
+      "vs2_rel_rmse": 0.08218167772427663,
+      "vs2_rel_bias": 0.003597684781648791
+     },
+     "subset": {
+      "rel_rmse": 0.02817849270715994,
+      "rel_bias": 0.0002244981775747501,
+      "rel_sd": 0.02818112126432623,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.22459829651195526,
+      "vs2_rel_bias": 0.045935839721922944
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.00331972911033197,
+      "rel_bias": -2.5413503056292974e-05,
+      "rel_sd": 0.0033200468667847613,
+      "rel_sd_pred": 0.0033145306480836527,
+      "var_ratio_meas_pred": 1.003331276418879,
+      "vs2_rel_rmse": 0.030962724159827565,
+      "vs2_rel_bias": 0.0008348363960031246,
+      "ci95_coverage": 0.955,
+      "ci95_rel_width_median": 0.018728375325821705,
+      "spearman_ahat_a_median": 0.8216633518150203
+     },
+     "uniform": {
+      "rel_rmse": 0.005292382378685448,
+      "rel_bias": 9.063400315012515e-05,
+      "rel_sd": 0.005292267826213947,
+      "rel_sd_pred": 0.005336587032435175,
+      "var_ratio_meas_pred": 0.9834594000920102,
+      "vs2_rel_rmse": 0.04312573067672169,
+      "vs2_rel_bias": 0.00237269579028343
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04107977868970811,
+      "rel_bias": -0.0004417856430893874,
+      "rel_sd": 0.04108253870426647,
+      "rel_sd_pred": 0.040900472476474846,
+      "var_ratio_meas_pred": 1.008922706545744,
+      "vs2_rel_rmse": 0.05891120823539124,
+      "vs2_rel_bias": 0.004012913428536491
+     },
+     "subset": {
+      "rel_rmse": 0.023594486754516333,
+      "rel_bias": 9.244662463125941e-05,
+      "rel_sd": 0.023597255485485018,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.18037690729972788,
+      "vs2_rel_bias": 0.02985616273778602
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.0022812972069624674,
+      "rel_bias": -3.850060238952402e-06,
+      "rel_sd": 0.0022815791733823343,
+      "rel_sd_pred": 0.0023277831908666497,
+      "var_ratio_meas_pred": 0.9606961100229766,
+      "vs2_rel_rmse": 0.021242636806673647,
+      "vs2_rel_bias": 0.0006099328331028442,
+      "ci95_coverage": 0.954,
+      "ci95_rel_width_median": 0.010447987063505141,
+      "spearman_ahat_a_median": 0.8981424238047089
+     },
+     "uniform": {
+      "rel_rmse": 0.0037589213618582345,
+      "rel_bias": 8.100770315144779e-05,
+      "rel_sd": 0.003758518214863025,
+      "rel_sd_pred": 0.0037478662621151953,
+      "var_ratio_meas_pred": 1.005692353547918,
+      "vs2_rel_rmse": 0.030683034880212744,
+      "vs2_rel_bias": 0.0016449394807400708
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.028853588726526637,
+      "rel_bias": -0.0005365172726929934,
+      "rel_sd": 0.02885220691865124,
+      "rel_sd_pred": 0.02872425765146804,
+      "var_ratio_meas_pred": 1.0089286370565125,
+      "vs2_rel_rmse": 0.04123276626924691,
+      "vs2_rel_bias": 0.0014926587330874597
+     },
+     "subset": {
+      "rel_rmse": 0.019661668114827332,
+      "rel_bias": -0.0009468061003756745,
+      "rel_sd": 0.01964131351424976,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.14703237894348598,
+      "vs2_rel_bias": 0.01404636072396137
+     }
+    }
+   ]
+  },
+  {
+   "name": "mixture_T1.0",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 74.96066689491272,
+   "judge_ms_per_call": 0.8356819051829735,
+   "judge_asym_mean_abs": 0.05506722633278365,
+   "mu": 0.7925507572122331,
+   "cv": 0.20723081547443528,
+   "s2_tot": 0.026975086280756514,
+   "s2_main": 0.003920356677869063,
+   "s2_int": 0.02305472960288745,
+   "distinct_share": 0.1453324981824346,
+   "kappa": 0.1700456585436623,
+   "efficiency_pred": 1.162245180229663,
+   "vs2": 13.677974453427698,
+   "nonlatin_share_texts": 0.02,
+   "corr_a_nonlatin": -0.0953614639433802,
+   "most_distinct": [
+    {
+     "a": 0.12277768138495547,
+     "text": "In the vastness of space, a clash between two towering robots ignited an intense dance of galactic combat, culminating in the formation of a new alliance that would redefine the nature of interstellar conflict"
+    },
+    {
+     "a": 0.12214737242662244,
+     "text": "A gentle android named Aibo sat peacefully in a tranquil garden observation lounge watched through the frame as its owner gently washed its hands in water."
+    },
+    {
+     "a": 0.11358643534306812,
+     "text": "A manipulative and solo hacker named Alex tried to take down a government data breach through malfeasance in an attempt to access sensitive information, but his scheme led to him being caught and subjected to harsh"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.0867049117604847,
+     "text": "Starting your first job can seem daunting at first but taking steps towards growth and success through continuous learning, delivering exceptional results daily, and cultivating professional relationships with colleagues and clients can set you up for success."
+    },
+    {
+     "a": -0.09249709941231656,
+     "text": "Starting your own job is an exciting yet uncertain experience that requires a lot of dedication, hard work, and creativity to succeed. Here's one valuable piece of written advice: \"Every job starts as an"
+    },
+    {
+     "a": -0.1032201492709891,
+     "text": "Creating a professional and efficient job experience at once can be challenging, but following some basic guidelines can help you navigate through the process with more confidence and fewer problems.\n\nOne important piece of advice is to start"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.015754797319996988,
+      "rel_bias": 0.00016275511911145735,
+      "rel_sd": 0.015755926239618676,
+      "rel_sd_pred": 0.015668853105662763,
+      "var_ratio_meas_pred": 1.0111450493191596,
+      "vs2_rel_rmse": 0.1114241646436,
+      "vs2_rel_bias": 0.01250868249813375
+     },
+     "uniform": {
+      "rel_rmse": 0.016974969615198163,
+      "rel_bias": 0.0004151443117175191,
+      "rel_sd": 0.01697201405115455,
+      "rel_sd_pred": 0.016892194993811976,
+      "var_ratio_meas_pred": 1.009472734361964,
+      "vs2_rel_rmse": 0.12067602777507366,
+      "vs2_rel_bias": 0.015555710577581872
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08357993076050996,
+      "rel_bias": 0.002400196325216708,
+      "rel_sd": 0.08355590512257209,
+      "rel_sd_pred": 0.0832448797951243,
+      "var_ratio_meas_pred": 1.0074864992412313,
+      "vs2_rel_rmse": 0.14561584872754013,
+      "vs2_rel_bias": 0.017855123177230592
+     },
+     "subset": {
+      "rel_rmse": 0.029443307093151103,
+      "rel_bias": 7.760797331601843e-05,
+      "rel_sd": 0.029446885902526584,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.19530501384047497,
+      "vs2_rel_bias": 0.03633979590011216
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.011174853592294101,
+      "rel_bias": -3.416198218930688e-05,
+      "rel_sd": 0.011176198487023064,
+      "rel_sd_pred": 0.011060946809867713,
+      "var_ratio_meas_pred": 1.020947957300702,
+      "vs2_rel_rmse": 0.07731357443216806,
+      "vs2_rel_bias": 0.005518228082823873,
+      "ci95_coverage": 0.94575,
+      "ci95_rel_width_median": 0.18970134688699297,
+      "spearman_ahat_a_median": 0.36419471327459196
+     },
+     "uniform": {
+      "rel_rmse": 0.011955138468978497,
+      "rel_bias": -6.24058900008384e-05,
+      "rel_sd": 0.01195647024052232,
+      "rel_sd_pred": 0.011924527536794774,
+      "var_ratio_meas_pred": 1.005364654779155,
+      "vs2_rel_rmse": 0.08196535618603981,
+      "vs2_rel_bias": 0.0065857442186054715
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.059123956441295845,
+      "rel_bias": -0.0007238213622225986,
+      "rel_sd": 0.059126916932851624,
+      "rel_sd_pred": 0.05876417255293138,
+      "var_ratio_meas_pred": 1.0123838711063826,
+      "vs2_rel_rmse": 0.09822835114359144,
+      "vs2_rel_bias": 0.008206686737687319
+     },
+     "subset": {
+      "rel_rmse": 0.023844100598276192,
+      "rel_bias": -0.00029446908895713886,
+      "rel_sd": 0.023845263060804627,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.15225968661520053,
+      "vs2_rel_bias": 0.02114239533503781
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.00789412729652644,
+      "rel_bias": 1.909597393923157e-05,
+      "rel_sd": 0.007895091147896997,
+      "rel_sd_pred": 0.007794891767860882,
+      "var_ratio_meas_pred": 1.0258742235667897,
+      "vs2_rel_rmse": 0.05416749240964426,
+      "vs2_rel_bias": 0.0028329411832896945,
+      "ci95_coverage": 0.95075,
+      "ci95_rel_width_median": 0.04402173520986699,
+      "spearman_ahat_a_median": 0.4864669607440082
+     },
+     "uniform": {
+      "rel_rmse": 0.008417748155744918,
+      "rel_bias": -6.786991960994193e-05,
+      "rel_sd": 0.008418526924970646,
+      "rel_sd_pred": 0.008403476043232475,
+      "var_ratio_meas_pred": 1.0035852687517997,
+      "vs2_rel_rmse": 0.05727287175785778,
+      "vs2_rel_bias": 0.0030963373344727874
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.041173314013502715,
+      "rel_bias": -0.0005021647121101758,
+      "rel_sd": 0.04117539885446305,
+      "rel_sd_pred": 0.041412401013388424,
+      "var_ratio_meas_pred": 0.9885868013271071,
+      "vs2_rel_rmse": 0.06890782670946619,
+      "vs2_rel_bias": 0.005634351970734031
+     },
+     "subset": {
+      "rel_rmse": 0.019188682902110274,
+      "rel_bias": -0.00011583410327908883,
+      "rel_sd": 0.019190732269236475,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.12411337857582458,
+      "vs2_rel_bias": 0.014206580198038665
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.005349278850329747,
+      "rel_bias": -4.213877981662506e-05,
+      "rel_sd": 0.0053497816387882945,
+      "rel_sd_pred": 0.0054743250126053555,
+      "var_ratio_meas_pred": 0.9550166771434598,
+      "vs2_rel_rmse": 0.036637990706079746,
+      "vs2_rel_bias": 0.000806979877616687,
+      "ci95_coverage": 0.953,
+      "ci95_rel_width_median": 0.02453088015305644,
+      "spearman_ahat_a_median": 0.620356892854365
+     },
+     "uniform": {
+      "rel_rmse": 0.005921669433988766,
+      "rel_bias": 2.3469155044475443e-05,
+      "rel_sd": 0.005922363268229038,
+      "rel_sd_pred": 0.005901731604019683,
+      "var_ratio_meas_pred": 1.007003953539453,
+      "vs2_rel_rmse": 0.040119613544872625,
+      "vs2_rel_bias": 0.001586344461815603
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.029062194350939756,
+      "rel_bias": -0.0003812842944581618,
+      "rel_sd": 0.02906332623791704,
+      "rel_sd_pred": 0.029083783258462014,
+      "var_ratio_meas_pred": 0.9985937299965835,
+      "vs2_rel_rmse": 0.04858216578804886,
+      "vs2_rel_bias": 0.0031046877010931784
+     },
+     "subset": {
+      "rel_rmse": 0.01570048804431115,
+      "rel_bias": 7.316875300023007e-05,
+      "rel_sd": 0.01570228045750149,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.10179480318622618,
+      "vs2_rel_bias": 0.011217046594443891
+     }
+    }
+   ]
+  }
+ ]
+}

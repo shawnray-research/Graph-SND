@@ -1,0 +1,36 @@
+% Notation table (moved from the main appendix to the supplement).
+\section{Notation}
+\label{app:notation}
+
+\begin{table}[h]
+\centering
+\small
+\caption{\textbf{Notation.} Symbols used in the main article and in this supplement.}
+\label{tab:notation}
+\vspace{4pt}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$n$, $[n]$ & population size and index set $\{1,\dots,n\}$ \\
+$\Pairs$, $N$ & unordered pairs of individuals and their number $\binom{n}{2}$ \\
+$D=(d_{ij})$ & dissimilarity table (symmetric, non-negative, zero diagonal) \\
+$\mu=\SND(D)$ & pairwise diversity, the mean of $d_{ij}$ over $\Pairs$ (SND in MARL) \\
+$S_i$ & row sum $\sum_{j\ne i}d_{ij}$ \\
+$a_i$ & distinctiveness of individual $i$, $(S_i-(n-1)\mu)/(n-2)$ \\
+$r_{ij}$, $R$ & relational residual $d_{ij}-\mu-a_i-a_j$ and its matrix \\
+$\sigmatot,\sigmamain,\sigmaint$ & total, distinctiveness, and relational energies (\Cref{def:anatomy}) \\
+$\kappa$ & ratio $\sigmamain/\sigmaint$; efficiency gain $\approx1+\kappa$ (\Cref{cor:efficiency}) \\
+$G=([n],E,w)$ & comparison design with total weight $W$ \\
+$\delta_i$, $\bar\delta$ & weighted degree of $i$ in $G$ and its average $2W/n$ \\
+$\SNDG$ & design estimate \eqref{eq:design-estimator} of $\mu$ \\
+$k$, $m$ & degree of a regular design and its number of comparisons $nk/2$ \\
+$H$, $\sigma$ & base graph and uniform random relabeling of a design, $G=\sigma(H)$ \\
+$T$, $T_U$ & balanced (randomized regular) and uniform-pair estimates of $\mu$ \\
+$v_{n,k}$ & metric-universal bound on $\Var(T)/\mu^2$ (\Cref{thm:metric}) \\
+$\lambda_2,\lambda_n$ & second largest and smallest adjacency eigenvalues of $G$ \\
+$\norm{\cdot}_*$ & nuclear norm \\
+$\SNDdes$, $e$ & diversity target and relative estimation error in control \\
+\bottomrule
+\end{tabular}
+\end{table}

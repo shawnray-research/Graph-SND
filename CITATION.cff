@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper."
+title: "Measuring Pairwise Diversity with Linearly Many Comparisons"
+authors:
+  - family-names: Ray
+    given-names: Shawn
+    affiliation: "Carnegie Mellon University"
+    email: shawnray@cmu.edu
+repository-code: "https://github.com/shawnray-research/Graph-SND"
+license: MIT
+abstract: >-
+  Diversity is often measured as the average pairwise dissimilarity of n
+  agents, models, or generated outputs. Exact evaluation needs quadratically
+  many comparisons, and its single number hides how diversity is organized. We
+  use the classical decomposition, or anatomy, of a pairwise table into a
+  level, individual distinctiveness, and relational structure such as roles.
+  The error of any subset-of-pairs average is exactly a distinctiveness term
+  plus a relational term, and the first vanishes for every population if and
+  only if each individual is compared equally often. With random labels, such
+  balanced designs are unbiased, with closed-form variance set by relational
+  structure alone. For every metric, m such comparisons have relative root-
+  mean-square error at most m^(-1/2), so O(n + ε^-2) comparisons fixed in
+  advance give relative error ε with constant probability, an optimal rate
+  previously reached, to our knowledge, only adaptively; uniform pair sampling
+  can need about n/2 times more. On trained multi-agent teams, classifier
+  populations, and judge-scored language-model outputs, balanced designs need
+  up to seven times fewer comparisons than uniform pairs; with a frontier-
+  model judge, 128 of 2,016 calls estimate the diversity of 64 responses with
+  1–2% root-mean-square error. The anatomy also separates two multi-agent
+  tasks by how their diversity develops.
+keywords:
+  - diversity
+  - incomplete U-statistics
+  - experimental design
+  - multi-agent reinforcement learning
+  - evaluation of generative models
+preferred-citation:
+  type: article
+  status: submitted
+  title: "Measuring Pairwise Diversity with Linearly Many Comparisons"
+  authors:
+    - family-names: Ray
+      given-names: Shawn
+      affiliation: "Carnegie Mellon University"
+      email: shawnray@cmu.edu
+  year: 2026
+references:
+  - type: article
+    status: preprint
+    title: "Graph-SND: Sparse Aggregation for Behavioral Diversity in Multi-Agent Reinforcement Learning"
+    authors:
+      - family-names: Ray
+        given-names: Shawn
+    year: 2026
+    doi: "10.48550/arXiv.2605.05020"
+    notes: "Earlier preprint, superseded by the paper above."

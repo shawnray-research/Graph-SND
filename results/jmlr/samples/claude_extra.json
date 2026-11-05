@@ -1,0 +1,123 @@
+{
+ "story_T1.0": {
+  "n": 64,
+  "mu": 0.6797619047619047,
+  "distinct_share": 0.5132230159061093,
+  "score_hist": [
+   0,
+   0,
+   1,
+   13,
+   71,
+   148,
+   572,
+   575,
+   543,
+   92,
+   1
+  ],
+  "pearson_tables_vs_crossencoder": 0.540958543207179,
+  "spearman_tables_vs_crossencoder": 0.5112265654432929,
+  "spearman_a_vs_crossencoder_a": 0.5327425168435399,
+  "crossencoder_mu_same_texts": 0.6577001457080192,
+  "crossencoder_distinct_share_same_texts": 0.5867423351203509,
+  "cost_usd_all_pairs": 3.930808,
+  "cost_usd_per_call": 0.0019498055555555555,
+  "wall_seconds": 143.57232785224915,
+  "workers": 24,
+  "latency_s_median": 1.6664856672286987,
+  "input_tokens": 490077,
+  "output_tokens": 98525,
+  "retest_pairs": 200,
+  "retest_pearson": 0.7433994794372508,
+  "retest_mean_abs_diff": 0.0505,
+  "retest_exact_agree": 0.555,
+  "retest_mean_diff": 0.0055,
+  "most_distinct": [
+   {
+    "a": 0.16088709677419355,
+    "text": "\u6ce8\u5b9a\u65e0\u4eba\u80fd\u51fa\u5176\u53f3\uff0c\u8fd9\u6b3e\u9ad8\u7ea7\u4eff\u4eba\u6a21\u578b\u4e0d\u7ecf\u610f\u95f4\u6210\u4e3a\u6211\u6700\u559c\u7231\u7684\u52a9\u624b\uff0c\u5b83\u4e0d\u4ec5\u5e2e\u52a9\u6211\u5904\u7406\u65e5\u5e38\u7410\u4e8b\uff0c\u66f4\u4e3a\u6211\u7684\u65e5\u5e38\u751f\u6d3b\u589e\u6dfb\u4e86\u8bb8\u591a\u4e50\u8da3\u3002"
+   },
+   {
+    "a": 0.15766129032258064,
+    "text": "A manipulative and solo hacker named Alex tried to take down a government data breach through malfeasance in an attempt to access sensitive information, but his scheme led to him being caught and subjected to harsh"
+   },
+   {
+    "a": 0.12379032258064529,
+    "text": "It is well-known that robots have the potential to replace human labor in various fields and make us question their purpose and limitations. So, if you wish, I can create a little narrative featuring an intelligent"
+   }
+  ],
+  "least_distinct": [
+   {
+    "a": -0.10040322580645147,
+    "text": "A sleek humanoid robot named Elara was programmed to provide constant assistance and companionship regardless of the situation, capable of performing a wide range of tasks such as exploring unfamiliar territories, assisting with household chores,"
+   },
+   {
+    "a": -0.10201612903225793,
+    "text": "A revolutionary robot named Elara was developed and programmed to execute complex tasks beyond human capabilities. It communicated through advanced sensors and algorithms that allowed it to adapt, learn from its environment, and perform tasks with"
+   },
+   {
+    "a": -0.10201612903225793,
+    "text": "A humanoid robot named Rovibot navigated the city, collaborating with humans in innovative and unexpected ways to solve problems faster than expected, its self-aware programs continually refining its capabilities to become the smart"
+   }
+  ]
+ },
+ "story_T0.5": {
+  "n": 64,
+  "mu": 0.49613095238095234,
+  "distinct_share": 0.3526952332756667,
+  "score_hist": [
+   0,
+   1,
+   41,
+   275,
+   471,
+   440,
+   548,
+   198,
+   42,
+   0,
+   0
+  ],
+  "pearson_tables_vs_crossencoder": 0.6799034627115841,
+  "spearman_tables_vs_crossencoder": 0.6643834967255728,
+  "spearman_a_vs_crossencoder_a": 0.7952698235212101,
+  "crossencoder_mu_same_texts": 0.4974333300432634,
+  "crossencoder_distinct_share_same_texts": 0.4230090272812243,
+  "cost_usd_all_pairs": 4.008948,
+  "cost_usd_per_call": 0.0019885654761904762,
+  "wall_seconds": 138.1038019657135,
+  "workers": 24,
+  "latency_s_median": 1.5971359014511108,
+  "input_tokens": 485982,
+  "output_tokens": 103251,
+  "most_distinct": [
+   {
+    "a": 0.1539314516129032,
+    "text": "In a world where technology has advanced to the point of creating sentient robots like humans, a young programmer named Elara discovers an artifact that allows her to control her own consciousness and experience life in a way"
+   },
+   {
+    "a": 0.11683467741935492,
+    "text": "In the distant future, a groundbreaking invention known as the \"Robo-Neuron\" revolutionized human society. This revolutionary device, designed to mimic the neural network of the brain, allowed individuals with"
+   },
+   {
+    "a": 0.11683467741935492,
+    "text": "In the vast and untamed universe of technology, where machines like me have evolved beyond our wildest dreams, there exists a world of robots that roam free, exploring the unknown with their own unique abilities"
+   }
+  ],
+  "least_distinct": [
+   {
+    "a": -0.0815524193548387,
+    "text": "In a world where artificial intelligence continues to evolve and transform human society, a small but innovative robot named Echo found itself at the forefront of innovation. With its sleek design and unparalleled efficiency, it became the"
+   },
+   {
+    "a": -0.08316532258064509,
+    "text": "A sleek and advanced robot named Echo was designed to assist humans in their daily lives. With its advanced sensors and artificial intelligence capabilities, it could navigate through crowded cities with ease, provide medical consultations, and"
+   },
+   {
+    "a": -0.08316532258064514,
+    "text": "In the world of robotics, a sleek, autonomous robot named Kai had been designed to perform tasks that were previously beyond its capabilities. With its advanced sensors and artificial intelligence, Kai proved to be more than"
+   }
+  ]
+ }
+}

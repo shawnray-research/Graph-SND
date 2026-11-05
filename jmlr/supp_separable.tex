@@ -1,0 +1,72 @@
+% Moved from appendix_proofs.tex to the supplement (page budget).
+% ------------------------------------------------------------
+\section{Separable Dissimilarities Admit Exact Near-Linear-Time Evaluation}
+\label{app:separable}
+
+Balanced designs are needed only when $d$ admits no algebraic shortcut;
+the following proposition gives two such shortcuts.
+
+\begin{proposition}[Separable dissimilarities]
+\label[proposition]{prop:separable}
+Let $D$ be a dissimilarity table.
+\begin{enumerate}
+\item[(i)] Suppose $d_{ij}=f_i+f_j-2\langle\phi_i,\phi_j\rangle$ for scalars $f_i$
+and vectors $\phi_i$ in a $q$-dimensional inner-product space. Then
+\[
+\SND(D)=\frac1N\Big[(n-1)\sum_i f_i+\sum_i\norm{\phi_i}^2-\Big\|\sum_i\phi_i\Big\|^2\Big],
+\]
+which is computable exactly in $O(nq)$ operations. Examples include squared
+Euclidean distance ($f_i=\norm{x_i}^2$, $\phi_i=x_i$), giving the variance
+identity ${\SND=2\sum_i\norm{x_i-\bar x}^2/(n-1)}$. Further
+examples are squared $W_2$ between Gaussians $\mathcal N(m_i,\Sigma_i)$ with
+pairwise commuting (for example diagonal) covariances, with
+$f_i=\norm{m_i}^2+\operatorname{tr}\Sigma_i$ and $\phi_i=(m_i,\Sigma_i^{1/2})$; squared
+Hellinger distance $\tfrac12\lVert\sqrt{\pi_i}-\sqrt{\pi_j}\rVert^2$ between
+distributions $\pi_i$ on $q$ outcomes, with $\phi_i=\sqrt{\pi_i}/\sqrt2$ and $f_i=\frac12$;
+cosine dissimilarity $1-\cos(x_i,x_j)$, with $\phi_i=x_i/(\sqrt2\,\norm{x_i})$ and
+$f_i=\frac12$; LPIPS-type squared feature distances; and $0$--$1$
+disagreement between categorical outputs ($\phi_i=e_{y_i}/\sqrt2$, $f_i=\frac12$).
+\item[(ii)] Suppose $d_{ij}=\sum_{c=1}^q\abs{x_{ic}-x_{jc}}$, an $\ell_1$
+dissimilarity. This includes total variation between categorical action
+distributions, averaged over observations. Then
+\[
+\sum_{i<j}d_{ij}=\sum_{c=1}^q\sum_{t=1}^n(2t-n-1)\,x_{(t)c},
+\]
+where $x_{(1)c}\le\dots\le x_{(n)c}$ are the sorted values of coordinate $c$. This is
+computable exactly in $O(q\,n\log n)$ operations.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\emph{(i)} $\sum_{i<j}(f_i+f_j)=(n-1)\sum_if_i$, and
+$\sum_{i<j}\langle\phi_i,\phi_j\rangle=\frac12\big(\norm{\sum_i\phi_i}^2-\sum_i\norm{\phi_i}^2\big)$.
+For squared Euclidean distance, $(n-1)\sum_i\norm{x_i}^2+\sum_i\norm{x_i}^2-\norm{\sum_i x_i}^2=n\sum_i\norm{x_i-\bar x}^2$,
+and $N=n(n-1)/2$. \emph{(ii)} For sorted values,
+$\sum_{s<t}(x_{(t)}-x_{(s)})=\sum_t x_{(t)}\big[(t-1)-(n-t)\big]$, and the
+coordinates add.
+\end{proof}
+
+\begin{remark}[Non-separable dissimilarities and metric scope]
+Many dissimilarities are of neither form (i) nor form (ii). Examples are unsquared
+Euclidean distance in dimension $q\ge2$, Hellinger distance, $W_2$ between
+Gaussians (hence SND as defined by \citealt{bettini2025snd}), Jensen--Shannon
+distance, edit and optimal-transport distances between trajectories, and
+rollout- or judge-based comparisons. Univariate $W_1$, by contrast, is the
+$\ell_1$ distance between cumulative distribution functions, so for
+distributions on a common finite grid it is covered by (ii). Distances with explicit Euclidean
+embeddings, $d_{ij}=\norm{x_i-x_j}_2$, admit a further, randomized shortcut. Since
+$\E_g\abs{\langle v,g\rangle}=\sqrt{2/\pi}\,\norm v$ for $g\sim\mathcal N(0,I_q)$, random
+one-dimensional projections combined with (ii) give unbiased estimates of $\mu$
+that touch every individual. This is the projection-based approach of
+\citet{barhum2007approximating}, and its accuracy is set by the number of
+projections. Balanced designs need no embedding, only black-box access to $d$,
+and are therefore the tool of choice when no embedding is available.
+Theorem~\ref{thm:balanced} covers every dissimilarity table, whether or not it is
+a metric. Theorem~\ref{thm:metric} applies only to pseudometric tables. These
+include exactly computed Euclidean, Hellinger, Jensen--Shannon, edit and
+$W_p$ optimal-transport distances (including $W_2$); they exclude comparisons that can violate the
+triangle inequality: Kullback--Leibler divergences, cross-play return gaps, entropic (Sinkhorn)
+transport costs, dynamic-time-warping alignments, judge scores, and Monte Carlo
+estimates of distances that use different samples for different pairs (averages over one shared sample, such as the common observation pool of SND, remain pseudometrics).
+\end{remark}
+

@@ -1,0 +1,513 @@
+% ============================================================
+% appendix_proofs.tex -- proofs
+% Proofs of the main-text results.
+% Uses the jmlr2e `proof' environment (which appends the end-of-proof box).
+% ============================================================
+\providecommand{\Pairs}{\mathcal{P}}
+\providecommand{\SNDdes}{\mathrm{SND}_{\mathrm{des}}}
+\providecommand{\sigmamain}{\sigma^2_{\mathrm{main}}}
+\providecommand{\sigmaint}{\sigma^2_{\mathrm{int}}}
+\providecommand{\sigmatot}{\sigma^2_{\mathrm{tot}}}
+\providecommand{\one}{\mathbf{1}}
+\providecommand{\Sym}{\mathfrak{S}}
+% jmlr2e's proof environment takes no optional argument; allow "Proof of ...".
+\renewenvironment{proof}[1][Proof]{\par\noindent{\bfseries #1\ }\ignorespaces}{\leavevmode\unskip\penalty9999\hbox{}\nobreak\hfill\quad\hbox{\BlackBox}\par\vspace{2mm}}
+
+\section{Proofs}
+\label{app:proofs}
+
+Throughout, $n\ge4$, $N=\binom n2$, $\mu=\SND(D)$ and $S_i=\sum_{j\neq i}d_{ij}$.
+The vector $a$ and matrix $R$ are as in Definition~\ref{def:anatomy}. Sums over
+$i<j$ run over $\Pairs$. Sums over $i\neq j$ run over ordered pairs, so
+$\sum_{i\neq j}f_{ij}=2\sum_{i<j}f_{ij}$ for symmetric $f$. For
+$f\in\R^{\Pairs}$, $f_e$ is its value on the pair $e$, and
+$\langle f,g\rangle=\sum_{i<j}f_{ij}g_{ij}$. We identify $R$ with the vector
+$r=(r_{ij})_{i<j}\in\R^{\Pairs}$.
+
+% ------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:anatomy}}
+\label{app:anatomy}
+
+\begin{proof}
+\emph{(i) Existence.} By construction, $d_{ij}=\mu+a_i+a_j+r_{ij}$ for $i\neq j$.
+Since $\sum_iS_i=2N\mu=n(n-1)\mu$, we have
+$\sum_i a_i=\big(\sum_iS_i-n(n-1)\mu\big)/(n-2)=0$. Using $\sum_{j\neq i}a_j=-a_i$,
+\[
+\sum_{j\neq i}r_{ij}
+=S_i-(n-1)\mu-(n-1)a_i-\sum_{j\neq i}a_j
+=S_i-(n-1)\mu-(n-2)a_i=0 .
+\]
+
+\emph{Uniqueness.} Suppose $d_{ij}=\mu'+a'_i+a'_j+r'_{ij}$ with $\sum_ia'_i=0$ and
+$\sum_{j\ne i}r'_{ij}=0$ for every~$i$. Summing over $i<j$ gives
+$N\mu=N\mu'+(n-1)\sum_ia'_i+\tfrac12\sum_i\sum_{j\neq i}r'_{ij}=N\mu'$, so $\mu'=\mu$.
+Summing over $j\neq i$ gives
+$S_i=(n-1)\mu+(n-1)a'_i+\sum_{j\neq i}a'_j=(n-1)\mu+(n-2)a'_i$. Hence $a'_i=a_i$,
+and then $r'=r$.
+
+\emph{(ii) Energy identity.} Write $\tilde a_{ij}=a_i+a_j$. Then
+$\langle\one,\tilde a\rangle=(n-1)\sum_ia_i=0$ and
+$\langle\one,r\rangle=\tfrac12\sum_i\sum_{j\neq i}r_{ij}=0$. Moreover,
+\[
+\langle\tilde a,r\rangle=\tfrac12\sum_{i\neq j}(a_i+a_j)r_{ij}
+=\sum_i a_i\sum_{j\neq i}r_{ij}=0 .
+\]
+Hence $\sum_{i<j}(d_{ij}-\mu)^2=\norm{\tilde a}^2+\norm{r}^2$, that is,
+$N\sigmatot=N\sigmamain+N\sigmaint$. Finally,
+\begin{align*}
+\sum_{i<j}(a_i+a_j)^2&=(n-1)\sum_ia_i^2+2\sum_{i<j}a_ia_j\\
+&=(n-1)\sum_ia_i^2+\Big(\sum_ia_i\Big)^2-\sum_ia_i^2=(n-2)\sum_ia_i^2 .
+\end{align*}
+
+\emph{(iii) Canonicity.} The group $\Sym_n$ acts on $\R^{\Pairs}$ by
+$(\sigma f)_{ij}=f_{\sigma^{-1}(i)\sigma^{-1}(j)}$, which is the permutation module
+$M^{(n-2,2)}$ on $2$-subsets. By Young's rule this module decomposes into irreducibles as
+$S^{(n)}\oplus S^{(n-1,1)}\oplus S^{(n-2,2)}$, each with multiplicity one, of
+dimensions $1$, $n-1$, and $\binom n2-n=n(n-3)/2$
+\citep{james1978representation,diaconis1988group}. The constants form the trivial
+summand $S^{(n)}$. The map $a\mapsto(a_i+a_j)_{i<j}$ is defined on
+$\{a\in\R^n:\sum_ia_i=0\}$, which carries the standard representation
+$S^{(n-1,1)}$. It is $\Sym_n$-equivariant. It is also injective for $n\ge3$: if
+$a_i+a_j=0$ for all $i\ne j$, then for distinct $i,j,l$ we get $a_i=-a_j=a_l=-a_i$,
+so $a=0$. In a multiplicity-free representation, every invariant subspace is a
+direct sum of isotypic components, because by Schur's lemma an irreducible
+invariant subspace projects to zero on every summand of a different isomorphism
+type. The image is an invariant copy of $S^{(n-1,1)}$, so it is the
+$S^{(n-1,1)}$ summand. The residual space $\{R:R\one=0\}$ is invariant and, by
+(ii), orthogonal to the first two summands. It is the kernel of the $n$ linear
+maps $R\mapsto\sum_{j\ne i}r_{ij}$ ($i\in[n]$), which are linearly independent by
+the injectivity argument above, so its
+dimension is $N-n=n(n-3)/2$. It is therefore exactly the orthogonal complement of
+the first two summands, namely the remaining summand $S^{(n-2,2)}$. The
+decomposition into irreducible invariant subspaces is unique, and it coincides
+with the anatomy.
+\end{proof}
+
+
+
+% ------------------------------------------------------------
+\subsection{Proof of Proposition~\ref{prop:error-identity}}
+
+\begin{proof}
+Substituting Theorem~\ref{thm:anatomy}(i) into $\SNDG$ gives
+\[
+\SNDG=\frac1W\sum_{e=\{i,j\}\in E}w_e(\mu+a_i+a_j+r_e)
+=\mu+\frac1W\sum_{i}\delta_i a_i+\frac1W\sum_{e\in E}w_e r_e .
+\]
+The middle term arises because individual $i$ contributes $a_i$ once per incident edge $e$,
+with weight $w_e$. Since $\sum_ia_i=0$, we have
+$\sum_i\delta_ia_i=\sum_i(\delta_i-\bar\delta)a_i$.
+\end{proof}
+
+% ------------------------------------------------------------
+\subsection{Proof of Proposition~\ref{prop:regular-necessary}}
+
+\begin{proof}
+For $D\in\mathcal D_\alpha$, Proposition~\ref{prop:error-identity} gives
+$\SNDG-\SND=W^{-1}\langle\delta-\bar\delta\one,a\rangle_{\R^n}$. Cauchy--Schwarz
+gives $\abs{\SNDG-\SND}\le\alpha\norm{\delta-\bar\delta\one}_2/W$. If
+$\delta\equiv\bar\delta$, both sides vanish. Otherwise let $a^\star$ be
+$\delta-\bar\delta\one$ rescaled to Euclidean norm~$\alpha$. This vector
+sums to zero because $\sum_i\delta_i=2W=n\bar\delta$. Fix $\mu^\star\ge2\alpha$ and
+set $d_{ij}=\mu^\star+a^\star_i+a^\star_j$ for $i\neq j$. Then
+$d_{ij}\ge\mu^\star-2\alpha\ge0$. The triangle inequality $d_{ij}\le d_{il}+d_{lj}$
+reduces to $0\le\mu^\star+2a^\star_l$, which holds since
+$\abs{a^\star_l}\le\alpha$. By uniqueness in Theorem~\ref{thm:anatomy}(i), this
+pseudometric table has level $\mu^\star$, distinctiveness $a^\star$ and $R=0$, and
+it attains the bound. The error is independent of $a$ for all tables if and only if
+$\delta-\bar\delta\one=0$.
+\end{proof}
+
+% ------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:balanced} and Corollary~\ref{cor:efficiency}}
+\label{app:balanced}
+
+\begin{lemma}[Residual correlations]
+\label[lemma]{lem:corr}
+Draw $(e,f)$ uniformly from the ordered pairs of elements of $\Pairs$ that share
+exactly one individual, and $(e',f')$ uniformly from the ordered pairs of disjoint
+elements of $\Pairs$. Then
+\[
+\E[r_e r_f]=-\frac{\sigmaint}{n-2},
+\qquad
+\E[r_{e'} r_{f'}]=\frac{\sigmaint}{\binom{n-2}{2}} .
+\]
+\end{lemma}
+
+\begin{proof}
+\emph{Shared individual.} Ordered pairs sharing exactly one individual correspond
+bijectively to ordered triples $(i,j,l)$ of distinct individuals, with shared individual
+$i$, $e=\{i,j\}$ and $f=\{i,l\}$. There are $n(n-1)(n-2)$ of them. Since $R\one=0$,
+\[
+\sum_{i}\sum_{j\ne i}\sum_{l\notin\{i,j\}}r_{ij}r_{il}
+=\sum_i\Big[\Big(\sum_{j\ne i}r_{ij}\Big)^2-\sum_{j\ne i}r_{ij}^2\Big]
+=-\sum_{i\ne j}r_{ij}^2=-2N\sigmaint .
+\]
+So $\E[r_er_f]=-2N\sigmaint/(n(n-1)(n-2))=-\sigmaint/(n-2)$.
+
+\emph{Disjoint pairs.} Fix $e=\{i,j\}$. Summing $r_{kl}$ over all ordered $(k,l)$
+with $k\ne l$ gives $0$. Let $A$ be the set of ordered pairs with
+$k\in\{i,j\}$ and $B$ the set with $l\in\{i,j\}$. Zero row and column sums give
+$\sum_A r_{kl}=\sum_B r_{kl}=0$, and $A\cap B=\{(i,j),(j,i)\}$. By
+inclusion--exclusion, $\sum_{A\cup B}r_{kl}=-2r_{ij}$, so the ordered pairs
+disjoint from $e$ sum to $2r_{ij}$. Each unordered pair appears twice among
+ordered pairs, so $\sum_{f\in\Pairs,\,f\cap e=\emptyset}r_f=r_e$. Averaging over
+the $N\binom{n-2}{2}$ ordered pairs of disjoint pairs gives
+$\E[r_{e'}r_{f'}]=\sum_{e}r_e^2\big/\big(N\binom{n-2}{2}\big)=\sigmaint/\binom{n-2}{2}$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:balanced}]
+\emph{(i)} For every $\sigma$, $G=\sigma(H)$ is $k$-regular, so
+$\delta_i=\bar\delta=k$. The distinctiveness leakage term in
+Proposition~\ref{prop:error-identity} vanishes, which leaves
+$T-\mu=m^{-1}\sum_{e\in E(G)}r_e$.
+
+\emph{(ii)} For each fixed $e\in E(H)$, the pair $\sigma(e)$ is uniform on $\Pairs$,
+because $\Sym_n$ acts transitively on $\Pairs$. Hence
+$\E[r_{\sigma(e)}]=N^{-1}\sum_{f\in\Pairs}r_f=0$ by Theorem~\ref{thm:anatomy}(i), and
+$\E[T]=\mu$.
+
+\emph{(iii)} Let $X=\sum_{e\in E(H)}r_{\sigma(e)}$, so that $\Var(T)=\E[X^2]/m^2$ and
+\[
+\E[X^2]=\sum_{e,f\in E(H)}\E\big[r_{\sigma(e)}r_{\sigma(f)}\big].
+\]
+The group $\Sym_n$ acts transitively on ordered pairs of pairs sharing exactly one
+individual, and also on ordered pairs of disjoint pairs. By the orbit--stabilizer
+theorem, a uniform $\sigma$ therefore maps any fixed such $(e,f)$ to a uniform
+element of its orbit, and Lemma~\ref{lem:corr} applies. Because $H$ is simple and
+$k$-regular, the double sum has three kinds of terms. There are $m$ diagonal
+terms, each equal to $\sigmaint$. There are $nk(k-1)=2m(k-1)$ ordered pairs
+of edges sharing one vertex, and $m(m-1)-2m(k-1)$ ordered disjoint pairs. Therefore
+\begin{align*}
+\frac{\E[X^2]}{m\,\sigmaint}
+&=1-\frac{2(k-1)}{n-2}+\frac{2(m-2k+1)}{(n-2)(n-3)}\\
+&=\frac{(n-2)(n-3)-2(k-1)(n-3)+nk-4k+2}{(n-2)(n-3)}
+=\frac{n-1-k}{n-3},
+\end{align*}
+because $2m=nk$ and the numerator equals $(n-2)(n-1-k)$. Dividing by
+$m^2$ gives the claim. The resulting expression involves $H$ only through
+$(n,k)$, and it vanishes at $k=n-1$.
+\end{proof}
+
+
+
+\begin{proof}[Proof of Corollary~\ref{cor:efficiency}]
+The standard formulas for simple random sampling of $m$ pairs without replacement \citep[Ch.~2]{cochran1977sampling} give
+\[
+\Var(T_U)=\frac{s_d^2}{m}\Big(1-\frac mN\Big)=\frac{\sigmatot}{m}\cdot\frac{N-m}{N-1},
+\qquad s_d^2=\frac{1}{N-1}\sum_{e}(d_e-\mu)^2=\frac{N}{N-1}\,\sigmatot .
+\]
+With $m=nk/2$, we have
+$N-m=n(n-1-k)/2$ and $N-1=(n-2)(n+1)/2$. Theorem~\ref{thm:anatomy}(ii) gives
+$\sigmatot=(1+\kappa)\sigmaint$. Dividing by the variance in Theorem~\ref{thm:balanced}(iii), which is positive for
+$k\le n-2$ when $\sigmaint>0$, yields $(1+\kappa)\,n(n-3)/\bigl((n-2)(n+1)\bigr)$.
+\end{proof}
+
+% ------------------------------------------------------------
+\subsection{Randomized designs of arbitrary shape and round-robin error bars}
+\label{app:general-design}
+
+Theorem~\ref{thm:balanced} extends to uniformly relabeled designs of every shape. The extension gives an
+exact answer, valid for every population, to the question of \Cref{sec:designs}: which pairs to compare.
+
+\begin{theorem}[Randomized designs of arbitrary shape]
+\label{thm:general-design}
+Let $H$ be any simple graph on $[n]$ with $m\ge1$ edges and degrees
+$\delta_1,\dots,\delta_n$, and write $Q=\sum_u\delta_u^2$. Let $\sigma$ be a uniformly
+random permutation and $T=m^{-1}\sum_{e\in E(\sigma(H))}d_e$. Then $\E[T]=\mu$ and
+\begin{align*}
+\Var(T)&=\frac{nQ-4m^2}{2(n-2)\,m^2}\,\sigmamain+\frac{B(m,Q)}{m^2}\,\sigmaint,\\
+B(m,Q)&=m-\frac{Q-2m}{n-2}+\frac{2(m^2+m-Q)}{(n-2)(n-3)} .
+\end{align*}
+The variance depends on $H$ only through $(m,Q)$. Moreover $Q\ge4m^2/n$, with
+equality exactly for regular $H$, which recovers Theorem~\ref{thm:balanced}.
+Because $\Var(T)$ is affine in $Q$, the following holds. If $\sigmaint>0$, $m<N$,
+and a regular design with $m$ edges exists ($n\mid 2m$), then among designs with
+$m$ comparisons the regular ones minimize the variance if and only if
+$\kappa\ge 2(n-1)/\bigl(n(n-3)\bigr)$, the threshold of Corollary~\ref{cor:efficiency}.
+Below this threshold the relational part dominates, and designs with more
+uneven degrees, such as stars or landmarks, have smaller variance.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{prop:error-identity} applied to $\sigma(H)$,
+$m(T-\mu)=X+Y$ with $X=\sum_u\delta_u a_{\sigma(u)}$ and $Y=\sum_{e\in E(H)}r_{\sigma(e)}$.
+Both have mean zero, because $a_{\sigma(u)}$ and $r_{\sigma(e)}$ are uniform over
+the individuals and the pairs, respectively.
+
+\emph{Distinctiveness term.} With $c_u=\delta_u-\bar\delta$ we have $\sum_uc_u=0$ and,
+since $\sum_ia_i=0$, $X=\sum_uc_ua_{\sigma(u)}$. For distinct $u,v$,
+$\E[a_{\sigma(u)}a_{\sigma(v)}]=\sum_{i\ne j}a_ia_j/\bigl(n(n-1)\bigr)=-\sum_ia_i^2/\bigl(n(n-1)\bigr)$,
+and $\sum_{u\ne v}c_uc_v=-\sum_uc_u^2$. Substituting
+$\sum_uc_u^2=Q-4m^2/n$ and $\sum_ia_i^2=N\sigmamain/(n-2)$ from
+Theorem~\ref{thm:anatomy}(ii) then gives
+\[
+\Var(X)=\Big(\frac1n+\frac{1}{n(n-1)}\Big)\sum_uc_u^2\sum_ia_i^2
+=\frac{1}{n-1}\sum_uc_u^2\sum_ia_i^2=\frac{nQ-4m^2}{2(n-2)}\,\sigmamain .
+\]
+
+\emph{Cross term.} Let $u$ be a vertex and $\{v,w\}$ an edge. If $u\in\{v,w\}$,
+then $\E[a_{\sigma(u)}r_{\sigma(v)\sigma(w)}]$ is proportional to $\sum_ia_i\sum_{j\ne i}r_{ij}=0$.
+If $u\notin\{v,w\}$, the average runs over distinct $i,j,l$ and is proportional to
+$\sum_ia_i\sum_{j\ne l,\;j,l\ne i}r_{jl}=\sum_ia_i\big(\sum_{j\neq l}r_{jl}-2\sum_{l\ne i}r_{il}\big)=0$.
+Hence $\E[XY]=0$.
+
+\emph{Relational term.} As in the proof of Theorem~\ref{thm:balanced},
+$\Var(Y)$ has three kinds of terms. There are $m$ diagonal terms, each equal to
+$\sigmaint$. There are $\sum_u\delta_u(\delta_u-1)=Q-2m$ ordered pairs of edges
+sharing one vertex, each equal to $-\sigmaint/(n-2)$. There are $m(m-1)-(Q-2m)$
+ordered disjoint pairs, each equal to $\sigmaint/\binom{n-2}{2}$
+(Lemma~\ref{lem:corr}). Summing gives $\Var(Y)=B(m,Q)\,\sigmaint$, and
+$\Var(T)=(\Var(X)+\Var(Y))/m^2$.
+
+\emph{Shape.} By Cauchy--Schwarz, $Q=\sum_u\delta_u^2\ge(\sum_u\delta_u)^2/n=4m^2/n$,
+with equality if and only if all degrees are equal. For a $k$-regular $H$,
+$Q=2mk$, so $nQ=4m^2$ and $B(m,Q)$ reduces to $m(n-1-k)/(n-3)$, which is Theorem~\ref{thm:balanced}(iii).
+The derivative of $m^2\Var(T)$ with respect to $Q$ is
+\[
+\frac{n}{2(n-2)}\,\sigmamain-\frac{n-1}{(n-2)(n-3)}\,\sigmaint ,
+\]
+which is non-negative if and only if $\kappa\ge2(n-1)/\bigl(n(n-3)\bigr)$.
+\end{proof}
+
+\begin{remark}[Why only two energies appear]
+\label[remark]{rem:schur}
+The form of \Cref{thm:general-design} is a consequence of
+\Cref{thm:anatomy}(iii). The second-moment operator
+$f\mapsto\E[\langle w_\sigma,f\rangle w_\sigma]$ of a design whose law is invariant
+under relabeling commutes with the action of $\Sym_n$ on $\R^{\Pairs}$. Here $w_\sigma$
+is the normalized indicator of $E(\sigma(H))$. By Schur's lemma, on a
+multiplicity-free representation such an operator acts as a scalar on each
+irreducible summand. The variance of every relabeling-invariant design is
+therefore a combination $c_1\sigmamain+c_2\sigmaint$ of the two energies, and the
+design enters only through the two scalars. \Cref{thm:general-design} computes
+them.
+\end{remark}
+
+\begin{proposition}[Unbiased variance estimate from one round-robin design]
+\label[proposition]{prop:rr-variance}
+\hfill\break
+Let $n$ be even and $2\le k\le n-2$. Relabel a fixed round-robin schedule (a partition of $\Pairs$ into $n-1$ perfect matchings, called rounds) by a
+uniform permutation, select $k$ of its $n-1$ rounds uniformly without
+replacement, let $\bar d_1,\dots,\bar d_k$ be the mean dissimilarities of the
+selected rounds, and let $T=k^{-1}\sum_\ell\bar d_\ell$. Then the estimator
+\[
+\widehat V=\Big(1-\frac{k}{n-1}\Big)\frac{s^2}{k},
+\qquad
+s^2=\frac{1}{k-1}\sum_{\ell=1}^{k}(\bar d_\ell-T)^2,
+\]
+satisfies $\E[\widehat V]=\Var(T)$.
+\end{proposition}
+
+\begin{proof}
+Condition on the relabeling $\sigma$. The $n-1$ rounds partition $\Pairs$ into
+perfect matchings of equal size $n/2$, so the average of their $n-1$ round means
+is exactly $\mu$ for every $\sigma$. Given $\sigma$, $T$ is the mean of a simple
+random sample of $k$ round means drawn without replacement from this finite
+population. Hence $\E[T\mid\sigma]=\mu$, and $\widehat V$ is the textbook unbiased
+estimator of $\Var(T\mid\sigma)$ \citep{cochran1977sampling}. Since
+$\E[T\mid\sigma]$ does not depend on $\sigma$,
+$\Var(T)=\E[\Var(T\mid\sigma)]=\E[\widehat V]$.
+\end{proof}
+
+% ------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:metric}}
+\label{app:metric}
+
+\begin{lemma}[Median amplification]
+\label[lemma]{lem:median}
+Let $T_1,\dots,T_L$ be independent estimates of $\mu$. Suppose each one fails,
+meaning $\abs{T_\ell-\mu}>\varepsilon\mu$, with probability at most $1/4$.
+Then
+\[
+\Prob\big(\abs{\operatorname{med}(T_1,\dots,T_L)-\mu}>\varepsilon\mu\big)\le e^{-L/8},
+\]
+which is at most $\eta$ when $L\ge 8\ln(1/\eta)$.
+\end{lemma}
+
+\begin{proof}
+If the median lies outside $[(1-\varepsilon)\mu,(1+\varepsilon)\mu]$, then at least
+$L/2$ of the $T_\ell$ do. The number of such $T_\ell$ is a sum of independent
+indicators with mean at most $L/4$. By Hoeffding's inequality
+\citep{hoeffding1963probability}, it reaches $L/2$ with probability at most
+$e^{-2L(1/4)^2}=e^{-L/8}$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:metric}]
+\emph{Step 1 (energy as a correlation).} By orthogonality
+(Theorem~\ref{thm:anatomy}(ii)),
+$N\sigmaint=\sum_{i<j}r_{ij}^2=\sum_{i<j}r_{ij}(\mu+a_i+a_j+r_{ij})=\sum_{i<j}r_{ij}d_{ij}$.
+
+\emph{Step 2 (averaged triangle inequality).} For $i\neq j$ and each of the $n-2$
+individuals $l\notin\{i,j\}$, $d_{ij}\le d_{il}+d_{lj}$. Summing over $l$ gives
+\[
+(n-2)\,d_{ij}\le(S_i-d_{ij})+(S_j-d_{ij}),
+\qquad\text{so}\qquad
+d_{ij}\le\frac{S_i+S_j}{n} .
+\]
+
+\emph{Step 3 (a residual bound).} By \eqref{eq:anatomy-def},
+$a_i+a_j={\big(S_i+S_j-2(n-1)\mu\big)/(n-2)}$, so Step 2 gives
+\[
+r_{ij}=d_{ij}-\mu-a_i-a_j=d_{ij}+\frac{n\mu-(S_i+S_j)}{n-2}
+\le d_{ij}+\frac{n\mu-n\,d_{ij}}{n-2}
+=\frac{n\mu-2d_{ij}}{n-2} .
+\]
+
+\emph{Step 4 (the energy bound).} Since $d_{ij}\ge0$, Steps 1 and 3 give
+\begin{align*}
+N\sigmaint=\sum_{i<j}r_{ij}d_{ij}
+&\le\sum_{i<j}\frac{(n\mu-2d_{ij})\,d_{ij}}{n-2}
+=\frac{N}{n-2}\Big(n\mu^2-2\big(\mu^2+\sigmatot\big)\Big)\\
+&=N\Big(\mu^2-\frac{2\sigmatot}{n-2}\Big),
+\end{align*}
+because $\sum_{i<j}d_{ij}=N\mu$ and $\sum_{i<j}d_{ij}^2=N(\mu^2+\sigmatot)$. This is
+the first bound. Since $\sigmaint\le\sigmatot$ by Theorem~\ref{thm:anatomy}(ii), it
+gives $\sigmaint\,\big(1+2/(n-2)\big)\le\mu^2$, that is,
+$\sigmaint\le(n-2)\mu^2/n$.
+
+\emph{Tightness.} Let $n$ be even, split $[n]$ into two halves of size $n/2$, and
+set $d_{ij}=1$ if $i$ and $j$ lie in different halves and $d_{ij}=0$ otherwise.
+This cut metric is a pseudometric. Every row sum is $S_i=n/2$, so $a=0$, and
+$\mu=(n/2)^2/N=n/(2(n-1))$. Since $d_{ij}^2=d_{ij}$, we get
+$\sigmaint=\sigmatot=\mu-\mu^2$, and
+\[
+\mu(1-\mu)=\frac{n}{2(n-1)}\cdot\frac{n-2}{2(n-1)}=\frac{n(n-2)}{4(n-1)^2}
+=\frac{n-2}{n}\,\mu^2 .
+\]
+So the bound $\sigmaint\le(n-2)\mu^2/n$ is attained, and, because
+$\sigmaint=\sigmatot$, so is the first bound of Step 4.
+
+\emph{Consequences.} If $\mu=0$, then $D=0$ and every claim is trivial, so assume
+$\mu>0$. By Theorem~\ref{thm:balanced}(iii) with $m=nk/2$, and Step 4,
+\[
+\frac{\Var(T)}{\mu^2}\le\frac{n-2}{n}\cdot\frac{n-1-k}{(n-3)m}
+=\frac{2(n-2)(n-1-k)}{n^2(n-3)k}=v_{n,k} .
+\]
+Chebyshev's inequality gives the tail bound. Since
+${(n-2)(n-1-k)\le(n-2)^2\le n(n-3)}$ for $k\ge1$ (the last inequality is
+equivalent to $n\ge4$), we have $v_{n,k}\le2/(nk)$. With $k\ge8/(n\varepsilon^2)$ this gives
+$v_{n,k}/\varepsilon^2\le1/4$, and Lemma~\ref{lem:median} applies. If the
+prescribed $k$ reaches $n-1$, the design is complete and exact. For the budget,
+let $x=8/(n\varepsilon^2)$. Then $\lceil\max\{1,x\}\rceil\le x+1$, rounding up to
+make $nk$ even adds at most one more, and the cap at $n-1$ can only lower $k$.
+Hence every design has $k\le x+2$ and uses at most $nk/2\le4\varepsilon^{-2}+n$
+evaluations. The median of $L\le8\ln(1/\eta)+1$ designs therefore uses
+${O\big((n+\varepsilon^{-2})(1+\log(1/\eta))\big)}$ evaluations.
+\end{proof}
+
+% ------------------------------------------------------------
+\subsection{Proof of Proposition~\ref{prop:lower}}
+
+The hard instances behind parts (i) and (ii) are standard in the sublinear-algorithms literature
+\citep{barhum2007approximating,goldreich2008approximating}; the proof, with
+explicit constants, is in \Cref{app:lower} of the Supplementary Material.
+
+% ------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:fixed-spectral}}
+
+\begin{proof}
+\emph{Part (i).} Let $A$ be the adjacency matrix of $G$ and $P=I-\frac1n\one\one^\top$. Since $R$ is
+symmetric with $R\one=0$, we have $R=PRP$, and $\operatorname{tr}R=0$ because
+$r_{ii}=0$. Then $\sum_{e\in E}r_e=\frac12\langle A,R\rangle_F$. For every
+$c\in\R$, $\langle A,R\rangle_F=\langle A-cI,PRP\rangle_F=\langle P(A-cI)P,R\rangle_F$.
+Because $G$ is regular, $A\one=k\one$, so $A$ preserves $\one^\perp$. The matrix
+$P(A-cI)P$ therefore has eigenvalues $0$ on $\one$ and $\lambda_j-c$ ($j\ge2$) on
+$\one^\perp$. With $c=(\lambda_2+\lambda_n)/2$, its operator norm is
+$(\lambda_2-\lambda_n)/2$. Trace duality (H\"older's inequality for Schatten norms) with $M=P(A-cI)P$,
+$\abs{\langle M,R\rangle_F}\le\norm{M}_{\mathrm{op}}\norm{R}_*$, gives
+$\abs{\sum_{e\in E}r_e}\le(\lambda_2-\lambda_n)\norm{R}_*/4$. Dividing by $m=nk/2$
+and applying Proposition~\ref{prop:error-identity}, whose distinctiveness leakage vanishes for regular $G$, proves the
+first bound. For pseudometric tables, Theorem~\ref{thm:metric} gives
+$\norm{R}_F^2=\sum_{i\neq j}r_{ij}^2={n(n-1)\sigmaint}\le{(n-1)(n-2)\mu^2}$. Together with
+$\norm{R}_*\le\sqrt{\operatorname{rank}(R)}\,\norm{R}_F$, this yields
+$\norm{R}_*/(n\mu)\le\sqrt{\operatorname{rank}(R)\,(n-1)(n-2)}/n$ when $\mu>0$.
+The final claim follows from Friedman's theorem
+\citep{friedman2008proof,bordenave2020new}:
+$\max(\abs{\lambda_2},\abs{\lambda_n})\le2\sqrt{k-1}+o(1)$ with high probability.
+
+\emph{Part (ii).} Let $\Lambda$ be diagonal and $\lambda=\max(\abs{\lambda_2},\abs{\lambda_n})$.
+Since $\operatorname{diag}(A)=0$, we have $\langle A,\Lambda\rangle_F=0$, so
+$\langle A,R\rangle_F=\langle A,{R+\Lambda}\rangle_F$. Regularity gives
+$A=\frac kn\one\one^\top+PAP$. Because $R\one=0$ and $P$ is an orthogonal
+projection,
+\[
+\langle\one\one^\top,R+\Lambda\rangle_F=\one^\top R\one+\operatorname{tr}\Lambda=\operatorname{tr}\Lambda,
+\qquad
+\langle PAP,R+\Lambda\rangle_F=\langle PAP,P(R+\Lambda)P\rangle_F .
+\]
+The matrix $PAP$ has
+eigenvalues $0,\lambda_2,\dots,\lambda_n$, so its operator norm is $\lambda$. H\"older's
+inequality then gives
+\[
+\Big|\sum_{e\in E}r_e\Big|
+\le\frac12\Big(\frac kn\abs{\operatorname{tr}\Lambda}
++\lambda\,\norm{P(R+\Lambda)P}_*\Big),
+\]
+and dividing by $m=nk/2$, as in part (i), yields the bound of part (ii).
+\end{proof}
+
+\begin{remark}[Roles and the diagonal correction]
+\label[remark]{rem:roles-diagonal}
+Suppose the population has $K$ roles and the relational structure is constant
+within and between roles. Then $R=F-\operatorname{Diag}(F)$ for a block-constant
+matrix $F$ with $\operatorname{rank}F\le K$. Because of its zero diagonal, $R$ itself
+generically has rank $n-1$, so part (i) gives little. Choosing
+$\Lambda=\operatorname{Diag}(F)$ in part (ii) gives $P(R+\Lambda)P=PFP$, whose rank
+is at most $K$. Hence $\norm{PFP}_*\le\sqrt K\,\norm{PFP}_F$, while the trace
+term $\abs{\operatorname{tr}F}/n^2\le\max_i\abs{F_{ii}}/n$ vanishes as $n$ grows.
+If every role has at least two members, each $F_{ii}$ equals an off-diagonal
+entry $r_{ij}$ of row $i$ (any $j\neq i$ in the role of $i$), so
+$\sum_iF_{ii}^2\le\norm{R}_F^2$ and
+\[
+\norm{PFP}_F\le\norm{F}_F\le\sqrt2\,\norm{R}_F=\sqrt{2n(n-1)}\;\sigma_{\mathrm{int}}.
+\]
+Part (ii) then gives
+\[
+\Bigl|\frac{\SNDG}{\SND}-1\Bigr|\le\frac{\lambda\sqrt{2K}\,\sigma_{\mathrm{int}}}{k\mu}+\frac{\max_i\abs{F_{ii}}}{n\mu},
+\]
+which is $O(\sqrt{K/k})\,\sigma_{\mathrm{int}}/\mu+O(1/n)$ when
+$\lambda\le2\sqrt{k-1}+o(1)$ and $\max_i\abs{F_{ii}}=O(\mu)$.
+Alternatively, the pseudometric bound of part (i) can be stated with the effective
+rank $r_{\mathrm{eff}}(R)=\norm{R}_*^2/\norm{R}_F^2\le\operatorname{rank}(R)$ in place of
+$\operatorname{rank}(R)$, because $\norm{R}_*=\sqrt{r_{\mathrm{eff}}(R)}\,\norm{R}_F$ by definition.
+\end{remark}
+
+\begin{remark}[No fixed sparse design is uniformly accurate]
+\label[remark]{rem:no-fixed}
+Randomization cannot be dropped from \Cref{thm:metric}. Let $G$ be a fixed connected
+$k$-regular graph and let $D$ be its own shortest-path metric. Then every compared
+pair has $d_e=1$, so $\SNDG=1$. But at most $1+k+\dots+k^{t}$ individuals lie
+within distance $t$ of any individual, so at least half of all pairs are at
+distance $\Omega(\log n/\log k)$, and $\mu=\Omega(\log n/\log k)$. The relative
+error of $G$ therefore tends to $-1$ as $n\to\infty$ with $k$ fixed. An adversary
+who knows the design can always choose such a table, whereas a uniformly
+relabeled design does not reveal its pairs in advance.
+\end{remark}
+
+% ------------------------------------------------------------
+\subsection{Proofs of Propositions~\ref{prop:sparse-anatomy} and~\ref{prop:dico}}
+\label{app:sparse-anatomy}
+
+Both proofs are short calculations, with simple random sampling for
+\Cref{prop:sparse-anatomy} and Chebyshev's and Markov's inequalities for
+\Cref{prop:dico}; they are in Sections~\ref{app:supp-sparse-dico} and~\ref{app:supp-dico} of the
+Supplementary Material.
+
+% ------------------------------------------------------------
+\subsection{Variance of Bernoulli sampling}
+
+\begin{remark}[Bernoulli sampling]
+\label[remark]{rem:ht-variance}
+Under Bernoulli sampling, each pair $e$ is included independently with probability
+$p$; its inclusion indicator is $\xi_e\sim\mathrm{Bernoulli}(p)$. The Horvitz--Thompson estimator
+$\widehat\mu_{\mathrm{HT}}=(pN)^{-1}\sum_{e\in\Pairs}\xi_e d_e$ is unbiased. Its
+variance is exactly
+\[
+\Var(\widehat\mu_{\mathrm{HT}})=\frac{p(1-p)}{p^2N^2}\sum_e d_e^2
+=\frac{1-p}{pN}\big(\mu^2+\sigmatot\big),
+\]
+because $N^{-1}\sum_e d_e^2=\mu^2+\sigmatot$.
+Unlike every other design in Table~\ref{tab:designs}, its variance contains the
+level $\mu^2$ itself, so it is not even exact on a constant table.
+\end{remark}

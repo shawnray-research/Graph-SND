@@ -1,0 +1,384 @@
+% ============================================================
+% app_exp_details.tex -- experimental details
+% ============================================================
+\section{Experimental Details}
+\label{app:exp-details}
+
+All code, tables, and logs are released with the paper. Unless stated
+otherwise, estimators are compared at a matched budget of $m=nk/2$ evaluated
+pairs, with $k\in\{1,2,4,8,16\}$ and $k<n-1$ ($k\le8$ in the law checks of \Cref{sec:exp-laws}).
+
+\subsection{Synthetic populations}
+\label{app:exp-details:synthetic}
+
+Each synthetic population is a set of $n$ behavior embeddings $x_i$, and the
+dissimilarity is the Euclidean distance $d_{ij}=\norm{x_i-x_j}_2$, so every
+table is a pseudometric table. $Z$ denotes a matrix of independent standard
+normal entries, $g_i$ a vector of independent standard normal entries, and $e_1$ the first basis vector. Table~\ref{tab:synthetic}
+lists the generators. Each family is drawn at $n\in\{50,100,200\}$ with two seeds for the exact-law checks and three further times at $n=200$ for the matched-budget comparison.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{\textbf{Synthetic families.} Labels are ordered by role (by angle for the
+continuum), so fixed, unshuffled designs meet the structure in its least
+favorable orientation.}
+\label{tab:synthetic}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}p{6.9cm}>{\raggedright\arraybackslash}p{4.9cm}@{}}
+\toprule
+Family & Generator & What it models \\
+\midrule
+near-simplex & $X=I_n+0.05\,Z_{n\times n}$ (rows $x_i$) & equidistant team with idiosyncratic noise \\
+heterogeneous scale & $x_i=\omega_i z_i$, $\log \omega_i\sim\mathcal N(0,0.6^2)$, $z_i\sim\mathcal N(0,I_{64})$ & members differ in idiosyncrasy \\
+one outlier & near-simplex, then $x_1\leftarrow 6\,x_1$ & one specialist or faulty member \\
+two roles & $x_i=3e_1\,\one\{i>n/2\}+0.3\,g_i$, $g_i\sim\mathcal N(0,I_8)$ & two equal roles \\
+unequal roles & four roles of sizes $40/30/20/10\%$, centers $3\,Z_{4\times 8}$, noise $0.3$ & unbalanced role structure \\
+continuum & $x_i=(\cos\theta_i,\sin\theta_i)+0.02\,g_i$, $\theta_i=2\pi i/n$ & a continuum of behaviors \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Designs compared}
+\label{app:exp-details:designs}
+
+Table~\ref{tab:design-list} lists all estimators; ``Balanced'' in \Cref{tab:e2} and \Cref{fig:designs} is the round-robin design. Randomized estimators are
+replicated $3{,}000$ times for the exact-law validation and $2{,}000$ times for
+the matched-budget comparison. Landmarks use $\max\{1,\operatorname{round}(m/(n-1))\}$
+random pivots and evaluate all pairs touching them, about $m$ pairs (at $k=1$ a single pivot already costs $n-1\approx2m$ pairs). Symmetrized nearest-neighbor graphs, built from the dissimilarity table
+itself, have between $m$ and $2m$ edges; using the true table is the best case for a local graph and the worst case for estimating $\mu$, because it selects the smallest dissimilarities. Where a baseline uses more pairs than the budget, the comparison favors that baseline. The fixed expander is a union of $k$ random perfect matchings; each draw is held fixed, so its error is pure bias, and we report the root-mean-square error over $100$ independent draws. For $k=1$ such a union is a perfect matching and for $k=2$ a union of cycles, so neither is an expander; this affects only the smallest budgets. Repeated edges are possible at every $k\ge2$ and are kept with multiplicity, so the graph is a $k$-regular multigraph rather than a simple graph as in \Cref{thm:balanced}; averaged over draws, its mean squared error is that of the balanced design times $(n-2)/(n-1-k)$, which is below $1.09$ for $n=200$ and $k\le16$. The check of \Cref{thm:fixed-spectral} uses simple random
+$k$-regular graphs ($20$ per $k$) and the ring lattice.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{\textbf{Estimators of the mean pairwise dissimilarity.} The first two are the
+balanced designs of Theorem~\ref{thm:balanced}. The last three are fixed graphs (the expander is drawn at random, then held fixed).}
+\label{tab:design-list}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{7.6cm}>{\raggedright\arraybackslash}p{3.4cm}@{}}
+\toprule
+Design & Pairs evaluated & Weights \\
+\midrule
+round-robin & $k$ random rounds of the circle-method \mbox{1-factorization}, relabeled & uniform \\
+permuted circulant & $i\sim i\pm1,\dots,\pm\lfloor k/2\rfloor$ on a random cyclic order, plus $i\sim i+n/2$ if $k$ is odd & uniform \\
+uniform pairs & $m$ pairs without replacement & uniform \\
+Bernoulli (HT) & each pair with probability $p=m/N$ & $1/p$, normalized by $N$ \\
+Bernoulli (ratio) & each pair with probability $p=m/N$ & uniform over realized pairs \\
+agent subsampling & all pairs among $s$ random agents, $\binom s2\approx m$ & uniform \\
+landmarks & all pairs touching $\approx m/(n-1)$ random reference agents (at least one) & uniform \\
+nearest neighbors (fixed) & each agent's $k$ most similar agents (local graph) & uniform \\
+fixed ring & the same circulant graph in the given labeling & uniform \\
+random expander (fixed) & union of $k$ random perfect matchings, each held fixed; RMSE over $100$ independent draws & uniform \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Trained multi-agent teams in VMAS}
+\label{app:exp-details:vmas}
+
+We train heterogeneous teams with independent PPO on VMAS \citep{bettini2022vmas}.
+Each agent has its own $2\times64$ tanh multilayer perceptron (MLP) policy with a state-independent
+log standard deviation, and there is no parameter sharing. Each PPO iteration
+collects $64$ steps in each of $128$ parallel environments, which is $8{,}192$
+environment steps, with episodes capped at $200$ steps.
+Runs were launched in three waves with wall-clock budgets of $13$, $23$, and
+$14$ minutes, respectively, on shared GPUs, so the iterations reached vary
+(Table~\ref{tab:vmas-runs}); teams are observed during training and are not
+claimed to be converged. Table~\ref{tab:ippo-hparams} lists the remaining
+hyperparameters.
+
+Behavioral distances follow SND \citep{bettini2025snd}. At each saved iteration,
+all $n$ policies are evaluated on a shared pool $\mathcal B$ of $4{,}096$ observations sampled
+from that \mbox{iteration's} rollout, with all agents' observations pooled. For diagonal
+Gaussian policies,
+\[d_{ij}=\frac{1}{|\mathcal B|}\sum_{o\in\mathcal B}\big(\norm{m_i(o)-m_j(o)}_2^2+\norm{\sigma_i(o)-\sigma_j(o)}_2^2\big)^{1/2},\]
+where $m_i(o)$ and $\sigma_i(o)$ are agent $i$'s action mean and standard deviation; that is, the $W_2$ distance between the two agents' Gaussian action distributions at $o$, averaged over $\mathcal B$. Tables are saved on a wave-specific schedule
+of early iterations and always at the final iteration. Two semi-synthetic variants
+are built from each final team: one with agent~$1$'s weights reset to their initialization
+(one agent reset) and one with the second half of the team reset (half reset). The $16$ training runs,
+together with the initialization table of an $n=64$ run, give $119$ of the $237$ tables of
+\Cref{fig:marl}(c), including the reset variants; the longer runs below give the other $118$. The error-bar
+experiment of \Cref{sec:exp-ci} uses $19$ of them: the final tables of the first-wave runs with
+$n\ge16$ and their reset variants, and an untrained $n=100$ table. Three unmodified final tables
+(Navigation with $n=16$, seeds $0$ and $2$, and with $n=32$, seed $0$) were left out by a
+file-selection slip; on them, the $95\%$ round-robin intervals at $k=4$ cover
+$94.1$--$95.4\%$ of draws and the Spearman correlation of $\widehat a$ with $a$ is
+$0.72$--$0.80$, in line with the other tables. Randomly initialized frozen
+Navigation teams with $n\in\{50,100,200\}$ provide large untrained tables.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{\textbf{Trained VMAS runs behind the real dissimilarity tables.} Each iteration
+has $8{,}192$ environment steps. A Navigation run with $n=64$ reached only
+iteration $5$, so only its initialization table is used (in \Cref{fig:marl}(c)).}
+\label{tab:vmas-runs}
+\begin{tabular}{@{}lccl@{}}
+\toprule
+Task & $n$ & Runs & Final iteration of each run (wave) \\
+\midrule
+Navigation & $8$ & $2$ & 77, 78 (1) \\
+Navigation & $16$ & $5$ & 20, 34, 35 (1); 69, 205 (2) \\
+Navigation & $32$ & $3$ & 10, 16 (1); 51 (2) \\
+Dispersion & $16$ & $6$ & 41, 42 (1); 102 (2); 33, 44, 45 (3) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Longer runs.}
+\label{app:exp-details:long}
+Seven further $n=16$ runs use the settings above with budgets of $42$--$49$
+minutes on an otherwise idle machine (an Intel i9-9820X CPU or one RTX~3080;
+PyTorch~2.5.1, VMAS~1.5.2): independent critics on Dispersion (seeds $0$--$2$) and
+on Navigation (seeds $0$ and $1$), and a centralized critic on Dispersion (seeds
+$0$ and $1$), in which agent $i$'s value network receives the concatenated
+observations of all agents while the policies stay decentralized and unshared,
+as in MAPPO \citep{yu2022surprising} without parameter sharing
+(\texttt{run\_e3.py --critic central}). Tables are saved at iterations
+$0,5,10,25,50,75,100,150,200,250,300,400,\dots$ and at the final iteration,
+together with the two reset variants of the final team; their $118$ tables are
+included in \Cref{fig:marl}(c). \Cref{tab:long-runs} summarizes the runs
+(\texttt{results/jmlr/matrices/vmas\_long}, \texttt{experiments/jmlr/core/long\_runs.py}).
+
+\begin{table}[ht]
+\centering
+\small
+\caption{\textbf{Longer VMAS runs with $n=16$} ($8{,}192$ environment steps per iteration).
+Share: the distinctiveness share of the pairwise variance, largest value at
+iterations $5$--$10$ and value at the final iteration. Reward: mean reward per
+step at iteration $100$ and at the final iteration; it rose until iteration
+$700$ in the independent Dispersion runs and was still rising at the end in the
+other four.}
+\label{tab:long-runs}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+Task & Critic & Seed & Iterations & Steps (M) & Final $\mu$ & Share (\%) & Reward \\
+\midrule
+Dispersion & independent & $0$ & $719$ & $5.9$ & $0.829$ & $72\to3$ & $0.0026\to0.0094$ \\
+Dispersion & independent & $1$ & $766$ & $6.3$ & $0.865$ & $65\to2$ & $0.0028\to0.0094$ \\
+Dispersion & independent & $2$ & $724$ & $5.9$ & $0.849$ & $69\to2$ & $0.0027\to0.0096$ \\
+Navigation & independent & $0$ & $714$ & $5.8$ & $0.132$ & $62\to58$ & $-0.0139\to0.0767$ \\
+Navigation & independent & $1$ & $543$ & $4.4$ & $0.126$ & $59\to64$ & $-0.0093\to0.0723$ \\
+Dispersion & centralized & $0$ & $348$ & $2.9$ & $0.372$ & $76\to28$ & $0.0022\to0.0041$ \\
+Dispersion & centralized & $1$ & $535$ & $4.4$ & $0.582$ & $82\to7$ & $0.0028\to0.0071$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{\textbf{Independent PPO hyperparameters of the VMAS anatomy runs}
+(\Cref{app:exp-details:vmas}). The DiCo runs use the configuration of the DiCo
+reference implementation (built on BenchMARL; \Cref{app:exp-details:dico}). GAE: generalized advantage estimation.}
+\label{tab:ippo-hparams}
+\begin{tabular}{@{}ll@{\qquad}ll@{}}
+\toprule
+Hyperparameter & Value & Hyperparameter & Value \\
+\midrule
+Optimizer & Adam & Discount $\gamma$ & $0.99$ \\
+Learning rate & $3\times10^{-4}$ & GAE $\lambda$ & $0.95$ \\
+Clip range & $0.2$ & PPO epochs per update & $4$ \\
+Entropy coefficient & $0.01$ & Mini-batch size & $2{,}048$ \\
+Value-loss coefficient & $0.5$ & Hidden layers & $2\times64$, tanh \\
+Max gradient norm & $0.5$ & Policy & diagonal Gaussian \\
+Episode length & $200$ steps & Rollout per iteration & $64$ steps $\times$ $128$ environments \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Simulated closed-loop control}
+\label{app:exp-details:sim-control}
+
+The simulation of \Cref{sec:exp-control} (\texttt{experiments/\allowbreak jmlr/\allowbreak closed\_loop.py})
+gives each of ${n\in\{50,500\}}$ agents an agent-specific action component
+$h_i(o)=\omega_i\tanh(W_io+b_i)\in\R^2$ on a fixed batch of $32$ observations
+$o\in\R^8$, with $W_i$ entries drawn from $\mathcal N(0,1/8)$ and $b_i$ from
+$\mathcal N(0,0.01)$. Equal scales set $\omega_i=1$; unequal scales draw
+$\log\omega_i\sim\mathcal N(0,0.7^2)$. Between steps, every entry of $W_i$
+receives independent $\mathcal N(0,0.02^2)$ noise, for $300$ steps. The
+dissimilarity is the mean Euclidean distance between $h_i(o)$ and $h_j(o)$
+over the batch, so the realized diversity under the scale
+$c_t=\SNDdes/\widehat\mu_t$ is $\SNDdes\,\mu_t/\widehat\mu_t$ exactly. At each
+step the balanced estimate uses a relabeled round-robin design with $k=5$
+($n=50$) or $k=8$ ($n=500$), uniform pairs and Bernoulli sampling use the same
+expected budget $m=nk/2$, and the controller uses the current estimate
+directly ($\tau=1$). Each setting is run with $10$ seeds ($7$ and
+$11$--$19$), each drawing a new population.
+
+\paragraph{Soft update.} DiCo rescales with a running average
+$s_t=(1-\tau)\,s_{t-1}+\tau\,\widehat\mu_t$ of the per-call estimates ($\tau=0.01$ by
+default), not with the current estimate. \Cref{tab:tau} reruns the $n=50$ simulation
+with this soft update for $\tau\in\{1,0.3,0.1,0.03,0.01\}$ ($10$ populations per setting,
+error over steps $100$--$300$; \texttt{experiments/\allowbreak jmlr/\allowbreak closed\_loop\_tau.py}). Lowering
+$\tau$ averages away estimation noise but makes $s_t$ lag behind the drifting $\mu_t$;
+the lag error does not depend on the design, and its size is set by the simulated drift
+rate, which is not calibrated to DiCo training. At $n=500$ ($m=2{,}000$, unequal scales)
+the pattern is the same: the balanced design's tracking error is $4.4\times$ smaller than
+uniform sampling's at $\tau=1$ ($0.31\%$ against $1.37\%$), $1.2\times$ smaller at
+$\tau=0.1$, and equal at $\tau\le0.03$ (\texttt{results/jmlr/closed\_loop\_tau/tau\_n500.json}).
+
+\begin{table}[ht]
+\centering
+\small
+\caption{\textbf{Root-mean-square tracking error (\%) of the simulated controller} with DiCo's soft
+update, $n=50$, $m=125$ comparisons per step (mean over $10$ populations; standard errors
+at most $0.31$ points). With $\tau=1$ the estimate is used directly, as in
+\Cref{fig:control}.}
+\label{tab:tau}
+\begin{tabular}{@{}c ccc ccc@{}}
+\toprule
+& \multicolumn{3}{c}{Equal scales} & \multicolumn{3}{c}{Unequal scales} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+$\tau$ & all pairs & uniform & balanced & all pairs & uniform & balanced \\
+\midrule
+$1$ & $0$ & $1.41$ & $1.37$ & $0$ & $5.06$ & $1.25$ \\
+$0.3$ & $0.13$ & $0.61$ & $0.57$ & $0.15$ & $2.08$ & $0.54$ \\
+$0.1$ & $0.42$ & $0.54$ & $0.48$ & $0.42$ & $1.18$ & $0.50$ \\
+$0.03$ & $1.48$ & $1.49$ & $1.45$ & $1.48$ & $1.50$ & $1.47$ \\
+$0.01$ & $4.15$ & $4.14$ & $4.10$ & $4.40$ & $4.19$ & $4.47$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Closed-loop diversity control (DiCo)}
+\label{app:exp-details:dico}
+
+We use the DiCo controller of \citet{bettini2024dico}, implemented in BenchMARL
+\citep{bettini2024benchmarl}, on VMAS Dispersion with $n=50$ agents. Its
+diversity estimator is replaced; the only other changes are the two memory settings below and an SND estimate computed without gradient (see the end of this subsection), identical in all arms, and \texttt{experiment.evaluation=false} in the balanced arm, which was also trained on a later software stack (see below). The grid has three
+seeds and set points $\SND_{\mathrm{des}}\in\{0.12,0.14,0.15\}$, and every cell
+is trained for $167$ iterations of independent PPO in two arms, with the all-pairs
+estimator and with Bernoulli sampling at $p=0.1$ and the ratio estimator
+($10\%$ of pairs per call in expectation, a nominal $10\times$ reduction).
+A third arm, at $\SND_{\mathrm{des}}\in\{0.12,0.14\}$ with the same three seeds, uses the
+randomized balanced design (\texttt{model.diversity\_estimator=expander},
+\texttt{model.diversity\_expander\_d=5}): at every call it draws a fresh random
+$5$-regular graph with \texttt{networkx.random\_regular\_graph}, whose distribution
+does not depend on the labels, so \Cref{thm:balanced} applies, and averages its
+$125$ pairs. To fit in the memory of an RTX~4090, we set
+\begin{center}
+\small
+\begin{tabular}{@{}l@{}}
+\texttt{on\_policy\_n\_envs\_per\_worker=120}\\
+\texttt{on\_policy\_collected\_frames\_per\_batch=12000}
+\end{tabular}
+\end{center}
+in the configuration of the DiCo reference implementation (built on BenchMARL). The
+Bernoulli and all-pairs runs of a cell share seeds and environment initializations and
+differ only in the diversity estimator, so their rollouts diverge once the estimates
+differ. Episodes last $100$ steps, there are $50$ food particles, and the reward is shared;
+the reported reward is the mean reward per agent and step over each iteration's training
+batch. At every iteration, the audit evaluates the controlled policies' all-pairs SND on
+$4{,}096$ evenly spaced observations of the rollout batch just collected, before that batch
+is used for the PPO update or for the controller's estimate, and it is never fed back. Over the last $50$
+iterations we report the audit error $\lvert\bar s-\SNDdes\rvert/\SNDdes$, where $\bar s$ is
+the mean audited SND (\Cref{tab:dico}).
+The balanced arm was trained later on Quadro RTX~5000 GPUs shared with other
+users' jobs, with the same overrides plus \texttt{experiment.evaluation=false}:
+the evaluation callback computes an all-pairs SND that exceeded the memory of
+the shared $16$\,GB GPUs, and evaluation rollouts enter no reported number. Two
+all-pairs runs on this stack (seed $0$ at both set points) give audit errors of
+$0.37\%$ and $0.34\%$ and rewards of $0.312$ and $0.333$. The three earlier all-pairs
+seeds give $0.39$--$0.54\%$ and $0.299$--$0.312$ at $0.12$, and $0.26$--$0.47\%$ and
+$0.309$--$0.349$ at $0.14$, so the new stack agrees to within seed-to-seed
+variation (at $0.12$ its audit error is slightly below the earlier range and its
+reward at the top of it). One run per set point cannot exclude a stack effect smaller
+than this seed-to-seed spread (about $0.02$ in reward), so comparisons of the balanced
+arm with the earlier arms, which match cells by seed and set point only, include any such
+effect. An earlier replicate of the whole Bernoulli and all-pairs grid (same seeds and
+set points, without the audit; \texttt{results/dico\_n50\_bern\_vs\_full}) gives a reward
+difference of $(-0.6\pm5.4)\times10^{-3}$ with seeds as the unit (interval within $\pm7\%$
+of the mean reward) and controller-side tracking errors of $0.39$--$0.65\%$ with
+Bernoulli sampling and $0.25$--$0.46\%$ with all pairs; \Cref{tab:dico} uses the audited
+grid because only it measures the realized all-pairs SND. Three balanced runs and one all-pairs check at
+$\SND_{\mathrm{des}}=0.15$ had completed $78$--$117$ and $29$ of their $167$
+iterations at submission; they are not reported. In our fork, the SND estimate is computed
+without gradient (the upstream code differs), identically in all arms. Hence no
+gradient flows through the scale ${c=\SNDdes/\widehat{\SND}}$. DiCo soft-updates its
+estimate $\widehat{\SND}$ with $\tau=0.01$ (the default). The action standard deviation
+comes from the shared head, so all agents share a covariance and the homogeneity
+assumption of \Cref{prop:dico} holds. Excluding rollout collection, which the iteration timer of the
+callback omits, the median training iteration takes $48.1$\,s with Bernoulli sampling and
+$52.9$\,s with all pairs ($9\%$ less; mean over the nine cells, RTX~4090).
+
+\begin{table}[ht]
+\centering
+\small
+\caption{\textbf{Per-cell DiCo results} behind \Cref{tab:dico} (final $50$ of $167$ iterations):
+audit error and mean reward per step. Within a seed, the reward differences between
+designs are strongly correlated across set points, so the main text treats seeds as the
+unit of replication.}
+\label{tab:dico-cells}
+\begin{tabular}{@{}cc ccc ccc@{}}
+\toprule
+& & \multicolumn{3}{c}{Audit error (\%)} & \multicolumn{3}{c}{Reward} \\
+\cmidrule(lr){3-5}\cmidrule(l){6-8}
+$\SND_{\mathrm{des}}$ & Seed & balanced & Bernoulli & all pairs & balanced & Bernoulli & all pairs \\
+\midrule
+$0.12$ & $0$ & $0.37$ & $0.67$ & $0.54$ & $0.296$ & $0.308$ & $0.312$ \\
+$0.12$ & $1$ & $0.57$ & $0.51$ & $0.39$ & $0.302$ & $0.308$ & $0.307$ \\
+$0.12$ & $2$ & $0.37$ & $0.31$ & $0.51$ & $0.324$ & $0.331$ & $0.299$ \\
+\addlinespace
+$0.14$ & $0$ & $0.45$ & $0.69$ & $0.26$ & $0.344$ & $0.333$ & $0.349$ \\
+$0.14$ & $1$ & $0.54$ & $0.43$ & $0.47$ & $0.350$ & $0.327$ & $0.328$ \\
+$0.14$ & $2$ & $0.54$ & $0.71$ & $0.34$ & $0.343$ & $0.346$ & $0.309$ \\
+\addlinespace
+$0.15$ & $0$ & -- & $0.56$ & $0.30$ & -- & $0.323$ & $0.342$ \\
+$0.15$ & $1$ & -- & $0.16$ & $0.69$ & -- & $0.335$ & $0.341$ \\
+$0.15$ & $2$ & -- & $0.57$ & $0.38$ & -- & $0.359$ & $0.341$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Model populations}
+\label{app:exp-details:zoo}
+
+The model populations are ReLU MLP classifiers with two hidden layers of width $w$
+(\mbox{$784\to w\to w\to 10$}), trained with Adam (learning rate $10^{-3}$, batch size $256$)
+on all $60{,}000$ Fashion-MNIST \citep{xiao2017fashion} training images. There are four recipes:
+\begin{itemize}
+\item width $32$, one epoch;
+\item width $256$, three epochs;
+\item width $256$, three epochs, with $30\%$ symmetric label noise drawn
+independently per model;
+\item width $128$, three epochs, with Gaussian input noise of standard deviation
+$0.3$.
+\end{itemize}
+Their mean test accuracies are $0.81$, $0.87$, $0.87$, and $0.86$, respectively. Each recipe is
+trained with $32$ seeds, giving $n=128$ models; a larger version uses $256$
+seeds per recipe ($n=1{,}024$). Two models are compared by the Jensen--Shannon
+distance between their predictive distributions (the square root of the base-2
+Jensen--Shannon divergence), averaged over the first $2{,}000$ test images.
+The resulting dissimilarity is a pseudometric, and it is not of the separable
+forms of \Cref{prop:separable}. All seeds of a recipe are trained in parallel as
+one batched model, each with its own initialization, data order, and label noise.
+Training plus the full table took $11$\,s for $n=128$ and $116$\,s for
+$n=1{,}024$ on one Quadro RTX~5000.
+
+\input{judge_appendix_snippet}
+
+\subsection{Software and hardware}
+\label{app:exp-details:software}
+
+The VMAS anatomy runs (VMAS~1.5.2) and the model populations use
+PyTorch~2.8.0 (CUDA~12.8) on NVIDIA Quadro RTX~5000 GPUs. The timing benchmarks
+and the simulated control loops use PyTorch~2.5.1 (CUDA~12.1) and NumPy~2 on an
+NVIDIA RTX~3080. The all-pairs and Bernoulli DiCo runs come from the earlier version of this work \citep{ray2026graphsnd}. They use
+the DiCo reference implementation (built on BenchMARL) with the overrides of
+\Cref{app:exp-details:dico} on an NVIDIA RTX~4090. The balanced-design DiCo runs and
+their two all-pairs checks use PyTorch~2.8.0 (CUDA~12.8), TorchRL~0.10.1,
+BenchMARL~1.5.2, and VMAS~1.5.2 on shared Quadro RTX~5000 GPUs. The design library itself
+(\texttt{graphsnd.designs}) needs only NumPy.
+
+\subsection{Timing}
+\label{app:exp-details:timing}
+
+Timings use the RTX~3080 setup of \Cref{app:exp-details:software}. Each agent is a
+$2\times64$ tanh MLP Gaussian policy with $18$-dimensional observations and
+$2$-dimensional actions. All agents are evaluated on a shared batch of
+$\abs{\mathcal B}=1{,}024$ observations. An all-pairs call evaluates all $\binom n2$ pairs.
+The balanced design (permuted circulant, $k\in\{4,8,16\}$) evaluates $nk/2$ pairs, and its cost includes drawing the
+design. Each configuration reports the median of $7$ timed calls ($3$ for
+all-pairs calls with $n\ge2{,}000$) after one warm-up call. The all-pairs computation is timed directly up to $n=5{,}000$; no timing is extrapolated.

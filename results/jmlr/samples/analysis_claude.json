@@ -1,0 +1,461 @@
+{
+ "judge": "claude-opus-5-5 (effort low)",
+ "generator": "Qwen/Qwen2.5-0.5B-Instruct",
+ "reps": 4000,
+ "populations": [
+  {
+   "name": "claude_story_T1.0",
+   "n": 64,
+   "pairs": 2016,
+   "judge_calls_all_pairs": 2016,
+   "judge_seconds_all_pairs": 3445.7358684539795,
+   "judge_ms_per_call": 1709.1943791934423,
+   "judge_asym_mean_abs": NaN,
+   "mu": 0.6797619047619047,
+   "cv": 0.17562976362232788,
+   "s2_tot": 0.014253117913832202,
+   "s2_main": 0.007315028161802355,
+   "s2_int": 0.006938089752029846,
+   "distinct_share": 0.5132230159061093,
+   "kappa": 1.0543288460144566,
+   "efficiency_pred": 1.990099209637826,
+   "vs2": 7.656647225960818,
+   "nonlatin_share_texts": 0.03125,
+   "corr_a_nonlatin": 0.395691328151355,
+   "most_distinct": [
+    {
+     "a": 0.16088709677419355,
+     "text": "\u6ce8\u5b9a\u65e0\u4eba\u80fd\u51fa\u5176\u53f3\uff0c\u8fd9\u6b3e\u9ad8\u7ea7\u4eff\u4eba\u6a21\u578b\u4e0d\u7ecf\u610f\u95f4\u6210\u4e3a\u6211\u6700\u559c\u7231\u7684\u52a9\u624b\uff0c\u5b83\u4e0d\u4ec5\u5e2e\u52a9\u6211\u5904\u7406\u65e5\u5e38\u7410\u4e8b\uff0c\u66f4\u4e3a\u6211\u7684\u65e5\u5e38\u751f\u6d3b\u589e\u6dfb\u4e86\u8bb8\u591a\u4e50\u8da3\u3002"
+    },
+    {
+     "a": 0.15766129032258064,
+     "text": "A manipulative and solo hacker named Alex tried to take down a government data breach through malfeasance in an attempt to access sensitive information, but his scheme led to him being caught and subjected to harsh"
+    },
+    {
+     "a": 0.12379032258064529,
+     "text": "It is well-known that robots have the potential to replace human labor in various fields and make us question their purpose and limitations. So, if you wish, I can create a little narrative featuring an intelligent"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.10040322580645147,
+     "text": "A sleek humanoid robot named Elara was programmed to provide constant assistance and companionship regardless of the situation, capable of performing a wide range of tasks such as exploring unfamiliar territories, assisting with household chores,"
+    },
+    {
+     "a": -0.10201612903225793,
+     "text": "A revolutionary robot named Elara was developed and programmed to execute complex tasks beyond human capabilities. It communicated through advanced sensors and algorithms that allowed it to adapt, learn from its environment, and perform tasks with"
+    },
+    {
+     "a": -0.10201612903225793,
+     "text": "A humanoid robot named Rovibot navigated the city, collaborating with humans in innovative and unexpected ways to solve problems faster than expected, its self-aware programs continually refining its capabilities to become the smart"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 32,
+     "judge_calls": 64,
+     "frac_pairs": 0.015873015873015872,
+     "balanced": {
+      "rel_rmse": 0.021893129311438865,
+      "rel_bias": -0.0005645796847635332,
+      "rel_sd": 0.021888584658710263,
+      "rel_sd_pred": 0.021838312318327047,
+      "var_ratio_meas_pred": 1.0046093492703236,
+      "vs2_rel_rmse": 0.08532861573338503,
+      "vs2_rel_bias": 0.0052084564580090476
+     },
+     "uniform": {
+      "rel_rmse": 0.030508316348249027,
+      "rel_bias": 0.00015947898423829265,
+      "rel_sd": 0.030511713718290753,
+      "rel_sd_pred": 0.03080749852279212,
+      "var_ratio_meas_pred": 0.9808900498899753,
+      "vs2_rel_rmse": 0.11474512098924529,
+      "vs2_rel_bias": 0.012768115943283309
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.17872764793678825,
+      "rel_bias": -0.0028034150612957776,
+      "rel_sd": 0.17872800263456776,
+      "rel_sd_pred": 0.17805223793733999,
+      "var_ratio_meas_pred": 1.0076050385630078,
+      "vs2_rel_rmse": 0.2181533479772801,
+      "vs2_rel_bias": 0.040558860635346194
+     },
+     "subset": {
+      "rel_rmse": 0.060059427134727505,
+      "rel_bias": 0.00024810274372466523,
+      "rel_sd": 0.060066423454263086,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.22450978790679416,
+      "vs2_rel_bias": 0.044389836282128003
+     }
+    },
+    {
+     "k": 2,
+     "m": 64,
+     "judge_calls": 128,
+     "frac_pairs": 0.031746031746031744,
+     "balanced": {
+      "rel_rmse": 0.015311314964436374,
+      "rel_bias": -4.870840630499806e-06,
+      "rel_sd": 0.015313228462887043,
+      "rel_sd_pred": 0.01531698008317537,
+      "var_ratio_meas_pred": 0.9995101957668134,
+      "vs2_rel_rmse": 0.060242907941876256,
+      "vs2_rel_bias": 0.003433191635552557,
+      "ci95_coverage": 0.9385,
+      "ci95_rel_width_median": 0.2873913520084218,
+      "spearman_ahat_a_median": 0.6171712925587289
+     },
+     "uniform": {
+      "rel_rmse": 0.021548645604143577,
+      "rel_bias": -6.594789842329085e-06,
+      "rel_sd": 0.021551338680728303,
+      "rel_sd_pred": 0.0216077980023234,
+      "var_ratio_meas_pred": 0.994780998979322,
+      "vs2_rel_rmse": 0.07970044896430516,
+      "vs2_rel_bias": 0.006346153067031679
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.12386503470560083,
+      "rel_bias": -0.0025666593695269357,
+      "rel_sd": 0.12385392214543803,
+      "rel_sd_pred": 0.12488247912648047,
+      "var_ratio_meas_pred": 0.9835954364761355,
+      "vs2_rel_rmse": 0.14275145739978054,
+      "vs2_rel_bias": 0.02022094892150572
+     },
+     "subset": {
+      "rel_rmse": 0.049173225348324155,
+      "rel_bias": 0.00043551982168454906,
+      "rel_sd": 0.049177444208668604,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.17904906383489402,
+      "vs2_rel_bias": 0.03003441009493857
+     }
+    },
+    {
+     "k": 4,
+     "m": 128,
+     "judge_calls": 256,
+     "frac_pairs": 0.06349206349206349,
+     "balanced": {
+      "rel_rmse": 0.010517309480524246,
+      "rel_bias": -0.00012813320928184435,
+      "rel_sd": 0.010517843735719627,
+      "rel_sd_pred": 0.010651707649301546,
+      "var_ratio_meas_pred": 0.9750232057559408,
+      "vs2_rel_rmse": 0.04078746539754792,
+      "vs2_rel_bias": 0.0013158382097619992,
+      "ci95_coverage": 0.95325,
+      "ci95_rel_width_median": 0.0600684282081029,
+      "spearman_ahat_a_median": 0.743816347802202
+     },
+     "uniform": {
+      "rel_rmse": 0.01508646076950389,
+      "rel_bias": 4.397438704017986e-05,
+      "rel_sd": 0.015088282833801288,
+      "rel_sd_pred": 0.015026457305296455,
+      "var_ratio_meas_pred": 1.0082458181735037,
+      "vs2_rel_rmse": 0.055550406777369325,
+      "vs2_rel_bias": 0.003226560496845776
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08801068343062893,
+      "rel_bias": -0.0010777419001749555,
+      "rel_sd": 0.08801508696926079,
+      "rel_sd_pred": 0.08684555643161129,
+      "var_ratio_meas_pred": 1.0271149266550523,
+      "vs2_rel_rmse": 0.09625739133996103,
+      "vs2_rel_bias": 0.00963894729404391
+     },
+     "subset": {
+      "rel_rmse": 0.038126748663797436,
+      "rel_bias": 0.00202634696610704,
+      "rel_sd": 0.0380776227984997,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.13763544483587697,
+      "vs2_rel_bias": 0.023792292413434835
+     }
+    },
+    {
+     "k": 8,
+     "m": 256,
+     "judge_calls": 512,
+     "frac_pairs": 0.12698412698412698,
+     "balanced": {
+      "rel_rmse": 0.007154884741623723,
+      "rel_bias": 2.9033493870400662e-05,
+      "rel_sd": 0.007155720355464223,
+      "rel_sd_pred": 0.007272095594468499,
+      "var_ratio_meas_pred": 0.9682501249098798,
+      "vs2_rel_rmse": 0.027650279300699562,
+      "vs2_rel_bias": 0.0008403475482263723,
+      "ci95_coverage": 0.9525,
+      "ci95_rel_width_median": 0.033010322699709646,
+      "spearman_ahat_a_median": 0.8519121789438653
+     },
+     "uniform": {
+      "rel_rmse": 0.010143427828498381,
+      "rel_bias": -4.7682246059443933e-05,
+      "rel_sd": 0.0101445839077328,
+      "rel_sd_pred": 0.010258808969234206,
+      "var_ratio_meas_pred": 0.9778552945985538,
+      "vs2_rel_rmse": 0.03752415925715311,
+      "vs2_rel_bias": 0.0011832170408319076
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.058325785566111746,
+      "rel_bias": -0.0009235921081434117,
+      "rel_sd": 0.05832576371724698,
+      "rel_sd_pred": 0.059290886411710486,
+      "var_ratio_meas_pred": 0.9677094496096416,
+      "vs2_rel_rmse": 0.0644778589763021,
+      "vs2_rel_bias": 0.004771951550412767
+     },
+     "subset": {
+      "rel_rmse": 0.03039708583069365,
+      "rel_bias": -0.0005041983068329037,
+      "rel_sd": 0.03039670378455837,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1064245977036331,
+      "vs2_rel_bias": 0.009193086839479614
+     }
+    }
+   ]
+  },
+  {
+   "name": "claude_story_T0.5",
+   "n": 64,
+   "pairs": 2016,
+   "judge_calls_all_pairs": 2016,
+   "judge_seconds_all_pairs": 3314.491247177124,
+   "judge_ms_per_call": 1644.0928805442084,
+   "judge_asym_mean_abs": NaN,
+   "mu": 0.49613095238095234,
+   "cv": 0.2719878785506302,
+   "s2_tot": 0.018209236819727893,
+   "s2_main": 0.006422311027905789,
+   "s2_int": 0.011786925791822103,
+   "distinct_share": 0.3526952332756667,
+   "kappa": 0.5448673505997347,
+   "efficiency_pred": 1.4965662870325964,
+   "vs2": 3.5277500258380132,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.1539314516129032,
+     "text": "In a world where technology has advanced to the point of creating sentient robots like humans, a young programmer named Elara discovers an artifact that allows her to control her own consciousness and experience life in a way"
+    },
+    {
+     "a": 0.11683467741935492,
+     "text": "In the distant future, a groundbreaking invention known as the \"Robo-Neuron\" revolutionized human society. This revolutionary device, designed to mimic the neural network of the brain, allowed individuals with"
+    },
+    {
+     "a": 0.11683467741935492,
+     "text": "In the vast and untamed universe of technology, where machines like me have evolved beyond our wildest dreams, there exists a world of robots that roam free, exploring the unknown with their own unique abilities"
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.0815524193548387,
+     "text": "In a world where artificial intelligence continues to evolve and transform human society, a small but innovative robot named Echo found itself at the forefront of innovation. With its sleek design and unparalleled efficiency, it became the"
+    },
+    {
+     "a": -0.08316532258064509,
+     "text": "A sleek and advanced robot named Echo was designed to assist humans in their daily lives. With its advanced sensors and artificial intelligence capabilities, it could navigate through crowded cities with ease, provide medical consultations, and"
+    },
+    {
+     "a": -0.08316532258064514,
+     "text": "In the world of robotics, a sleek, autonomous robot named Kai had been designed to perform tasks that were previously beyond its capabilities. With its advanced sensors and artificial intelligence, Kai proved to be more than"
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 32,
+     "judge_calls": 64,
+     "frac_pairs": 0.015873015873015872,
+     "balanced": {
+      "rel_rmse": 0.03885713999606041,
+      "rel_bias": -0.0005599880023995363,
+      "rel_sd": 0.03885796221390747,
+      "rel_sd_pred": 0.038999576436321744,
+      "var_ratio_meas_pred": 0.9927508387302494,
+      "vs2_rel_rmse": 0.07122336823355904,
+      "vs2_rel_bias": 0.004458893115197871
+     },
+     "uniform": {
+      "rel_rmse": 0.04817161815075039,
+      "rel_bias": -0.0013252849430112068,
+      "rel_sd": 0.04815940455553118,
+      "rel_sd_pred": 0.04770983000742732,
+      "var_ratio_meas_pred": 1.0189349968853942,
+      "vs2_rel_rmse": 0.08671377333639682,
+      "vs2_rel_bias": 0.004895338442258312
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.18502723378519184,
+      "rel_bias": 0.0001690911817637808,
+      "rel_sd": 0.18505028925338235,
+      "rel_sd_pred": 0.181739008063807,
+      "var_ratio_meas_pred": 1.0367719287629655,
+      "vs2_rel_rmse": 0.2189380213818825,
+      "vs2_rel_bias": 0.04057200953318052
+     },
+     "subset": {
+      "rel_rmse": 0.07804026834266695,
+      "rel_bias": -0.0014537092581483613,
+      "rel_sd": 0.07803648272152663,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.138471012592897,
+      "vs2_rel_bias": 0.015362351420639575
+     }
+    },
+    {
+     "k": 2,
+     "m": 64,
+     "judge_calls": 128,
+     "frac_pairs": 0.031746031746031744,
+     "balanced": {
+      "rel_rmse": 0.027177091782034663,
+      "rel_bias": -0.00014269646070774744,
+      "rel_sd": 0.0271801148840566,
+      "rel_sd_pred": 0.027353566833372263,
+      "var_ratio_meas_pred": 0.9873579916280067,
+      "vs2_rel_rmse": 0.04915121667992354,
+      "vs2_rel_bias": 0.0023947703876949777,
+      "ci95_coverage": 0.94075,
+      "ci95_rel_width_median": 0.47251482758529545,
+      "spearman_ahat_a_median": 0.5296919136225915
+     },
+     "uniform": {
+      "rel_rmse": 0.03402766121655415,
+      "rel_bias": 1.3984703059355397e-05,
+      "rel_sd": 0.03403191259781663,
+      "rel_sd_pred": 0.03346277429058348,
+      "var_ratio_meas_pred": 1.0343054812900654,
+      "vs2_rel_rmse": 0.060595023460563134,
+      "vs2_rel_bias": 0.0034665209653683693
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.1289902179534552,
+      "rel_bias": 0.004461682663467359,
+      "rel_sd": 0.12892914874782818,
+      "rel_sd_pred": 0.12746831010898507,
+      "var_ratio_meas_pred": 1.0230521537445763,
+      "vs2_rel_rmse": 0.13452276973842742,
+      "vs2_rel_bias": 0.013200602643114179
+     },
+     "subset": {
+      "rel_rmse": 0.06394482328978177,
+      "rel_bias": -0.00026165675955724943,
+      "rel_sd": 0.06395228248397647,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.1105087715490566,
+      "vs2_rel_bias": 0.011553895516180246
+     }
+    },
+    {
+     "k": 4,
+     "m": 128,
+     "judge_calls": 256,
+     "frac_pairs": 0.06349206349206349,
+     "balanced": {
+      "rel_rmse": 0.01874809191618344,
+      "rel_bias": 0.00029821535692864387,
+      "rel_sd": 0.018748063648579748,
+      "rel_sd_pred": 0.019022169872425006,
+      "var_ratio_meas_pred": 0.9713879842625311,
+      "vs2_rel_rmse": 0.03401065478532861,
+      "vs2_rel_bias": 0.0015504411388069794,
+      "ci95_coverage": 0.945,
+      "ci95_rel_width_median": 0.10786159721271285,
+      "spearman_ahat_a_median": 0.6668387894984984
+     },
+     "uniform": {
+      "rel_rmse": 0.023295251441090282,
+      "rel_bias": -4.86090281942575e-05,
+      "rel_sd": 0.02329811317221511,
+      "rel_sd_pred": 0.023270624296846797,
+      "var_ratio_meas_pred": 1.0023639341085564,
+      "vs2_rel_rmse": 0.04129502513846378,
+      "vs2_rel_bias": 0.0015955867042474203
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08837895833543076,
+      "rel_bias": 0.00041789142171566596,
+      "rel_sd": 0.0883890196682537,
+      "rel_sd_pred": 0.08864379051604414,
+      "var_ratio_meas_pred": 0.9942600665370617,
+      "vs2_rel_rmse": 0.09297596600650548,
+      "vs2_rel_bias": 0.00997168425575845
+     },
+     "subset": {
+      "rel_rmse": 0.05051069200998886,
+      "rel_bias": 0.00022401990190212828,
+      "rel_sd": 0.05051651019084721,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.08710750604110258,
+      "vs2_rel_bias": 0.007582571654804804
+     }
+    },
+    {
+     "k": 8,
+     "m": 256,
+     "judge_calls": 512,
+     "frac_pairs": 0.12698412698412698,
+     "balanced": {
+      "rel_rmse": 0.01294710319003571,
+      "rel_bias": 0.00013543228854229206,
+      "rel_sd": 0.012948013433404407,
+      "rel_sd_pred": 0.012986747503867505,
+      "var_ratio_meas_pred": 0.9940437270171769,
+      "vs2_rel_rmse": 0.023439161777271903,
+      "vs2_rel_bias": 0.0008047906518811043,
+      "ci95_coverage": 0.95275,
+      "ci95_rel_width_median": 0.058320344040263365,
+      "spearman_ahat_a_median": 0.7874051086937337
+     },
+     "uniform": {
+      "rel_rmse": 0.01581000708027816,
+      "rel_bias": -0.0002442636472704818,
+      "rel_sd": 0.015810096424003925,
+      "rel_sd_pred": 0.015887237051678528,
+      "var_ratio_meas_pred": 0.9903125573180872,
+      "vs2_rel_rmse": 0.027985866552477624,
+      "vs2_rel_bias": 0.0004356009367711966
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.06020947507501719,
+      "rel_bias": 0.0006084283143370506,
+      "rel_sd": 0.06021392806551237,
+      "rel_sd_pred": 0.06051857032810906,
+      "var_ratio_meas_pred": 0.9899576114549797,
+      "vs2_rel_rmse": 0.06237716866073858,
+      "vs2_rel_bias": 0.003927774349075763
+     },
+     "subset": {
+      "rel_rmse": 0.0396292192345724,
+      "rel_bias": -0.0005308345445534934,
+      "rel_sd": 0.03963061793989197,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.0675565752116883,
+      "vs2_rel_bias": 0.003529573390137264
+     }
+    }
+   ]
+  }
+ ]
+}

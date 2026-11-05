@@ -1,0 +1,688 @@
+{
+ "judge": "cross-encoder/stsb-roberta-base",
+ "generator": "claude-opus-5-5 (effort low)",
+ "reps": 4000,
+ "populations": [
+  {
+   "name": "opus_story",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 97.64331340789795,
+   "judge_ms_per_call": 1.0885542185941801,
+   "judge_asym_mean_abs": 0.03897155813598713,
+   "mu": 0.40875309123434417,
+   "cv": 0.29763275660886435,
+   "s2_tot": 0.014800744225742495,
+   "s2_main": 0.006794328587602338,
+   "s2_int": 0.008006415638140158,
+   "distinct_share": 0.4590531721901635,
+   "kappa": 0.8486105261930442,
+   "efficiency_pred": 1.8362861812281235,
+   "vs2": 2.728569498435113,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.33631998273508595,
+     "text": "The old robot spent its final hour of battery life teaching the new model how to water the garden, hoping it would love the tomatoes as much as it had."
+    },
+    {
+     "a": 0.27916079093754226,
+     "text": "After centuries of sorting the abandoned library alone, the little robot finally found a book about loneliness and, for the first time, sat down to read instead of shelve."
+    },
+    {
+     "a": 0.27051373539113294,
+     "text": "After centuries of sorting the abandoned city's mail, the little robot finally opened one of the letters, read \"I miss you,\" and decided to deliver it to the stars."
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.06664477832056999,
+     "text": "After centuries of sweeping the empty city, the little robot finally found a single green sprout pushing through the cracked pavement, and for the first time it set down its broom and simply waited to see what would grow."
+    },
+    {
+     "a": -0.06667339600064276,
+     "text": "After centuries of sweeping the empty city alone, the little robot finally found a single green sprout pushing through the cracked pavement, and for the first time it set down its broom and simply waited to see what would grow."
+    },
+    {
+     "a": -0.0850084476352105,
+     "text": "After centuries of sweeping the empty city, the little robot finally found a flower growing through the cracked pavement, and for the first time it set down its broom to simply watch something grow."
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.01798983221529115,
+      "rel_bias": 0.0005114323104096208,
+      "rel_sd": 0.017984809241886977,
+      "rel_sd_pred": 0.017903679456777247,
+      "var_ratio_meas_pred": 1.0090834516383904,
+      "vs2_rel_rmse": 0.026991602724372326,
+      "vs2_rel_bias": 0.0013794284823658298
+     },
+     "uniform": {
+      "rel_rmse": 0.024339740459599378,
+      "rel_bias": -0.00024113091740851633,
+      "rel_sd": 0.024341588891417267,
+      "rel_sd_pred": 0.024261211102568615,
+      "var_ratio_meas_pred": 1.0066370087603833,
+      "vs2_rel_rmse": 0.03408516250946826,
+      "vs2_rel_bias": 0.0009716014867786615
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.08482931646760838,
+      "rel_bias": -0.0011706856296983537,
+      "rel_sd": 0.0848318427119354,
+      "rel_sd_pred": 0.0850468304107018,
+      "var_ratio_meas_pred": 0.9949506415045011,
+      "vs2_rel_rmse": 0.09087894215891035,
+      "vs2_rel_bias": 0.009396851879834855
+     },
+     "subset": {
+      "rel_rmse": 0.06740291161614358,
+      "rel_bias": -0.0017825536292415123,
+      "rel_sd": 0.06738776056867564,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.08794591230253233,
+      "vs2_rel_bias": 0.005578957840189025
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.012663232275231452,
+      "rel_bias": 0.00020013787136807792,
+      "rel_sd": 0.012663233625751872,
+      "rel_sd_pred": 0.012638554005000233,
+      "var_ratio_meas_pred": 1.0039092631955293,
+      "vs2_rel_rmse": 0.01904942969268176,
+      "vs2_rel_bias": 0.0006908551577187172,
+      "ci95_coverage": 0.95075,
+      "ci95_rel_width_median": 0.21613237426031381,
+      "spearman_ahat_a_median": 0.48815177852875835
+     },
+     "uniform": {
+      "rel_rmse": 0.01712396097917579,
+      "rel_bias": 0.000594501401781411,
+      "rel_sd": 0.017115777667430283,
+      "rel_sd_pred": 0.017126458697318464,
+      "var_ratio_meas_pred": 0.9987530756440401,
+      "vs2_rel_rmse": 0.024001577814143676,
+      "vs2_rel_bias": 0.0014345519442724441
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.059778396606821486,
+      "rel_bias": -0.0004337637762283908,
+      "rel_sd": 0.05978429635273361,
+      "rel_sd_pred": 0.06003620438439377,
+      "var_ratio_meas_pred": 0.9916257351932376,
+      "vs2_rel_rmse": 0.061022294694210596,
+      "vs2_rel_bias": 0.003994138805712533
+     },
+     "subset": {
+      "rel_rmse": 0.05498842414984304,
+      "rel_bias": -0.0020248512559357668,
+      "rel_sd": 0.054958000903782986,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.07127783562675415,
+      "vs2_rel_bias": 0.0024602746958506394
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.008864572361895143,
+      "rel_bias": 1.0775758563230653e-05,
+      "rel_sd": 0.008865674090929254,
+      "rel_sd_pred": 0.008906666152969206,
+      "var_ratio_meas_pred": 0.9908163772270441,
+      "vs2_rel_rmse": 0.013351098946757463,
+      "vs2_rel_bias": 0.0001957370006480108,
+      "ci95_coverage": 0.95875,
+      "ci95_rel_width_median": 0.0503163434845566,
+      "spearman_ahat_a_median": 0.6136137219544394
+     },
+     "uniform": {
+      "rel_rmse": 0.012210002481099257,
+      "rel_bias": -6.874700604675432e-05,
+      "rel_sd": 0.01221133545587925,
+      "rel_sd_pred": 0.012069391003059503,
+      "var_ratio_meas_pred": 1.0236597083725358,
+      "vs2_rel_rmse": 0.017139153525588022,
+      "vs2_rel_bias": 0.00013465274285962003
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04199603479410447,
+      "rel_bias": -0.0004715068441695225,
+      "rel_sd": 0.041998637967454545,
+      "rel_sd_pred": 0.042308829738882114,
+      "var_ratio_meas_pred": 0.9853905356854942,
+      "vs2_rel_rmse": 0.04325159189031203,
+      "vs2_rel_bias": 0.0033640643292405237
+     },
+     "subset": {
+      "rel_rmse": 0.046077309484141675,
+      "rel_bias": 0.0008741041229756163,
+      "rel_sd": 0.046074777401065206,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.059362485858828445,
+      "vs2_rel_bias": 0.004403164840680152
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.0062314103553051375,
+      "rel_bias": -3.600879000398294e-05,
+      "rel_sd": 0.006232085373715035,
+      "rel_sd_pred": 0.006255120244409153,
+      "var_ratio_meas_pred": 0.992648436442072,
+      "vs2_rel_rmse": 0.00934205689253977,
+      "vs2_rel_bias": 2.6413647435497012e-05,
+      "ci95_coverage": 0.9495,
+      "ci95_rel_width_median": 0.02827429909217069,
+      "spearman_ahat_a_median": 0.731252192356717
+     },
+     "uniform": {
+      "rel_rmse": 0.008412572458422918,
+      "rel_bias": -3.429202858029612e-05,
+      "rel_sd": 0.008413554326150834,
+      "rel_sd_pred": 0.008476290758440445,
+      "var_ratio_meas_pred": 0.9852519774735035,
+      "vs2_rel_rmse": 0.011799003552329228,
+      "vs2_rel_bias": 0.00010192170151990254
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.029634509558504413,
+      "rel_bias": 0.0012671769456105153,
+      "rel_sd": 0.02961110642592648,
+      "rel_sd_pred": 0.029713341992583436,
+      "var_ratio_meas_pred": 0.9931303800005308,
+      "vs2_rel_rmse": 0.030183011215884407,
+      "vs2_rel_bias": 0.0004030728053499022
+     },
+     "subset": {
+      "rel_rmse": 0.03761515053409395,
+      "rel_bias": 0.0006477126597794758,
+      "rel_sd": 0.03761427556719019,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.048463119387475245,
+      "vs2_rel_bias": 0.003370612573009746
+     }
+    }
+   ]
+  },
+  {
+   "name": "opus_cafe",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 84.41463923454285,
+   "judge_ms_per_call": 0.9410773604742793,
+   "judge_asym_mean_abs": 0.04436736574041405,
+   "mu": 0.37034677046547365,
+   "cv": 0.521723272319798,
+   "s2_tot": 0.03733339994131722,
+   "s2_main": 0.006177271553562392,
+   "s2_int": 0.03115612838775483,
+   "distinct_share": 0.1654623356906197,
+   "kappa": 0.19826826609143838,
+   "efficiency_pred": 1.1902796328652496,
+   "vs2": 2.2952418524466798,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.1964546467008807,
+     "text": "**Grounds for Celebration**: a playful twist on a familiar phrase that suggests every cup, from a Monday-morning pick-me-up to a catch-up with an old friend, deserves to feel like a small occasion worth savoring."
+    },
+    {
+     "a": 0.19324788515949815,
+     "text": "**The Daily Grind & Bloom.** The name nods to both the ritual of grinding fresh beans each morning and the \"bloom,\" the moment hot water first hits the grounds and releases their aroma, suggesting a place where everyday routines blossom into something special."
+    },
+    {
+     "a": 0.18884119453696202,
+     "text": "**Grounds for Celebration**: a playful twist on \"grounds\" that suggests every cup, whether it marks a big win or simply getting through a Tuesday, is a reason to celebrate."
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.09360994911383862,
+     "text": "**The Daily Grind & Unwind:** a cozy spot where you can fuel up for the hustle of your day with freshly ground coffee, then slow down and relax with a cup when it's time to unwind."
+    },
+    {
+     "a": -0.09655924361674179,
+     "text": "**The Daily Grind & Unwind**: A cozy spot where you can fuel up on freshly ground coffee to power through your busy day, or slow down and relax with a cup when you need a break."
+    },
+    {
+     "a": -0.09700775784284076,
+     "text": "**The Daily Grind & Unwind**: a cozy spot where you can fuel up on freshly ground coffee to power through your busy day, or slow down and relax with a cup when you need a break."
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.03937078317205981,
+      "rel_bias": -0.00044416020852855453,
+      "rel_sd": 0.03937319966047189,
+      "rel_sd_pred": 0.03898050475236229,
+      "var_ratio_meas_pred": 1.0202497603138696,
+      "vs2_rel_rmse": 0.04235303186824536,
+      "vs2_rel_bias": 0.0014874202160439776
+     },
+     "uniform": {
+      "rel_rmse": 0.04229194229811535,
+      "rel_bias": -0.0005194700559290055,
+      "rel_sd": 0.04229403894925113,
+      "rel_sd_pred": 0.04252770626153765,
+      "var_ratio_meas_pred": 0.9890412442400064,
+      "vs2_rel_rmse": 0.04534054310103024,
+      "vs2_rel_bias": 0.0017424725553203402
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.09260267206124333,
+      "rel_bias": 0.00231387562909946,
+      "rel_sd": 0.09258533287417121,
+      "rel_sd_pred": 0.09193984770946578,
+      "var_ratio_meas_pred": 1.0140907576092095,
+      "vs2_rel_rmse": 0.09627038384969418,
+      "vs2_rel_bias": 0.00787650205639423
+     },
+     "subset": {
+      "rel_rmse": 0.0781440300875099,
+      "rel_bias": 0.0003183364970265057,
+      "rel_sd": 0.07815315143333668,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.07936772675567767,
+      "vs2_rel_bias": 0.006658882552506684
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.027408512731990093,
+      "rel_bias": -0.0001254886886166151,
+      "rel_sd": 0.027411652128917764,
+      "rel_sd_pred": 0.02751709310056983,
+      "var_ratio_meas_pred": 0.9923510121477472,
+      "vs2_rel_rmse": 0.029442094327502635,
+      "vs2_rel_bias": 0.0006514105621688859,
+      "ci95_coverage": 0.95275,
+      "ci95_rel_width_median": 0.4848435475966174,
+      "spearman_ahat_a_median": 0.37437682253883797
+     },
+     "uniform": {
+      "rel_rmse": 0.029610094917276612,
+      "rel_bias": 0.00025348932239110944,
+      "rel_sd": 0.029612711668245625,
+      "rel_sd_pred": 0.030021131331848628,
+      "var_ratio_meas_pred": 0.9729762675744454,
+      "vs2_rel_rmse": 0.03161323045747871,
+      "vs2_rel_bias": 0.0011688936830085428
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.06460419936228323,
+      "rel_bias": -0.000444903542523134,
+      "rel_sd": 0.0646107442547118,
+      "rel_sd_pred": 0.06490211876797887,
+      "var_ratio_meas_pred": 0.991041264482163,
+      "vs2_rel_rmse": 0.06693054343745808,
+      "vs2_rel_bias": 0.0045760100202940635
+     },
+     "subset": {
+      "rel_rmse": 0.06306866233371078,
+      "rel_bias": 0.0006575276630469418,
+      "rel_sd": 0.06307311931822533,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.06433413055815236,
+      "vs2_rel_bias": 0.005011693374292081
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.01950089245599773,
+      "rel_bias": -0.00012123055061907806,
+      "rel_sd": 0.019502953648979537,
+      "rel_sd_pred": 0.01939189891897315,
+      "var_ratio_meas_pred": 1.011486521049965,
+      "vs2_rel_rmse": 0.020905392932299992,
+      "vs2_rel_bias": 0.00023951389759324648,
+      "ci95_coverage": 0.9495,
+      "ci95_rel_width_median": 0.10944950661332753,
+      "spearman_ahat_a_median": 0.4932153268529911
+     },
+     "uniform": {
+      "rel_rmse": 0.020964263885458537,
+      "rel_bias": -0.0006499426062844815,
+      "rel_sd": 0.020956806335904982,
+      "rel_sd_pred": 0.021156549570578397,
+      "var_ratio_meas_pred": 0.9812067344906553,
+      "vs2_rel_rmse": 0.022344909974793423,
+      "vs2_rel_bias": -0.000183922886823229
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.04596485949016907,
+      "rel_bias": 0.0008409803885180978,
+      "rel_sd": 0.04596291121370494,
+      "rel_sd_pred": 0.045737946307626995,
+      "var_ratio_meas_pred": 1.0098613154353109,
+      "vs2_rel_rmse": 0.045685214639784213,
+      "vs2_rel_bias": 0.0010704163503894026
+     },
+     "subset": {
+      "rel_rmse": 0.050380520042761195,
+      "rel_bias": -0.00010351927489948842,
+      "rel_sd": 0.050386712422383455,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.051772444908939334,
+      "vs2_rel_bias": 0.0026820725104184095
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.013668279564066813,
+      "rel_bias": -0.0002656172421509062,
+      "rel_sd": 0.01366740696787305,
+      "rel_sd_pred": 0.013618862256913907,
+      "var_ratio_meas_pred": 1.0071417464022383,
+      "vs2_rel_rmse": 0.014657327938203724,
+      "vs2_rel_bias": 1.0466415671928075e-05,
+      "ci95_coverage": 0.94675,
+      "ci95_rel_width_median": 0.061251132325641826,
+      "spearman_ahat_a_median": 0.6253485060528772
+     },
+     "uniform": {
+      "rel_rmse": 0.014758056267413229,
+      "rel_bias": 0.00013390083482356374,
+      "rel_sd": 0.014759293836332591,
+      "rel_sd_pred": 0.014858170189375932,
+      "var_ratio_meas_pred": 0.986734926765205,
+      "vs2_rel_rmse": 0.015708467418284588,
+      "vs2_rel_bias": 0.00038031803782567764
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.031555666079859324,
+      "rel_bias": 0.00028517243843717566,
+      "rel_sd": 0.031558322521230885,
+      "rel_sd_pred": 0.03212159847163025,
+      "var_ratio_meas_pred": 0.9652360251615133,
+      "vs2_rel_rmse": 0.032268741157115914,
+      "vs2_rel_bias": 0.00114432326921321
+     },
+     "subset": {
+      "rel_rmse": 0.0409368745612897,
+      "rel_bias": 0.0003126883547333037,
+      "rel_sd": 0.04094079825895072,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.04204204745154556,
+      "vs2_rel_bias": 0.0020674238981022164
+     }
+    }
+   ]
+  },
+  {
+   "name": "opus_advice",
+   "n": 300,
+   "pairs": 44850,
+   "judge_calls_all_pairs": 89700,
+   "judge_seconds_all_pairs": 63.05841898918152,
+   "judge_ms_per_call": 0.7029924079061485,
+   "judge_asym_mean_abs": 0.044446108084724364,
+   "mu": 0.2190539018798167,
+   "cv": 0.6126696295885539,
+   "s2_tot": 0.018011699471845728,
+   "s2_main": 0.01237630241967895,
+   "s2_int": 0.00563539705216678,
+   "distinct_share": 0.6871257450761087,
+   "kappa": 2.1961722137964226,
+   "efficiency_pred": 3.174863923936557,
+   "vs2": 1.5894994379227547,
+   "nonlatin_share_texts": 0.0,
+   "corr_a_nonlatin": null,
+   "most_distinct": [
+    {
+     "a": 0.2659214320765512,
+     "text": "Ask questions early and often, because no one expects you to know everything yet, and the time to learn is when you're new."
+    },
+    {
+     "a": 0.2601746345493084,
+     "text": "Ask questions early and often, because no one expects you to know everything yet, and showing curiosity builds trust faster than pretending you have it all figured out."
+    },
+    {
+     "a": 0.2544211502009856,
+     "text": "Ask questions early and often, because no one expects you to know everything yet, and the sooner you learn, the faster you'll earn trust and responsibility."
+    }
+   ],
+   "least_distinct": [
+    {
+     "a": -0.08129507365576108,
+     "text": "Ask questions freely and early, because people expect you to be learning, and asking now is far better than guessing wrong later."
+    },
+    {
+     "a": -0.08129507365576108,
+     "text": "Ask questions freely and early, because people expect you to be learning, and asking now is far better than guessing wrong later."
+    },
+    {
+     "a": -0.08129507365576108,
+     "text": "Ask questions freely and early, because people expect you to be learning, and asking now is far better than guessing wrong later."
+    }
+   ],
+   "budgets": [
+    {
+     "k": 1,
+     "m": 150,
+     "judge_calls": 300,
+     "frac_pairs": 0.0033444816053511705,
+     "balanced": {
+      "rel_rmse": 0.02757480529912726,
+      "rel_bias": -0.0002729416172690957,
+      "rel_sd": 0.027576901775511753,
+      "rel_sd_pred": 0.02802822173960208,
+      "var_ratio_meas_pred": 0.9680546047887351,
+      "vs2_rel_rmse": 0.015236517003374096,
+      "vs2_rel_bias": 0.00011857156296790627
+     },
+     "uniform": {
+      "rel_rmse": 0.050631357808585256,
+      "rel_bias": 0.000775445641169048,
+      "rel_sd": 0.05063174864737886,
+      "rel_sd_pred": 0.04994109986057135,
+      "var_ratio_meas_pred": 1.0278497819177572,
+      "vs2_rel_rmse": 0.027415950933674365,
+      "vs2_rel_bias": 0.001173564430420715
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.09541447955527547,
+      "rel_bias": -0.0012284650377700768,
+      "rel_sd": 0.09541849901850163,
+      "rel_sd_pred": 0.09559512523033832,
+      "var_ratio_meas_pred": 0.9963081163435186,
+      "vs2_rel_rmse": 0.08755383210862762,
+      "vs2_rel_bias": 0.0077038702021701155
+     },
+     "subset": {
+      "rel_rmse": 0.168738490208633,
+      "rel_bias": 6.109960825617655e-05,
+      "rel_sd": 0.16875957541218256,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.09062329871372692,
+      "vs2_rel_bias": 0.008049983992631127
+     }
+    },
+    {
+     "k": 2,
+     "m": 300,
+     "judge_calls": 600,
+     "frac_pairs": 0.006688963210702341,
+     "balanced": {
+      "rel_rmse": 0.019856070028770552,
+      "rel_bias": 0.00023210062795442354,
+      "rel_sd": 0.01985719575725079,
+      "rel_sd_pred": 0.01978566444820872,
+      "var_ratio_meas_pred": 1.007243690314813,
+      "vs2_rel_rmse": 0.010899208651746057,
+      "vs2_rel_bias": 0.00024469676669292006,
+      "ci95_coverage": 0.954,
+      "ci95_rel_width_median": 0.35032127788846446,
+      "spearman_ahat_a_median": 0.6605892266610336
+     },
+     "uniform": {
+      "rel_rmse": 0.03549273258848429,
+      "rel_bias": -0.00020376149729883775,
+      "rel_sd": 0.03549658504331518,
+      "rel_sd_pred": 0.03525438942205887,
+      "var_ratio_meas_pred": 1.013787080713205,
+      "vs2_rel_rmse": 0.01914173673079545,
+      "vs2_rel_bias": 0.0002457419072452449
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.06713263293465684,
+      "rel_bias": 0.0005967555932320234,
+      "rel_sd": 0.06713837336274811,
+      "rel_sd_pred": 0.06748244994863588,
+      "var_ratio_meas_pred": 0.9898284841534242,
+      "vs2_rel_rmse": 0.060687274527592046,
+      "vs2_rel_bias": 0.0031492689110705907
+     },
+     "subset": {
+      "rel_rmse": 0.13855321861707615,
+      "rel_bias": -0.004500436778427153,
+      "rel_sd": 0.13849742178797103,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.07391292071316552,
+      "vs2_rel_bias": 0.002939162835368103
+     }
+    },
+    {
+     "k": 4,
+     "m": 600,
+     "judge_calls": 1200,
+     "frac_pairs": 0.013377926421404682,
+     "balanced": {
+      "rel_rmse": 0.014276941260587348,
+      "rel_bias": -6.107486401585316e-05,
+      "rel_sd": 0.014278595560910214,
+      "rel_sd_pred": 0.013943391608339574,
+      "var_ratio_meas_pred": 1.0486586293387206,
+      "vs2_rel_rmse": 0.007855534954052298,
+      "vs2_rel_bias": 2.0896928240921042e-05,
+      "ci95_coverage": 0.9485,
+      "ci95_rel_width_median": 0.07838730742155078,
+      "spearman_ahat_a_median": 0.7605389052950435
+     },
+     "uniform": {
+      "rel_rmse": 0.024334806351040874,
+      "rel_bias": 0.0009086949869525629,
+      "rel_sd": 0.024320874774579896,
+      "rel_sd_pred": 0.024844541304710883,
+      "var_ratio_meas_pred": 0.9582888109748946,
+      "vs2_rel_rmse": 0.013128799913545802,
+      "vs2_rel_bias": 0.0006636104256070308
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.047680485727068934,
+      "rel_bias": -0.0012421243022547879,
+      "rel_sd": 0.04767026284673645,
+      "rel_sd_pred": 0.04755636227365574,
+      "var_ratio_meas_pred": 1.0047958660948737,
+      "vs2_rel_rmse": 0.04270178678540874,
+      "vs2_rel_bias": 0.0022395580186274078
+     },
+     "subset": {
+      "rel_rmse": 0.11419040473033557,
+      "rel_bias": 0.0009544800051155544,
+      "rel_sd": 0.11420069154731571,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.06100552195304167,
+      "vs2_rel_bias": 0.004171763757953917
+     }
+    },
+    {
+     "k": 8,
+     "m": 1200,
+     "judge_calls": 2400,
+     "frac_pairs": 0.026755852842809364,
+     "balanced": {
+      "rel_rmse": 0.009940550150131684,
+      "rel_bias": -0.0001564923417178843,
+      "rel_sd": 0.009940560905806433,
+      "rel_sd_pred": 0.009792394777924167,
+      "var_ratio_meas_pred": 1.0304904086196054,
+      "vs2_rel_rmse": 0.005463380774985478,
+      "vs2_rel_bias": -4.842588099751577e-05,
+      "ci95_coverage": 0.94625,
+      "ci95_rel_width_median": 0.04423913641314185,
+      "spearman_ahat_a_median": 0.8346739014283323
+     },
+     "uniform": {
+      "rel_rmse": 0.01766353270312415,
+      "rel_bias": 0.0003177369516860207,
+      "rel_sd": 0.017662882696212263,
+      "rel_sd_pred": 0.017448233784573705,
+      "var_ratio_meas_pred": 1.024755425025817,
+      "vs2_rel_rmse": 0.009528853136610648,
+      "vs2_rel_bias": 0.000249892136954033
+     },
+     "bernoulli_ht": {
+      "rel_rmse": 0.033909086813390873,
+      "rel_bias": 0.001024880165908515,
+      "rel_sd": 0.03389783259925829,
+      "rel_sd_pred": 0.03339866559489627,
+      "var_ratio_meas_pred": 1.0301148084689857,
+      "vs2_rel_rmse": 0.03003828345579165,
+      "vs2_rel_bias": 0.00030642876692676957
+     },
+     "subset": {
+      "rel_rmse": 0.0941907138486285,
+      "rel_bias": -0.00034866806716715715,
+      "rel_sd": 0.09420184447646897,
+      "rel_sd_pred": null,
+      "var_ratio_meas_pred": null,
+      "vs2_rel_rmse": 0.050390370721655406,
+      "vs2_rel_bias": 0.002472338218398873
+     }
+    }
+   ]
+  }
+ ]
+}

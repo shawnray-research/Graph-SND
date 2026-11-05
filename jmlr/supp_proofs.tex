@@ -1,0 +1,207 @@
+% Proofs and remarks moved from appendix_proofs.tex to the supplement (page budget).
+\section{Additional Proofs and Remarks}
+\label{app:supp-proofs}
+
+\subsection{Classical counterparts of the anatomy}
+
+\begin{remark}[Classical counterparts]
+In Theorem~\ref{thm:anatomy}, parts (i) and (ii) identify the anatomy with the
+two-way analysis of variance (ANOVA) of a symmetric layout.
+This decomposition is exactly Griffing's Method~4 diallel analysis, which splits crosses into
+general and specific combining ability \citep{griffing1956concept}. It is also
+the finite-population (without-replacement) Hoeffding decomposition of the pair
+average \citep{nandi1963properties,bloznelis2001orthogonal}, and the symmetric social relations model \citep{kenny1984social}. The
+classical i.i.d.\ Hoeffding projection \citep{hoeffding1948class} differs by the
+factor $(n-2)/n$ on the main effects. The double centering of classical scaling
+\citep{torgerson1952multidimensional,gower1966some} removes the same main effects,
+but it acts on the $n\times n$ matrix including its diagonal. Our residual is
+centered on the $N$ off-diagonal pairs, and this centering is what makes
+\Cref{prop:error-identity,thm:balanced} exact. It is the U-centering of
+\citet{szekely2014partial}, which \citet{zhang2026ucentering} characterizes as
+the least-squares residual after fitting additive endpoint effects.
+\end{remark}
+
+\subsection{Relation to incomplete U-statistics}
+
+\begin{remark}[Relation to incomplete U-statistics]
+\label[remark]{rem:classical}
+For i.i.d.\ observations, the variance of an incomplete U-statistic depends
+on a fixed design only through its degree sequence, and equireplicate
+designs minimize it
+\citep{blom1976some,brown1978reduced,lee1982incomplete,lee1990ustatistics}.
+As in that setting, where a regular design has the same H\'ajek projection
+as the complete statistic, regularity removes the main effects from the
+error, here in every realization, and \Cref{thm:balanced}(iii) is the
+permutation variance of a quadratic-assignment statistic
+\citep{daniels1944relation,mantel1967detection,hubert1987assignment},
+expressed through the anatomy. Within the variance formula itself, only the finite-population correction
+differs: residuals of overlapping pairs have covariance
+$-\sigmaint/(n-2)$ (\Cref{lem:corr}), so for
+${\kappa<2(n-1)/\bigl(n(n-3)\bigr)}$ irregular designs such as landmarks have
+smaller variance than regular ones (\Cref{thm:general-design}), while
+uniform pair sampling gains at most the factor
+$1+2(n-1)/\bigl(n(n-3)\bigr)$ (\Cref{cor:efficiency}). Over an i.i.d.\
+superpopulation, equireplicate designs are again optimal
+(\Cref{sec:discussion}).
+\end{remark}
+
+\subsection{Energy per dimension}
+
+\begin{remark}[Energy per dimension]
+\label[remark]{rem:dof}
+The two variances have the same form,
+\[
+\Var(T)=\frac{N-m}{m}\cdot\frac{\sigmaint}{n(n-3)/2},
+\qquad
+\Var(T_U)=\frac{N-m}{m}\cdot\frac{\sigmatot}{N-1}.
+\]
+Uniform sampling is exposed to the total energy, spread over all $N-1$
+non-constant directions of $\R^{\Pairs}$; a balanced design is exposed only
+to the relational energy, spread over the $n(n-3)/2$ dimensions of the
+relational subspace (\Cref{thm:anatomy}(iii)). The threshold of
+\Cref{cor:efficiency} is the ratio $(n-1)/\bigl(n(n-3)/2\bigr)$ of the
+dimensions of the distinctiveness and relational subspaces, so balance pays
+off exactly when distinctiveness carries more energy per dimension than
+relational structure does.
+\end{remark}
+
+\subsection{Why Chebyshev and a median}
+
+\begin{remark}[Why Chebyshev and a median]
+\label[remark]{rem:why-median}
+A single balanced design also concentrates exponentially: once the labels are
+randomized, $T$ is a function of a uniform permutation, so bounded-difference
+inequalities for permutations apply \citep{mcdiarmid1989method}. These bounds
+depend on the range of the table. Swapping two labels changes up to $2k$
+compared pairs, hence $T$ by up to $4d_{\max}/n$, where
+$d_{\max}=\max_{i<j}d_{ij}$, so the resulting exponent is of order
+$n\varepsilon^2\mu^2/d_{\max}^2$ and does not improve with $k$. Over
+pseudometrics the ratio $d_{\max}/\mu$ can grow linearly in $n$: one
+individual at unit distance from $n-1$ coincident others gives $\mu=2/n$ and
+$d_{\max}/\mu=n/2$, and the bound is then vacuous. Chebyshev's inequality
+needs only $\Var(T)/\mu^2\le v_{n,k}\le 2/(nk)$, which \Cref{thm:metric}
+establishes for every pseudometric without reference to $d_{\max}$. The
+median of $L=\lceil 8\ln(1/\eta)\rceil$ independent designs
+(\Cref{lem:median}) then restores the $\log(1/\eta)$ dependence. The
+guarantee is therefore scale-free: it holds uniformly over pseudometric
+tables, including tables with arbitrary outliers. When $d_{\max}/\mu$ is
+known to be bounded, a single design with a tail bound is a valid
+alternative.
+\end{remark}
+
+\subsection{Higher moments of balanced designs}
+
+\begin{remark}[Higher moments depend on the design]
+Only the first two moments of the error $T-\mu$ of a balanced design (Theorem~\ref{thm:balanced}) are free of its base graph $H$. Third and higher moments
+involve counts of small subgraphs of $H$, such as triangles and paths. For example,
+at $n=6$ and $k=2$ the hexagon and two disjoint triangles give identical means and
+variances but, in general, different third moments. Tail bounds sharper than Chebyshev's
+therefore depend on the chosen $H$, while all of our guarantees use only the
+variance.
+\end{remark}
+
+\subsection{Proof of Proposition~\ref{prop:lower}}
+\label{app:lower}
+
+\begin{proof}
+Both constructions are standard in the sublinear-algorithms literature
+\citep{barhum2007approximating,goldreich2008approximating}. We include them so
+the constants are explicit.
+
+\emph{(i)} Let $D^{(0)}$ have all off-diagonal entries equal to $1$ (so $\mu=1$).
+For $u\in[n]$, let $D^{(u)}$ agree with $D^{(0)}$ except $d_{uj}=1+n$ for $j\neq u$.
+Then $\mu(D^{(u)})=1+n(n-1)/N=3$. Both tables are pseudometrics: the only
+nontrivial checks are $1+n\le(1+n)+1$ and $1\le2(1+n)$. The intervals
+$(3^{-1/2},3^{1/2})$ and $(3^{1/2},3^{3/2})$ are disjoint, so a procedure that
+succeeds on $D^{(0)}$ and on $D^{(u)}$ must distinguish them. Run the procedure with
+the same internal randomness on $D^{(0)}$ and on $D^{(u)}$. Both runs see identical
+answers until a pair containing $u$ is queried. Let $V_0$ be the set of individuals
+touched by the $q<n/8$ queries of the run on $D^{(0)}$, so $\abs{V_0}\le2q$. If $u\notin V_0$,
+the two runs coincide and produce the same output, so at least one of them fails.
+Draw $u$ uniformly and independently of the internal randomness. Then
+$\Prob(u\in V_0)\le 2q/n<1/4$, and
+$\Prob(\text{fail on }D^{(0)})+\E_u\Prob(\text{fail on }D^{(u)})\ge\Prob(u\notin V_0)>3/4$.
+Hence some table in the family has failure probability greater than $3/8$.
+
+\emph{(ii)} Let $P_\pm$ be the laws of random symmetric tables whose entries $d_{ij}$, $i<j$, are
+independently $2$ with probability $\tfrac12\pm\varepsilon$, and $1$ otherwise.
+Every such table is a pseudometric, since all entries lie in $[1,2]$. Under
+$P_\pm$, $\mu=1+B/N$ with $B\sim\mathrm{Bin}(N,\tfrac12\pm\varepsilon)$. By
+Chebyshev, $P_\pm\big(\abs{\mu-(\tfrac32\pm\varepsilon)}>\varepsilon/8\big)\le
+16/(N\varepsilon^2)\le1/256$ when $N\ge4096\,\varepsilon^{-2}$. On
+the complementary events, a $(1\pm\varepsilon/2)$-approximation $\widehat\mu$
+satisfies $\widehat\mu>\tfrac32$ under $P_+$ and $\widehat\mu<\tfrac32$ under
+$P_-$, since $\varepsilon\le1/8$. So a procedure with worst-case success
+probability $2/3$ yields a test between $P_+$ and $P_-$ with average success at
+least $2/3-1/256>0.66$. Hence the total variation between the transcript laws
+satisfies $\mathrm{TV}\ge0.32$. Repeated queries reveal nothing new, so assume
+$q$ distinct queries. Each reveals an independent
+$\mathrm{Bernoulli}(\tfrac12\pm\varepsilon)$ entry, even under adaptivity. By the
+chain rule and the $\chi^2$ bound on the Kullback--Leibler (KL) divergence,
+$\mathrm{KL}\le q\,(2\varepsilon)^2/(\tfrac14-\varepsilon^2)\le 18\,q\,\varepsilon^2$.
+Pinsker's inequality gives $0.32\le\mathrm{TV}\le\sqrt{9q\varepsilon^2}$, so
+$q\ge0.011\,\varepsilon^{-2}$.
+
+\emph{Combining (i) and (ii).} A $(1\pm\varepsilon/2)$-approximation with
+$\varepsilon\le1/8$ lies in $(3^{-1/2},3^{1/2})\mu$. A procedure that succeeds with
+probability $2/3>5/8$ on every pseudometric table therefore needs at least $n/8$
+evaluations by (i) and, when $N\ge4096\,\varepsilon^{-2}$, at least $c\,\varepsilon^{-2}$ by (ii). It thus needs at
+least $\tfrac12(n/8+c\,\varepsilon^{-2})$.
+
+\emph{(iii)} Under uniform sampling with replacement, each draw contains $u$ with
+probability $(n-1)/N=2/n$. In that case it returns $1+n$, and otherwise $1$. Hence
+a single draw $d$ has $\Var(d)={n^2\cdot\frac2n\bigl(1-\frac2n\bigr)}=2(n-2)$. Since
+$\mu=3$ and the $m$ draws are independent, $\Var(T_U')/\mu^2=2(n-2)/(9m)$. Finally, $d^{(u)}_{ij}=3+a_i+a_j$ with $a_u=n-1$
+and $a_l=-1$ for $l\neq u$, so $\sum_ia_i=0$. Uniqueness in
+Theorem~\ref{thm:anatomy}(i) gives level $3$, distinctiveness $a$ and $R=0$.
+Theorem~\ref{thm:balanced}(i) then shows that every balanced design is exact.
+\end{proof}
+
+% ------------------------------------------------------------
+\subsection{Proof of Proposition~\ref{prop:sparse-anatomy}}
+\label{app:supp-sparse-dico}
+
+\begin{proof}
+Write $u=\sigma^{-1}(i)$ for the vertex of $H$ that receives individual $i$.
+Since $\sigma$ is uniform, $u$ is uniform on $[n]$. Conditional on $u$, the
+restriction of $\sigma$ to $[n]\setminus\{u\}$ is a uniform bijection onto
+$[n]\setminus\{i\}$. The partners of $i$ in $G$ are the images of the $k$
+neighbors of $u$ in $H$, so they form a uniformly random $k$-subset of
+$[n]\setminus\{i\}$, whatever $u$ is. Hence $\widehat m_i$ is the mean of a simple
+random sample of size $k$, drawn without replacement from the $n-1$ values
+$\{d_{ij}\}_{j\ne i}$. These values have mean $S_i/(n-1)$ and population variance
+$s_i^2$ (divisor $n-1$). The standard finite-population formula
+\citep{cochran1977sampling} gives $\E[\widehat m_i]=S_i/(n-1)$ and the stated
+$\Var(\widehat m_i)$. By Theorem~\ref{thm:balanced}, $\E[T]=\mu$, so
+\[
+\E[\widehat a_i]=\frac{n-1}{n-2}\Big(\frac{S_i}{n-1}-\mu\Big)=\frac{S_i-(n-1)\mu}{n-2}=a_i .
+\]
+Finally, $\widehat a_i-a_i=\frac{n-1}{n-2}\big[(\widehat m_i-\E[\widehat m_i])-(T-\mu)\big]$
+and $(x-y)^2\le2x^2+2y^2$ give the stated bound on $\Var(\widehat a_i)$.
+\end{proof}
+
+% ------------------------------------------------------------
+\subsection{Proof of Proposition~\ref{prop:dico}}\label{app:supp-dico}
+
+\begin{proof}
+Homogeneity gives $\SND(c\,h)=c\,\SND(h)$, so
+$\SND_{\mathrm{real}}=\SNDdes\,\SND(h)/\widehat{\SND}=\SNDdes/(1+e)$.
+
+\emph{(i)} If $\abs e\le\varepsilon<1$, then
+$\lvert 1/(1+e)-1\rvert=\lvert e\rvert/(1+e)\le\varepsilon/(1-\varepsilon)$.
+
+\emph{(ii)} On the event $\{T=0\}$ we have $e=-1$. This event lies inside
+$\{\abs e>\varepsilon\}$ and inside $\{\abs e>1/2\}$, so the convention
+$1/\SND_{\mathrm{real}}:=0$ there affects none of the bounds below.
+Theorem~\ref{thm:balanced}(ii) gives $\E[e]=0$, so
+$\E[1/\SND_{\mathrm{real}}]=\E[1+e]/\SNDdes=1/\SNDdes$. By (i), the event
+$\{\abs{\SND_{\mathrm{real}}/\SNDdes-1}>\varepsilon/(1-\varepsilon)\}$ is contained
+in $\{\abs e>\varepsilon\}$. Chebyshev's inequality and \mbox{Theorem}~\ref{thm:metric}
+bound the probability of the latter by $\E[e^2]/\varepsilon^2\le v_{n,k}/\varepsilon^2$.
+For the bias, write ${1/(1+e)-1=-e+e^2/(1+e)}$. Since $\E[e]=0$,
+$-\E[e\,\one\{\abs e\le\frac12\}]=\E[e\,\one\{\abs e>\frac12\}]$, whose absolute value
+is at most $2\E[e^2]$. On $\{\abs e\le\frac12\}$ we have $e^2/(1+e)\le2e^2$.
+Summing the two bounds gives $4\E[e^2]$. Markov's inequality gives
+$\Prob(\abs e>\frac12)\le4\E[e^2]$.
+\end{proof}
+

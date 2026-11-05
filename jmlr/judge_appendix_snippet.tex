@@ -1,0 +1,88 @@
+% ---------------------------------------------------------------------------
+% Appendix: protocol of the neural-judge and sample-set experiments.
+% ---------------------------------------------------------------------------
+\subsection{Neural judges and sample sets}
+\label{app:exp-details:judge}
+
+\paragraph{Generators.} We used Qwen2.5-0.5B-Instruct and
+Llama-3.2-1B-Instruct in float16 with the chat template. Each population is
+$300$ responses to one prompt, sampled with pure temperature sampling (no
+top-$k$ or nucleus truncation), at most $40$ new tokens, and seed
+$1000p+t$ for prompt index $p$ and temperature index $t$. The prompts are:
+``Write a one-sentence story about a robot.''; ``Invent a name for a new
+coffee shop and explain it in one sentence.''; and ``Give one sentence of
+advice to someone starting their first job.'' The temperatures are
+$T\in\{0.5,1,1.5\}$. The composite populations are the following.
+\begin{itemize}
+  \item \emph{Mixture:} the first $100$ Qwen responses at $T=1$ for each
+  of the three prompts.
+  \item \emph{Two generators:} $150$ Qwen and $150$ Llama story responses
+  at $T=1$.
+  \item \emph{Degenerate:} $294$ Qwen story responses at $T=0.5$ plus $6$
+  at $T=1.5$.
+\end{itemize}
+
+\paragraph{Frontier-model populations.} For each prompt, $300$ independent
+calls to \texttt{claude-\allowbreak opus-\allowbreak 5-\allowbreak 5} (effort \texttt{low}, default sampling,
+the prompt as the only user message, 3~November~2026) gave the responses. The
+cross-encoder judge described in the next paragraph scored them exactly as it scored the open-model populations.
+
+\paragraph{Cross-encoder judge.} We used
+\texttt{cross-encoder/stsb-roberta-base} in float16, with batches of
+$1{,}024$ pairs truncated to $128$ tokens. Each pair is scored in both
+orders, ${s=\mathrm{sigmoid}(\text{logit})\in[0,1]}$, and
+$d_{ij}=1-\tfrac12\bigl(s(i,j)+s(j,i)\bigr)$ with $d_{ii}=0$. The mean
+absolute asymmetry $\lvert s(i,j)-s(j,i)\rvert$ is $0.039$--$0.064$. The
+time reported is GPU wall-clock for all $89{,}700$ calls of one
+population, which is $0.79$\,ms per call (median over the $21$ tables) on
+one Quadro RTX~5000 with PyTorch~2.8.0 and Transformers~4.57.1.
+
+\paragraph{Claude judge.} For the first $64$ Qwen story responses at
+$T=0.5$ and at $T=1$, we called \texttt{claude-\allowbreak opus-\allowbreak 5-\allowbreak 5} through the
+Anthropic Messages API on 3~November~2026, with effort \texttt{low}, a
+limit of $2{,}000$ output tokens, one call per pair, and the order of the two texts randomized in each call. The
+system prompt was, verbatim: ``You compare two short texts written in
+response to the same request. Rate how different they are, in content and
+in style, on an integer scale from 0 to 10: 0 means essentially the same
+text, 10 means completely different. Reply with the integer only.'' The
+user message was ``Request: \textit{prompt}'' followed by ``Text A:'' and
+``Text B:''. The value $d_{ij}$ is the returned integer divided by $10$. The run made $24$ requests in parallel, with $0$ failures
+and a median latency of $1.6$--$1.7$\,s. Cost is computed from token usage at
+\$4 and \$20 per million input and output tokens, respectively. Re-scoring
+$200$ random pairs with the order swapped (\$0.39) gave a Pearson correlation of
+$0.74$, a mean absolute difference of $0.05$, and a mean difference of
+$0.006$.
+
+\paragraph{GPT-5 judge.} The same $2{,}016$ pairs of the $T=1$ population, in
+the same order, were scored by \texttt{gpt-\allowbreak 5-\allowbreak 2025-\allowbreak 08-\allowbreak 07} through the OpenAI Chat
+Completions API on 3~November~2026, with reasoning effort
+\texttt{minimal} and the same system prompt and user message, with $0$
+failures; at list price the $2{,}016$ calls cost \$0.61. Every Monte Carlo
+design draw in \Cref{sec:exp-judge} subsamples these stored scores rather than
+calling the judge again.
+
+\paragraph{Diversity curve.} For \Cref{fig:judge}(c) we sampled $1{,}000$
+Qwen2.5-0.5B-Instruct responses to the story prompt at each
+$T\in\{0.25,0.5,0.75,1,1.25,1.5\}$, with the generation settings above
+(pure temperature sampling, at most $40$ new tokens) and seed $5000+t$ for
+temperature index $t$. For each temperature, one randomized round-robin
+design was drawn: a uniform relabeling of the circle-method schedule, from
+which $k=4$ of the $999$ rounds are kept uniformly at random. That gives
+$m=2{,}000$ pairs, one Claude call per pair, with the order of the two texts
+randomized. At $T=1$ a second, independently drawn design was scored as
+well. The calls used the Claude protocol above with $40$ requests in
+parallel, on 3~November~2026. All $14{,}000$ calls together cost \$28.80 at
+the prices above. Two replies at $T=1.5$ could not be parsed as an integer,
+and they were dropped from their round means. Each interval is the Student-$t$
+interval with $3$ degrees of freedom on the four round means, with the
+finite-population correction $1-k/(n-1)$ (\Cref{prop:rr-variance}). The
+distinctiveness estimates $\widehat a_i$ come from the same calls
+(\Cref{prop:sparse-anatomy}).
+
+\paragraph{Sample sets.} The feature map is the $128$-dimensional
+penultimate layer of a $784\to256\to128\to10$ ReLU network trained for
+five epochs with Adam (test accuracy $0.867$). The Gaussian kernel used for the Vendi
+score has bandwidth equal to the median pairwise feature distance. Planting uniform-noise
+images in $1\%$ of the set left the anatomy essentially unchanged, and none of them
+ranked among the $1\%$ most distinctive samples. The anatomy describes the
+chosen dissimilarity, not the raw inputs.
